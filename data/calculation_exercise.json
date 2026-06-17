@@ -96,8 +96,108 @@
     {
       "id": "midterm",
       "title": "Partial / Midterm",
-      "description": "This section is ready for a future partial or midterm exercise.",
-      "emptyMessage": "No partial / midterm exercise has been added yet."
+      "description": "A three-year partial / midterm practice question with a share buyback in year 3.",
+      "years": ["Année 1", "Année 2", "Année 3"],
+      "given": [
+        {
+          "title": "Année 1",
+          "items": [
+            "1 000 € de ventes (85 % à encaisser dans l’année, 15 % l’année suivante)",
+            "Marge brute de 50 % (80 % des COGS sont payés dans l’année)",
+            "150 € de frais de personnel",
+            "100 € autres opex",
+            "Acquisition de PC à 300 € le jour 1 (amortissement sur 5 ans)",
+            "Prêt bancaire de 800 € reçu le premier jour (à taux d’intérêt de 6 %)",
+            "Amortissement constant du prêt, sur 8 ans (c’est-à-dire 100 € remboursés en première année)",
+            "Levée de fonds de 800 €",
+            "25 % d’impôt sur le revenu des sociétés applicable (payé l’année prochaine)"
+          ]
+        },
+        {
+          "title": "Année 2",
+          "items": [
+            "1 600 € de ventes (85 % à encaisser dans l’année, 15 % l’année suivante)",
+            "Marge brute de 55 % (80 % des COGS sont payés dans l’année)",
+            "250 € coûts de personnel",
+            "200 € autres opex",
+            "Acquisition de chaise à 150 € le premier jour (amortissement de 3 ans)",
+            "100 € remboursés sur le prêt, encore une fois (et paiement des intérêts)",
+            "50 % du bénéfice net de la première année est versé en dividendes"
+          ]
+        },
+        {
+          "title": "Année 3",
+          "items": [
+            "2 200 € de ventes (85 % à encaisser dans l’année, 15 % l’année suivante)",
+            "Marge brute de 55 % (80 % des COGS sont payés dans l’année)",
+            "450 € coûts de personnel",
+            "400 autres opex",
+            "Acquisition logiciel à 500 € le premier jour (amortissement de 4 ans)",
+            "100 € remboursés sur le prêt, encore une fois (et paiement des intérêts)",
+            "50 % du bénéfice net de la deuxième année est versé en dividendes",
+            "Des actions d’une valeur de 200 € sont rachetées et annulées par la Société"
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "pnl-midterm",
+          "title": "P&L / CDR",
+          "rows": [
+            { "label": "Revenues / Chiffre d'affaires", "hint": "Total revenue from the given information.", "answers": [1000, 1600, 2200] },
+            { "label": "COGS / Coûts Directs", "hint": "(100% - gross margin percentage) × revenue.", "answers": [-500, -720, -990] },
+            { "label": "Gross Margin / Marge Brute", "hint": "Revenue + COGS, or the given gross margin percentage × revenue.", "type": "strong", "answers": [500, 880, 1210] },
+            { "label": "Staff / Equipe", "hint": "Personnel costs from the given information.", "answers": [-150, -250, -450] },
+            { "label": "Other Opex / Autres Coûts Opér.", "hint": "Other operating expenses from the given information.", "answers": [-100, -200, -400] },
+            { "label": "EBITDA", "hint": "Gross margin + staff + other opex.", "type": "strong", "answers": [250, 430, 360] },
+            { "label": "Amortization / Amortissements", "hint": "Acquisition cost ÷ useful life. Add amortization from all active assets.", "answers": [-60, -110, -235] },
+            { "label": "EBIT", "hint": "EBITDA + amortization.", "type": "strong", "answers": [190, 320, 125] },
+            { "label": "Interests", "hint": "Beginning-of-year bank loan × interest rate.", "answers": [-48, -42, -36] },
+            { "label": "EBT / RNAI", "hint": "EBIT + interests.", "type": "strong", "answers": [142, 278, 89] },
+            { "label": "Corporate Income Tax / IS", "hint": "Tax rate × EBT.", "answers": [-35.5, -69.5, -22.25] },
+            { "label": "Net income / Résultat Net", "hint": "EBT + corporate income tax.", "type": "strong", "answers": [106.5, 208.5, 66.75] }
+          ]
+        },
+        {
+          "id": "cashflow-midterm",
+          "title": "Cash Flow / TFT",
+          "rows": [
+            { "label": "Cash in of Revenues / Encaissements", "hint": "Cash collected this year from current-year and previous-year revenues.", "answers": [850, 1510, 2110] },
+            { "label": "Cash out of COGS / Décaissements COGS", "hint": "COGS × percentage paid during the year, plus any previous-year unpaid COGS.", "answers": [-400, -676, -936] },
+            { "label": "Cash out of Opex / Décaissements Opex", "hint": "Staff + other opex paid during the year.", "answers": [-250, -450, -850] },
+            { "label": "Corporate Income Tax / IS", "hint": "Last year's tax paid this year.", "answers": [0, -35.5, -69.5] },
+            { "label": "Operating Cash Flow / Flux d'activité", "hint": "Total of the operating cash lines above. Cash generated by operations.", "type": "total", "answers": [200, 348.5, 254.5] },
+            { "label": "Capex", "hint": "Assets bought this year.", "answers": [-300, -150, -500] },
+            { "label": "Investing Cash Flow / Flux d'Invest.", "hint": "Capex plus cash from selling assets, if any.", "type": "total", "answers": [-300, -150, -500] },
+            { "label": "Equity Raised / Levée de fonds", "hint": "Equity fundraising received by the company.", "answers": [800, 0, 0] },
+            { "label": "Share Buyback / Rachat d'actions", "hint": "Cash paid to buy back and cancel company shares.", "answers": [0, 0, -200] },
+            { "label": "Dividends Paid / Dividendes payés", "hint": "Percentage of previous-year net income paid as dividends.", "answers": [0, -53.25, -104.25] },
+            { "label": "Debt Drawn / Paid Back / Dettes financières", "hint": "New loan received, if any, minus repayments of bank loans.", "answers": [700, -100, -100] },
+            { "label": "Interests Paid", "hint": "Beginning-of-year bank loan × interest rate.", "answers": [-48, -42, -36] },
+            { "label": "Financing Cash Flow / Flux de financement", "hint": "Total of financing lines above.", "type": "total", "answers": [1452, -195.25, -440.25] },
+            { "label": "Net Cash Flow / Variation de trésorerie", "hint": "Operating cash flow + investing cash flow + financing cash flow.", "type": "total", "answers": [1352, 3.25, -685.75] }
+          ]
+        },
+        {
+          "id": "balance-midterm",
+          "title": "Balance Sheet / Bilan",
+          "rows": [
+            { "label": "Gross Fixed Assets / Immobilisations brutes", "hint": "Total capex bought since creation, before amortization.", "answers": [300, 450, 950] },
+            { "label": "Cumulative Amortization", "hint": "Total amortization accumulated so far: previous years + this year.", "answers": [-60, -170, -405] },
+            { "label": "Net Fixed Assets / Immobilisations nettes", "hint": "Gross fixed assets + cumulative amortization. Remaining accounting value of long-term assets.", "type": "total", "answers": [240, 280, 545] },
+            { "label": "Receivables / Créances clients", "hint": "Revenue not yet collected at year-end.", "answers": [150, 240, 330] },
+            { "label": "Payables / Dettes Fournisseurs", "hint": "COGS not yet paid at year-end.", "answers": [-100, -144, -198] },
+            { "label": "Corporate Income Tax Debt / Dette d'IS", "hint": "Tax recorded this year but paid next year.", "answers": [-35.5, -69.5, -22.25] },
+            { "label": "Working Capital / BFR", "hint": "Receivables + payables + corporate income tax debt.", "type": "total", "answers": [14.5, 26.5, 109.75] },
+            { "label": "Cash Available / Trésorerie disponible", "hint": "Previous cash available + current-year net cash flow.", "answers": [1352, 1355.25, 669.5] },
+            { "label": "Outstanding Debt / Dettes financières restantes", "hint": "Remaining bank loan after repayments.", "answers": [-700, -600, -500] },
+            { "label": "Net Cash / (Net Debt)", "hint": "Cash available + outstanding debt.", "type": "total", "answers": [652, 755.25, 169.5] },
+            { "label": "Equity Injected / Capital Social", "hint": "Total shareholder money injected, reduced by share buybacks.", "answers": [800, 800, 600] },
+            { "label": "Reserves & Cumulative Net Inc. / Réserves", "hint": "Previous reserves + this year's net income + dividends paid.", "answers": [106.5, 261.75, 224.25] },
+            { "label": "Shareholders Equity / Capitaux Propres", "hint": "Equity injected + reserves and cumulative net income.", "type": "total", "answers": [906.5, 1061.75, 824.25] }
+          ]
+        }
+      ]
     },
     {
       "id": "final",
