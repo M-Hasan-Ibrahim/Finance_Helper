@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practical Questions - Financial Tables Trainer</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="index.html">Home</a>
+      <a class="active" href="practical.html">Practical questions</a>
+      <a href="theoretical.html">Theoretical questions</a>
+    </nav>
+
+    <h1>Financial Tables Trainer</h1>
+    <p class="subtitle">Memorize the row names and order of P&amp;L / CDR, Cash Flow / TFT, and Balance Sheet / Bilan.</p>
+
+    <section class="card">
+      <div class="controls">
+        <div>
+          <label for="studyFlow">Study mode</label>
+          <select id="studyFlow">
+            <option value="practice">Practice one table</option>
+            <option value="lightning">Lightning round: reveal after each</option>
+            <option value="blind">Lightning round: score at the end</option>
+            <option value="progressive">Progressive table: chosen start to all rows</option>
+          </select>
+        </div>
+        <div>
+          <label for="mode">Answer type</label>
+          <select id="mode">
+            <option value="free">Free answer</option>
+            <option value="mcq">MCQ</option>
+          </select>
+        </div>
+        <div>
+          <label for="tableChoice">Table</label>
+          <select id="tableChoice">
+            <option value="random">Random table</option>
+          </select>
+        </div>
+        <div>
+          <label for="missingCount">Missing rows</label>
+          <input id="missingCount" type="number" min="1" max="13" value="3" />
+        </div>
+      </div>
+      <div class="button-row">
+        <button id="newQuizBtn">New quiz</button>
+      </div>
+      <p class="hint">Free answer accepts English or French and ignores accents, capitalization, apostrophes, and small punctuation differences.</p>
+    </section>
+
+    <section class="card" id="quizCard">
+      <div class="quiz-header">
+        <div class="title-area">
+          <p class="title-label" id="titleLabel">Table name:</p>
+          <div id="titleQuestion"></div>
+          <div class="small" id="microHint">The table title is also hidden.</div>
+        </div>
+        <div class="status-stack">
+          <span class="pill" id="modePill">Free answer</span>
+          <span class="pill dark" id="progressPill">Practice</span>
+        </div>
+      </div>
+
+      <div id="tableContainer"></div>
+
+      <div class="button-row">
+        <button id="checkBtn">Check answers</button>
+        <button id="nextBtn" class="secondary" hidden>Next question</button>
+        <button class="secondary" id="showBtn">Show answers</button>
+        <button class="ghost" id="resetBtn">Try again</button>
+      </div>
+
+      <div class="feedback" id="feedback"></div>
+    </section>
+  </main>
+
+  <script src="assets/practical.js"></script>
+</body>
+</html>

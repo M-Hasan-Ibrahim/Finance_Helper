@@ -1,0 +1,61 @@
+[
+  {
+    "id": "pnl",
+    "title": "P&L / CDR",
+    "titleAliases": ["p&l", "pnl", "table p&l", "table pnl", "table 1", "profit and loss", "profit & loss", "income statement", "cdr", "compte de resultat", "compte de résultat"],
+    "rows": [
+      { "label": "Revenues / Chiffre d'affaires", "aliases": ["revenues", "revenue", "sales", "turnover", "chiffre d affaires", "chiffre d'affaire", "chiffre d'affaires", "ca"] },
+      { "label": "COGS / Coûts Directs", "aliases": ["cogs", "cost of goods sold", "cost of sales", "couts directs", "coûts directs", "cout des ventes", "coût des ventes", "cost of revenues"] },
+      { "label": "Gross Margin / Marge Brute", "aliases": ["gross margin", "gross profit", "marge brute"], "type": "strong" },
+      { "label": "Staff / Equipe", "aliases": ["staff", "team", "payroll", "personnel", "equipe", "équipe", "frais de personnel", "couts de personnel", "coûts de personnel"] },
+      { "label": "Other Opex / Autres Coûts Opér.", "aliases": ["other opex", "opex", "operating expenses", "autres opex", "autres couts oper", "autres coûts opér", "autres couts operationnels", "autres coûts opérationnels"] },
+      { "label": "EBITDA", "aliases": ["ebitda"], "type": "strong" },
+      { "label": "Amortization / Amortissements", "aliases": ["amortization", "amortisation", "amortissements", "depreciation", "d&a", "da", "depreciation and amortization"] },
+      { "label": "EBIT", "aliases": ["ebit"], "type": "strong" },
+      { "label": "Interests", "aliases": ["interests", "interest", "interest expense", "interets", "intérêts"] },
+      { "label": "EBT / RNAI", "aliases": ["ebt", "rnai", "earnings before tax", "resultat avant impots", "résultat avant impôts"], "type": "strong" },
+      { "label": "Corporate Income Tax / IS", "aliases": ["corporate income tax", "income tax", "tax", "is", "cit", "impot sur les societes", "impôt sur les sociétés"] },
+      { "label": "Net income / Résultat Net", "aliases": ["net income", "net result", "bottom line", "resultat net", "résultat net", "net profit"], "type": "strong" }
+    ]
+  },
+  {
+    "id": "cashflow",
+    "title": "Cash Flow / TFT",
+    "titleAliases": ["cash flow", "cashflow", "table of cash flow", "table cash flow", "table 2", "tft", "tableau de flux de tresorerie", "tableau de flux de trésorerie", "cash flow statement", "statement of cash flows"],
+    "rows": [
+      { "label": "Cash in of Revenues / Encaissements", "aliases": ["cash in of revenues", "cash in revenues", "cash receipts", "cash collections", "encaissements", "encaissement", "encaissements clients"] },
+      { "label": "Cash out of COGS / Décaissements COGS", "aliases": ["cash out of cogs", "cogs cash out", "payment of cogs", "decaissements cogs", "décaissements cogs", "decaissement des cogs", "décaissement des cogs"] },
+      { "label": "Cash out of Opex / Décaissements Opex", "aliases": ["cash out of opex", "opex cash out", "payment of opex", "decaissements opex", "décaissements opex", "decaissement opex", "décaissement opex"] },
+      { "label": "Corporate Income Tax / IS", "aliases": ["corporate income tax", "income tax", "tax", "is", "cit", "impot sur les societes", "impôt sur les sociétés"] },
+      { "label": "Operating Cash Flow / Flux d'activité", "aliases": ["operating cash flow", "operating cf", "cash flow from operations", "flux d activite", "flux d'activité", "flux d exploitation", "flux de tresorerie d activite", "flux de trésorerie d'activité"], "type": "total" },
+      { "label": "Capex", "aliases": ["capex", "capital expenditures", "capital expenditure", "investment expenses"] },
+      { "label": "Investing Cash Flow / Flux d'Invest.", "aliases": ["investing cash flow", "cash flow from investing", "flux d invest", "flux d'investissement", "flux d investissement", "flux de tresorerie d investissement", "flux de trésorerie d'investissement"], "type": "total" },
+      { "label": "Equity Raised / Levée de fonds", "aliases": ["equity raised", "fundraising", "fund raise", "capital increase", "levee de fonds", "levée de fonds", "equity injection"] },
+      { "label": "Dividends Paid / Dividendes payés", "aliases": ["dividends paid", "dividends", "dividendes", "dividendes payes", "dividendes payés"] },
+      { "label": "Debt Drawn / Paid Back / Dettes financières", "aliases": ["debt drawn", "debt paid back", "debt repayment", "debt drawdown", "tirages ou remboursements de dettes", "dettes financieres", "dettes financières", "remboursements de dettes"] },
+      { "label": "Interests Paid", "aliases": ["interests paid", "interest paid", "decaissement des interets", "décaissement des intérêts", "interets payes", "intérêts payés"] },
+      { "label": "Financing Cash Flow / Flux de financement", "aliases": ["financing cash flow", "cash flow from financing", "flux de financement", "flux de tresorerie de financement", "flux de trésorerie de financement"], "type": "total" },
+      { "label": "Net Cash Flow / Variation de trésorerie", "aliases": ["net cash flow", "change in cash", "variation de tresorerie", "variation de trésorerie", "net change in cash"], "type": "total" }
+    ]
+  },
+  {
+    "id": "balance",
+    "title": "Balance Sheet / Bilan",
+    "titleAliases": ["balance sheet", "table of balance sheet", "table balance sheet", "table 3", "bilan", "statement of financial position"],
+    "rows": [
+      { "label": "Gross Fixed Assets / Immobilisations brutes", "aliases": ["gross fixed assets", "gross assets", "immobilisations brutes", "fixed assets gross"] },
+      { "label": "Cumulative Amortization", "aliases": ["cumulative amortization", "accumulated amortization", "cumulative depreciation", "accumulated depreciation", "amortissements cumules", "amortissements cumulés"] },
+      { "label": "Net Fixed Assets / Immobilisations nettes", "aliases": ["net fixed assets", "net assets", "immobilisations nettes"], "type": "total" },
+      { "label": "Receivables / Créances clients", "aliases": ["receivables", "accounts receivable", "trade receivables", "creances clients", "créances clients"] },
+      { "label": "Payables / Dettes Fournisseurs", "aliases": ["payables", "accounts payable", "trade payables", "dettes fournisseurs"] },
+      { "label": "Corporate Income Tax Debt / Dette d'IS", "aliases": ["corporate income tax debt", "income tax debt", "tax debt", "dette d is", "dette d'is", "dette impot sur les societes", "dette d'impôt sur les sociétés"] },
+      { "label": "Working Capital / BFR", "aliases": ["working capital", "bfr", "besoin en fonds de roulement"], "type": "total" },
+      { "label": "Cash Available / Trésorerie disponible", "aliases": ["cash available", "cash", "available cash", "tresorerie disponible", "trésorerie disponible"] },
+      { "label": "Outstanding Debt / Dettes financières restantes", "aliases": ["outstanding debt", "financial debt", "remaining debt", "debt", "dettes financieres restantes", "dettes financières restantes", "dettes financieres", "dettes financières"] },
+      { "label": "Net Cash / (Net Debt)", "aliases": ["net cash", "net debt", "net cash net debt", "tresorerie nette", "trésorerie nette"], "type": "total" },
+      { "label": "Equity Injected / Capital Social", "aliases": ["equity injected", "share capital", "capital social", "capital social et prime d emission", "capital social et prime d'émission", "equity injection"] },
+      { "label": "Reserves & Cumulative Net Inc. / Réserves", "aliases": ["reserves", "cumulative net income", "retained earnings", "reserves and cumulative net income", "reserves et resultats cumules", "réserves et résultats cumulés", "réserves"] },
+      { "label": "Shareholders Equity / Capitaux Propres", "aliases": ["shareholders equity", "equity", "capitaux propres", "owners equity"], "type": "total" }
+    ]
+  }
+]
