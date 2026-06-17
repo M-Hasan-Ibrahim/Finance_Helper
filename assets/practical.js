@@ -2,6 +2,7 @@ const ROUND_LENGTH = 10;
 
 let TABLES = [];
 let EXERCISE = null;
+let activeExerciseId = null;
 let current = null;
 let missingIndexes = [];
 let titleOptions = [];
@@ -26,6 +27,7 @@ const els = {
   titleQuestion: document.getElementById("titleQuestion"),
   tableContainer: document.getElementById("tableContainer"),
   feedback: document.getElementById("feedback"),
+  calculationExerciseTabs: document.getElementById("calculationExerciseTabs"),
   exerciseGiven: document.getElementById("exerciseGiven"),
   exerciseTables: document.getElementById("exerciseTables")
 };
@@ -443,10 +445,50 @@ function switchPracticalTab(tabName) {
 
 function renderExercise() {
   if (!EXERCISE) return;
+  const exercises = EXERCISE.exercises || [EXERCISE];
+  activeExerciseId = activeExerciseId || exercises[0]?.id;
+
+  els.calculationExerciseTabs.innerHTML = exercises.map(exercise => `
+    <button
+      class="exercise-tab-button ${exercise.id === activeExerciseId ? "active" : ""}"
+      type="button"
+      data-exercise-tab="${escapeHtml(exercise.id)}"
+    >
+      ${escapeHtml(exercise.title)}
+    </button>`).join("");
+
+  els.calculationExerciseTabs.querySelectorAll("[data-exercise-tab]").forEach(button => {
+    button.addEventListener("click", () => {
+      activeExerciseId = button.dataset.exerciseTab;
+      renderExercise();
+    });
+  });
+
+  renderSelectedExercise();
+}
+
+function getActiveExercise() {
+  const exercises = EXERCISE.exercises || [EXERCISE];
+  return exercises.find(exercise => exercise.id === activeExerciseId) || exercises[0];
+}
+
+function renderSelectedExercise() {
+  const exercise = getActiveExercise();
+
+  if (!exercise.tables || !exercise.tables.length) {
+    els.exerciseGiven.innerHTML = `
+      <div class="feedback show">
+        <b>${escapeHtml(exercise.title)}</b><br />
+        ${escapeHtml(exercise.emptyMessage || "This exercise will be added later.")}
+      </div>`;
+    els.exerciseTables.innerHTML = "";
+    return;
+  }
 
   els.exerciseGiven.innerHTML = `
+    ${exercise.description ? `<p class="hint">${escapeHtml(exercise.description)}</p>` : ""}
     <div class="given-grid">
-      ${EXERCISE.given.map(section => `
+      ${exercise.given.map(section => `
         <div class="given-card">
           <h3>${escapeHtml(section.title)}</h3>
           <ul>
@@ -455,9 +497,9 @@ function renderExercise() {
         </div>`).join("")}
     </div>`;
 
-  els.exerciseTables.innerHTML = EXERCISE.tables.map(table => renderExerciseTable(table)).join("");
+  els.exerciseTables.innerHTML = exercise.tables.map(table => renderExerciseTable(exercise, table)).join("");
 
-  EXERCISE.tables.forEach(table => {
+  exercise.tables.forEach(table => {
     document
       .querySelector(`[data-check-table="${table.id}"]`)
       .addEventListener("click", () => checkExerciseTable(table.id));
@@ -467,7 +509,7 @@ function renderExercise() {
   });
 }
 
-function renderExerciseTable(table) {
+function renderExerciseTable(exercise, table) {
   const rowsHtml = table.rows.map((row, rowIndex) => {
     const classes = [row.type === "strong" ? "strong-row" : "", row.type === "total" ? "total-row" : ""].join(" ");
     return `
@@ -483,7 +525,7 @@ function renderExerciseTable(table) {
             <input
               type="text"
               inputmode="decimal"
-              aria-label="${escapeHtml(row.label)} ${escapeHtml(EXERCISE.years[yearIndex])}"
+              aria-label="${escapeHtml(row.label)} ${escapeHtml(exercise.years[yearIndex])}"
               data-exercise-input="${table.id}-${rowIndex}-${yearIndex}"
               placeholder="0"
             />
@@ -500,7 +542,7 @@ function renderExerciseTable(table) {
           <thead>
             <tr>
               <th>Rows to fill</th>
-              ${EXERCISE.years.map(year => `<th>${escapeHtml(year)}</th>`).join("")}
+              ${exercise.years.map(year => `<th>${escapeHtml(year)}</th>`).join("")}
             </tr>
           </thead>
           <tbody>${rowsHtml}</tbody>
@@ -515,7 +557,10 @@ function renderExerciseTable(table) {
 }
 
 function parseNumericAnswer(input) {
-  const cleaned = String(input || "")
+  const raw = String(input || "").trim();
+  if (raw === "/") return 0;
+
+  const cleaned = raw
     .trim()
     .replace(/\s+/g, "")
     .replace(/€/g, "")
@@ -538,8 +583,13 @@ function formatNumber(value) {
   return String(value).replace(".", ",");
 }
 
+function displayExpectedAnswer(row, yearIndex) {
+  return row.displayAnswers?.[yearIndex] ?? formatNumber(row.answers[yearIndex]);
+}
+
 function checkExerciseTable(tableId) {
-  const table = EXERCISE.tables.find(item => item.id === tableId);
+  const exercise = getActiveExercise();
+  const table = exercise.tables.find(item => item.id === tableId);
   let score = 0;
   let total = 0;
 
@@ -563,7 +613,8 @@ function checkExerciseTable(tableId) {
 }
 
 function showExerciseAnswers(tableId) {
-  const table = EXERCISE.tables.find(item => item.id === tableId);
+  const exercise = getActiveExercise();
+  const table = exercise.tables.find(item => item.id === tableId);
 
   table.rows.forEach((row, rowIndex) => {
     row.answers.forEach((answer, yearIndex) => {
@@ -574,7 +625,7 @@ function showExerciseAnswers(tableId) {
 
       input.classList.toggle("correct", ok);
       input.classList.toggle("wrong", !ok);
-      answerBox.textContent = `Correct: ${formatNumber(answer)}`;
+      answerBox.textContent = `Correct: ${displayExpectedAnswer(row, yearIndex)}`;
       answerBox.className = "cell-answer show";
     });
   });

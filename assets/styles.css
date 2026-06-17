@@ -145,6 +145,25 @@ h2 {
   display: none;
 }
 
+.exercise-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.exercise-tab-button {
+  background: #e2e8f0;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.exercise-tab-button.active,
+.exercise-tab-button:hover {
+  background: var(--teal);
+  color: white;
+}
+
 .card,
 .home-card {
   background: var(--panel);
@@ -663,7 +682,8 @@ tbody tr.strong-row td { font-weight: 700; }
   }
 
   .top-nav,
-  .sub-tabs {
+  .sub-tabs,
+  .exercise-tabs {
     display: grid;
     grid-template-columns: 1fr;
     gap: 6px;
@@ -671,7 +691,8 @@ tbody tr.strong-row td { font-weight: 700; }
   }
 
   .top-nav a,
-  .sub-tab-button {
+  .sub-tab-button,
+  .exercise-tab-button {
     width: 100%;
     border-radius: 8px;
     border: 1px solid #c5d6df;
