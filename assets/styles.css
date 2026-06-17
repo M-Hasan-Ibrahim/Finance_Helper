@@ -65,11 +65,31 @@ h2 {
 
 .language-toggle {
   flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   background: #0f3f52;
+  border: 2px solid #8fd2e4;
+  box-shadow: 0 6px 16px rgba(7, 54, 74, 0.22);
+  white-space: nowrap;
 }
 
 .language-toggle:hover {
   background: var(--teal-dark);
+  border-color: #bfe8f5;
+}
+
+.toggle-arrows {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #bfe8f5;
+  color: #07364a;
+  font-weight: 900;
+  line-height: 1;
 }
 
 .top-nav {

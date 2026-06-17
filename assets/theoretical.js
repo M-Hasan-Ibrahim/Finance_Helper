@@ -59,7 +59,10 @@ function renderLanguage(language) {
   document.documentElement.lang = language;
   titleEl.textContent = content.pageTitle;
   subtitleEl.textContent = content.subtitle;
-  languageToggle.textContent = content.toggleLabel;
+  languageToggle.innerHTML = `
+    <span class="toggle-arrows" aria-hidden="true">↕</span>
+    <span>${escapeHtml(content.toggleLabel)}</span>`;
+  languageToggle.setAttribute("aria-label", content.toggleLabel);
   container.innerHTML = content.blocks.map(renderBlock).join("");
 }
 

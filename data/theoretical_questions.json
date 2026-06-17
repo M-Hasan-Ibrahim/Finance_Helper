@@ -4,7 +4,7 @@
     "fr": {
       "pageTitle": "Questions théoriques",
       "subtitle": "Capital de startup, dilution, valorisation, création d'actions et traitement comptable.",
-      "toggleLabel": "English",
+      "toggleLabel": "Translate to English",
       "loading": "Chargement des questions théoriques...",
       "blocks": [
         {
@@ -75,7 +75,7 @@
     "en": {
       "pageTitle": "Theoretical Questions",
       "subtitle": "Startup capital, dilution, valuation, share creation, and accounting treatment.",
-      "toggleLabel": "Français",
+      "toggleLabel": "Traduire en Français",
       "loading": "Loading theoretical questions...",
       "blocks": [
         {
