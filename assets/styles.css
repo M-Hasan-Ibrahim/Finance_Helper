@@ -46,6 +46,27 @@ h2 {
   font-size: 14px;
 }
 
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.page-heading .subtitle {
+  margin-bottom: 0;
+}
+
+.language-toggle {
+  flex: 0 0 auto;
+  background: #0f3f52;
+}
+
+.language-toggle:hover {
+  background: var(--teal-dark);
+}
+
 .top-nav {
   display: flex;
   flex-wrap: wrap;
@@ -424,6 +445,11 @@ tbody tr.strong-row td { font-weight: 700; }
 }
 
 @media (max-width: 620px) {
+  .page-heading {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .controls { grid-template-columns: 1fr; }
   td, th { font-size: 12px; padding: 7px 6px; }
   .answer-box { flex-direction: column; align-items: stretch; }
