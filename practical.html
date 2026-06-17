@@ -17,65 +17,83 @@
     <h1>Financial Tables Trainer</h1>
     <p class="subtitle">Memorize the row names and order of P&amp;L / CDR, Cash Flow / TFT, and Balance Sheet / Bilan.</p>
 
-    <section class="card">
-      <div class="controls">
-        <div>
-          <label for="studyFlow">Study mode</label>
-          <select id="studyFlow">
-            <option value="practice">Practice one table</option>
-            <option value="lightning">Lightning round: reveal after each</option>
-            <option value="blind">Lightning round: score at the end</option>
-            <option value="progressive">Progressive table: chosen start to all rows</option>
-          </select>
-        </div>
-        <div>
-          <label for="mode">Answer type</label>
-          <select id="mode">
-            <option value="free">Free answer</option>
-            <option value="mcq">MCQ</option>
-          </select>
-        </div>
-        <div>
-          <label for="tableChoice">Table</label>
-          <select id="tableChoice">
-            <option value="random">Random table</option>
-          </select>
-        </div>
-        <div>
-          <label for="missingCount">Missing rows</label>
-          <input id="missingCount" type="number" min="1" max="13" value="3" />
-        </div>
-      </div>
-      <div class="button-row">
-        <button id="newQuizBtn">New quiz</button>
-      </div>
-      <p class="hint">Free answer accepts English or French and ignores accents, capitalization, apostrophes, and small punctuation differences.</p>
-    </section>
+    <nav class="sub-tabs" aria-label="Practical question sections">
+      <button class="sub-tab-button active" type="button" data-practical-tab="memorization">Table memorization</button>
+      <button class="sub-tab-button" type="button" data-practical-tab="calculation">Solve tables with numbers</button>
+    </nav>
 
-    <section class="card" id="quizCard">
-      <div class="quiz-header">
-        <div class="title-area">
-          <p class="title-label" id="titleLabel">Table name:</p>
-          <div id="titleQuestion"></div>
-          <div class="small" id="microHint">The table title is also hidden.</div>
+    <div class="sub-tab-panel" id="memorizationPanel">
+      <section class="card">
+        <div class="controls">
+          <div>
+            <label for="studyFlow">Study mode</label>
+            <select id="studyFlow">
+              <option value="practice">Practice one table</option>
+              <option value="lightning">Lightning round: reveal after each</option>
+              <option value="blind">Lightning round: score at the end</option>
+              <option value="progressive">Progressive table: chosen start to all rows</option>
+            </select>
+          </div>
+          <div>
+            <label for="mode">Answer type</label>
+            <select id="mode">
+              <option value="free">Free answer</option>
+              <option value="mcq">MCQ</option>
+            </select>
+          </div>
+          <div>
+            <label for="tableChoice">Table</label>
+            <select id="tableChoice">
+              <option value="random">Random table</option>
+            </select>
+          </div>
+          <div>
+            <label for="missingCount">Missing rows</label>
+            <input id="missingCount" type="number" min="1" max="13" value="3" />
+          </div>
         </div>
-        <div class="status-stack">
-          <span class="pill" id="modePill">Free answer</span>
-          <span class="pill dark" id="progressPill">Practice</span>
+        <div class="button-row">
+          <button id="newQuizBtn">New quiz</button>
         </div>
-      </div>
+        <p class="hint">Free answer accepts English or French and ignores accents, capitalization, apostrophes, and small punctuation differences.</p>
+      </section>
 
-      <div id="tableContainer"></div>
+      <section class="card" id="quizCard">
+        <div class="quiz-header">
+          <div class="title-area">
+            <p class="title-label" id="titleLabel">Table name:</p>
+            <div id="titleQuestion"></div>
+            <div class="small" id="microHint">The table title is also hidden.</div>
+          </div>
+          <div class="status-stack">
+            <span class="pill" id="modePill">Free answer</span>
+            <span class="pill dark" id="progressPill">Practice</span>
+          </div>
+        </div>
 
-      <div class="button-row">
-        <button id="checkBtn">Check answers</button>
-        <button id="nextBtn" class="secondary" hidden>Next question</button>
-        <button class="secondary" id="showBtn">Show answers</button>
-        <button class="ghost" id="resetBtn">Try again</button>
-      </div>
+        <div id="tableContainer"></div>
 
-      <div class="feedback" id="feedback"></div>
-    </section>
+        <div class="button-row">
+          <button id="checkBtn">Check answers</button>
+          <button id="nextBtn" class="secondary" hidden>Next question</button>
+          <button class="secondary" id="showBtn">Show answers</button>
+          <button class="ghost" id="resetBtn">Try again</button>
+        </div>
+
+        <div class="feedback" id="feedback"></div>
+      </section>
+    </div>
+
+    <div class="sub-tab-panel" id="calculationPanel" hidden>
+      <section class="card">
+        <h2>Calculation Exercise</h2>
+        <p class="subtitle">Use the given information to fill the three financial tables. Each table has its own check button.</p>
+        <p class="hint">You can enter final numbers like <b>850</b> or simple expressions like <b>50 + 800</b>. Commas and dots both work for decimals.</p>
+        <div id="exerciseGiven"></div>
+      </section>
+
+      <div id="exerciseTables"></div>
+    </div>
   </main>
 
   <script src="assets/practical.js"></script>

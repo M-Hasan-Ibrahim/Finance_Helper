@@ -1,6 +1,7 @@
 const ROUND_LENGTH = 10;
 
 let TABLES = [];
+let EXERCISE = null;
 let current = null;
 let missingIndexes = [];
 let titleOptions = [];
@@ -24,7 +25,15 @@ const els = {
   microHint: document.getElementById("microHint"),
   titleQuestion: document.getElementById("titleQuestion"),
   tableContainer: document.getElementById("tableContainer"),
-  feedback: document.getElementById("feedback")
+  feedback: document.getElementById("feedback"),
+  exerciseGiven: document.getElementById("exerciseGiven"),
+  exerciseTables: document.getElementById("exerciseTables")
+};
+
+const practicalTabButtons = [...document.querySelectorAll(".sub-tab-button")];
+const practicalPanels = {
+  memorization: document.getElementById("memorizationPanel"),
+  calculation: document.getElementById("calculationPanel")
 };
 
 function normalize(text) {
@@ -423,6 +432,127 @@ function escapeHtml(str) {
     .replace(/'/g, "&#039;");
 }
 
+function switchPracticalTab(tabName) {
+  practicalTabButtons.forEach(button => {
+    button.classList.toggle("active", button.dataset.practicalTab === tabName);
+  });
+  Object.entries(practicalPanels).forEach(([name, panel]) => {
+    panel.hidden = name !== tabName;
+  });
+}
+
+function renderExercise() {
+  if (!EXERCISE) return;
+
+  els.exerciseGiven.innerHTML = `
+    <div class="given-grid">
+      ${EXERCISE.given.map(section => `
+        <div class="given-card">
+          <h3>${escapeHtml(section.title)}</h3>
+          <ul>
+            ${section.items.map(item => `<li>${escapeHtml(item)}</li>`).join("")}
+          </ul>
+        </div>`).join("")}
+    </div>`;
+
+  els.exerciseTables.innerHTML = EXERCISE.tables.map(table => renderExerciseTable(table)).join("");
+
+  EXERCISE.tables.forEach(table => {
+    document
+      .querySelector(`[data-check-table="${table.id}"]`)
+      .addEventListener("click", () => checkExerciseTable(table.id));
+  });
+}
+
+function renderExerciseTable(table) {
+  const rowsHtml = table.rows.map((row, rowIndex) => {
+    const classes = [row.type === "strong" ? "strong-row" : "", row.type === "total" ? "total-row" : ""].join(" ");
+    return `
+      <tr class="${classes}">
+        <td>${escapeHtml(row.label)}</td>
+        ${row.answers.map((_, yearIndex) => `
+          <td>
+            <input
+              type="text"
+              inputmode="decimal"
+              aria-label="${escapeHtml(row.label)} ${escapeHtml(EXERCISE.years[yearIndex])}"
+              data-exercise-input="${table.id}-${rowIndex}-${yearIndex}"
+              placeholder="0"
+            />
+            <div class="cell-answer" data-exercise-answer="${table.id}-${rowIndex}-${yearIndex}"></div>
+          </td>`).join("")}
+      </tr>`;
+  }).join("");
+
+  return `
+    <section class="card exercise-card">
+      <h2>${escapeHtml(table.title)}</h2>
+      <div class="table-wrap">
+        <table class="exercise-table" aria-label="${escapeHtml(table.title)} calculation exercise">
+          <thead>
+            <tr>
+              <th>Rows to fill</th>
+              ${EXERCISE.years.map(year => `<th>${escapeHtml(year)}</th>`).join("")}
+            </tr>
+          </thead>
+          <tbody>${rowsHtml}</tbody>
+        </table>
+      </div>
+      <div class="button-row">
+        <button type="button" data-check-table="${escapeHtml(table.id)}">Check ${escapeHtml(table.title)}</button>
+        <span class="score" id="exerciseScore-${escapeHtml(table.id)}"></span>
+      </div>
+    </section>`;
+}
+
+function parseNumericAnswer(input) {
+  const cleaned = String(input || "")
+    .trim()
+    .replace(/\s+/g, "")
+    .replace(/€/g, "")
+    .replace(/,/g, ".")
+    .replace(/[−–—]/g, "-")
+    .replace(/[×x]/gi, "*");
+
+  if (!cleaned) return NaN;
+  if (!/^[0-9+\-*/().]+$/.test(cleaned)) return NaN;
+
+  try {
+    const value = Function(`"use strict"; return (${cleaned});`)();
+    return Number.isFinite(value) ? value : NaN;
+  } catch {
+    return NaN;
+  }
+}
+
+function formatNumber(value) {
+  return String(value).replace(".", ",");
+}
+
+function checkExerciseTable(tableId) {
+  const table = EXERCISE.tables.find(item => item.id === tableId);
+  let score = 0;
+  let total = 0;
+
+  table.rows.forEach((row, rowIndex) => {
+    row.answers.forEach((answer, yearIndex) => {
+      total++;
+      const input = document.querySelector(`[data-exercise-input="${table.id}-${rowIndex}-${yearIndex}"]`);
+      const answerBox = document.querySelector(`[data-exercise-answer="${table.id}-${rowIndex}-${yearIndex}"]`);
+      const value = parseNumericAnswer(input.value);
+      const ok = Math.abs(value - answer) <= 0.01;
+
+      input.classList.toggle("correct", ok);
+      input.classList.toggle("wrong", !ok);
+      answerBox.textContent = ok ? "" : `Correct: ${formatNumber(answer)}`;
+      answerBox.classList.toggle("show", !ok);
+      if (ok) score++;
+    });
+  });
+
+  document.getElementById(`exerciseScore-${table.id}`).textContent = `Score: ${score}/${total}`;
+}
+
 function populateTableSelect() {
   TABLES.forEach(table => {
     const option = document.createElement("option");
@@ -434,10 +564,16 @@ function populateTableSelect() {
 
 async function init() {
   try {
-    const response = await fetch("data/tables.json");
-    if (!response.ok) throw new Error(`Could not load tables.json (${response.status})`);
-    TABLES = await response.json();
+    const [tablesResponse, exerciseResponse] = await Promise.all([
+      fetch("data/tables.json"),
+      fetch("data/calculation_exercise.json")
+    ]);
+    if (!tablesResponse.ok) throw new Error(`Could not load tables.json (${tablesResponse.status})`);
+    if (!exerciseResponse.ok) throw new Error(`Could not load calculation_exercise.json (${exerciseResponse.status})`);
+    TABLES = await tablesResponse.json();
+    EXERCISE = await exerciseResponse.json();
     populateTableSelect();
+    renderExercise();
     els.missingCount.max = Math.max(...TABLES.map(table => table.rows.length));
     newQuiz();
   } catch (error) {
@@ -448,6 +584,9 @@ async function init() {
   }
 }
 
+practicalTabButtons.forEach(button => {
+  button.addEventListener("click", () => switchPracticalTab(button.dataset.practicalTab));
+});
 els.newQuizBtn.addEventListener("click", newQuiz);
 els.checkBtn.addEventListener("click", checkAnswers);
 els.nextBtn.addEventListener("click", nextQuestion);
