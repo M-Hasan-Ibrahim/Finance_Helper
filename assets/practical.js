@@ -461,6 +461,9 @@ function renderExercise() {
     document
       .querySelector(`[data-check-table="${table.id}"]`)
       .addEventListener("click", () => checkExerciseTable(table.id));
+    document
+      .querySelector(`[data-show-table="${table.id}"]`)
+      .addEventListener("click", () => showExerciseAnswers(table.id));
   });
 }
 
@@ -469,7 +472,12 @@ function renderExerciseTable(table) {
     const classes = [row.type === "strong" ? "strong-row" : "", row.type === "total" ? "total-row" : ""].join(" ");
     return `
       <tr class="${classes}">
-        <td>${escapeHtml(row.label)}</td>
+        <td>
+          <span class="row-help" tabindex="0">
+            ${escapeHtml(row.label)}
+            ${row.hint ? `<span class="row-tooltip">${escapeHtml(row.hint)}</span>` : ""}
+          </span>
+        </td>
         ${row.answers.map((_, yearIndex) => `
           <td>
             <input
@@ -499,7 +507,8 @@ function renderExerciseTable(table) {
         </table>
       </div>
       <div class="button-row">
-        <button type="button" data-check-table="${escapeHtml(table.id)}">Check ${escapeHtml(table.title)}</button>
+        <button type="button" data-check-table="${escapeHtml(table.id)}">Check answers</button>
+        <button class="secondary" type="button" data-show-table="${escapeHtml(table.id)}">Show answers</button>
         <span class="score" id="exerciseScore-${escapeHtml(table.id)}"></span>
       </div>
     </section>`;
@@ -544,13 +553,31 @@ function checkExerciseTable(tableId) {
 
       input.classList.toggle("correct", ok);
       input.classList.toggle("wrong", !ok);
-      answerBox.textContent = ok ? "" : `Correct: ${formatNumber(answer)}`;
-      answerBox.classList.toggle("show", !ok);
+      answerBox.textContent = ok ? "Correct" : "Wrong";
+      answerBox.className = `cell-answer show ${ok ? "correct" : "wrong"}`;
       if (ok) score++;
     });
   });
 
   document.getElementById(`exerciseScore-${table.id}`).textContent = `Score: ${score}/${total}`;
+}
+
+function showExerciseAnswers(tableId) {
+  const table = EXERCISE.tables.find(item => item.id === tableId);
+
+  table.rows.forEach((row, rowIndex) => {
+    row.answers.forEach((answer, yearIndex) => {
+      const input = document.querySelector(`[data-exercise-input="${table.id}-${rowIndex}-${yearIndex}"]`);
+      const answerBox = document.querySelector(`[data-exercise-answer="${table.id}-${rowIndex}-${yearIndex}"]`);
+      const value = parseNumericAnswer(input.value);
+      const ok = Math.abs(value - answer) <= 0.01;
+
+      input.classList.toggle("correct", ok);
+      input.classList.toggle("wrong", !ok);
+      answerBox.textContent = `Correct: ${formatNumber(answer)}`;
+      answerBox.className = "cell-answer show";
+    });
+  });
 }
 
 function populateTableSelect() {
