@@ -196,7 +196,7 @@ function renderPracticeQuestion() {
         <div class="feedback" id="mcqFeedback"></div>
         <div class="button-row">
           <button type="button" id="checkMcqBtn" ${isRandomSession ? "hidden" : ""}>Check answer</button>
-          <button class="secondary" type="button" id="nextMcqBtn" hidden>
+          <button class="secondary" type="button" id="nextMcqBtn" ${isRandomSession ? "" : "hidden"}>
             ${practiceIndex === practiceQuestions.length - 1 ? "See final score" : "Next question"}
           </button>
         </div>
@@ -205,12 +205,10 @@ function renderPracticeQuestion() {
     </div>`;
 
   document.getElementById("checkMcqBtn").addEventListener("click", checkPracticeAnswer);
-  document.getElementById("nextMcqBtn").addEventListener("click", nextPracticeQuestion);
-  if (isRandomSession) {
-    document.querySelectorAll('input[name="practiceAnswer"]').forEach(input => {
-      input.addEventListener("change", checkPracticeAnswer);
-    });
-  }
+  document.getElementById("nextMcqBtn").addEventListener(
+    "click",
+    isRandomSession ? submitRandomAnswer : nextPracticeQuestion
+  );
 }
 
 function renderRandomTracker() {
@@ -277,6 +275,25 @@ function checkPracticeAnswer() {
 
 function nextPracticeQuestion() {
   if (!practiceChecked) return;
+  practiceIndex++;
+  renderPracticeQuestion();
+}
+
+function submitRandomAnswer() {
+  const selected = document.querySelector('input[name="practiceAnswer"]:checked');
+  const feedback = document.getElementById("mcqFeedback");
+
+  if (!selected) {
+    feedback.textContent = "Choose an answer before continuing.";
+    feedback.className = "feedback show";
+    return;
+  }
+
+  const question = practiceQuestions[practiceIndex];
+  const isCorrect = selected.value === question.answer;
+  practiceResults[practiceIndex] = isCorrect;
+  if (isCorrect) practiceScore++;
+
   practiceIndex++;
   renderPracticeQuestion();
 }
