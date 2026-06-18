@@ -1,0 +1,1204 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the main role of a Business Plan?",
+      "options": {
+        "A": "To calculate only taxes",
+        "B": "To present future financial perspectives of a company",
+        "C": "To replace accounting",
+        "D": "To avoid making financial statements"
+      },
+      "answer": "B",
+      "explanation": "It shows the future financial vision of the company."
+    },
+    {
+      "id": 2,
+      "question": "A Business Plan usually contains:",
+      "options": {
+        "A": "Only graphs",
+        "B": "Only legal documents",
+        "C": "Modeling tabs and presentation tabs",
+        "D": "Only invoices"
+      },
+      "answer": "C",
+      "explanation": "It contains calculation tabs and presentation tabs."
+    },
+    {
+      "id": 3,
+      "question": "“Garbage in, garbage out” means:",
+      "options": {
+        "A": "Excel always gives wrong answers",
+        "B": "If assumptions are bad, the model result is bad",
+        "C": "Taxes are always wrong",
+        "D": "Business Plans are useless"
+      },
+      "answer": "B",
+      "explanation": "The result depends on the quality of assumptions."
+    },
+    {
+      "id": 4,
+      "question": "For investors, the Business Plan helps mainly to judge:",
+      "options": {
+        "A": "The seriousness of the entrepreneur and company potential",
+        "B": "The logo color",
+        "C": "The number of employees only",
+        "D": "The tax rate only"
+      },
+      "answer": "A",
+      "explanation": "Investors check seriousness, vision, and potential size."
+    },
+    {
+      "id": 5,
+      "question": "For banks, the Business Plan mainly helps to check:",
+      "options": {
+        "A": "If the company can repay debt",
+        "B": "If the CEO is famous",
+        "C": "If salaries are low",
+        "D": "If taxes are high"
+      },
+      "answer": "A",
+      "explanation": "Banks care about repayment capacity."
+    },
+    {
+      "id": 6,
+      "question": "The three main financial statements are:",
+      "options": {
+        "A": "Revenues, COGS, EBITDA",
+        "B": "P&L, Balance Sheet, Cash Flow Statement",
+        "C": "Tax, salary, debt",
+        "D": "Sales, profit, dividend"
+      },
+      "answer": "B",
+      "explanation": "These are the three standard financial statements."
+    },
+    {
+      "id": 7,
+      "question": "The P&L / Compte de Résultat shows:",
+      "options": {
+        "A": "Cash available at one date",
+        "B": "Products minus charges over a period",
+        "C": "Only bank debt",
+        "D": "Only investments"
+      },
+      "answer": "B",
+      "explanation": "P&L measures profit over a period."
+    },
+    {
+      "id": 8,
+      "question": "The final line of the P&L is:",
+      "options": {
+        "A": "EBITDA",
+        "B": "EBIT",
+        "C": "Net income",
+        "D": "Gross margin"
+      },
+      "answer": "C",
+      "explanation": "Net income is the final result after tax."
+    },
+    {
+      "id": 9,
+      "question": "If net income is positive, the company is:",
+      "options": {
+        "A": "Deficit-making",
+        "B": "Bankrupt",
+        "C": "Profitable",
+        "D": "Automatically debt-free"
+      },
+      "answer": "C",
+      "explanation": "Positive net income means profit."
+    },
+    {
+      "id": 10,
+      "question": "The Cash Flow Statement shows:",
+      "options": {
+        "A": "The evolution of cash",
+        "B": "Only accounting profit",
+        "C": "Only fixed assets",
+        "D": "Only tax expense"
+      },
+      "answer": "A",
+      "explanation": "It tracks cash movements."
+    },
+    {
+      "id": 11,
+      "question": "The Balance Sheet shows:",
+      "options": {
+        "A": "Assets, debts, and equity at a specific date",
+        "B": "Only annual sales",
+        "C": "Only monthly expenses",
+        "D": "Only EBITDA"
+      },
+      "answer": "A",
+      "explanation": "The balance sheet is a snapshot at a date."
+    },
+    {
+      "id": 12,
+      "question": "Which statement is true?",
+      "options": {
+        "A": "P&L equals cash flow",
+        "B": "Revenue is always collected immediately",
+        "C": "A company can be profitable but have cash problems",
+        "D": "Amortization is a cash payment every year"
+      },
+      "answer": "C",
+      "explanation": "Profit and cash are different."
+    },
+    {
+      "id": 13,
+      "question": "Revenues / Chiffre d’affaires means:",
+      "options": {
+        "A": "Money borrowed from the bank",
+        "B": "Total sales excluding VAT",
+        "C": "Total salaries",
+        "D": "Total cash in bank"
+      },
+      "answer": "B",
+      "explanation": "Financial statements usually use HT revenue."
+    },
+    {
+      "id": 14,
+      "question": "COGS means:",
+      "options": {
+        "A": "Costs directly linked to sales volume",
+        "B": "Fixed salaries",
+        "C": "Bank interest",
+        "D": "Tax expense"
+      },
+      "answer": "A",
+      "explanation": "COGS are direct costs."
+    },
+    {
+      "id": 15,
+      "question": "Gross Margin is calculated as:",
+      "options": {
+        "A": "Revenues - COGS",
+        "B": "EBITDA - tax",
+        "C": "Cash - debt",
+        "D": "Equity - dividends"
+      },
+      "answer": "A",
+      "explanation": "Gross margin is sales minus direct costs."
+    },
+    {
+      "id": 16,
+      "question": "If revenues are 1,000 and gross margin is 50%, COGS is:",
+      "options": {
+        "A": "250",
+        "B": "500",
+        "C": "750",
+        "D": "1,500"
+      },
+      "answer": "B",
+      "explanation": "COGS = 50% of 1,000 = 500."
+    },
+    {
+      "id": 17,
+      "question": "EBITDA is calculated as:",
+      "options": {
+        "A": "Gross Margin - operating expenses",
+        "B": "Net income + dividends",
+        "C": "Cash - capex",
+        "D": "Revenues - tax only"
+      },
+      "answer": "A",
+      "explanation": "EBITDA is operating profit before D&A, interest, and tax."
+    },
+    {
+      "id": 18,
+      "question": "EBIT is calculated as:",
+      "options": {
+        "A": "EBITDA - amortization",
+        "B": "EBITDA + debt",
+        "C": "Revenues - cash",
+        "D": "Gross margin + dividends"
+      },
+      "answer": "A",
+      "explanation": "EBIT includes amortization."
+    },
+    {
+      "id": 19,
+      "question": "EBT means:",
+      "options": {
+        "A": "Earnings Before Tax",
+        "B": "Equity Before Tax",
+        "C": "Earnings Before Treasury",
+        "D": "Enterprise Bank Tax"
+      },
+      "answer": "A",
+      "explanation": "EBT is result before tax."
+    },
+    {
+      "id": 20,
+      "question": "Net income is calculated as:",
+      "options": {
+        "A": "EBT - corporate income tax",
+        "B": "EBITDA - revenues",
+        "C": "Cash - receivables",
+        "D": "Gross assets - amortization"
+      },
+      "answer": "A",
+      "explanation": "Net income is after tax."
+    },
+    {
+      "id": 21,
+      "question": "Cash in of revenues means:",
+      "options": {
+        "A": "Total sales invoiced",
+        "B": "Cash actually collected from customers",
+        "C": "Net income",
+        "D": "EBITDA"
+      },
+      "answer": "B",
+      "explanation": "It is real cash received."
+    },
+    {
+      "id": 22,
+      "question": "If Year 2 sales are 1,600 and 85% is collected in the same year, same-year collection is:",
+      "options": {
+        "A": "1,360",
+        "B": "1,500",
+        "C": "1,600",
+        "D": "240"
+      },
+      "answer": "A",
+      "explanation": "1,600 × 85% = 1,360."
+    },
+    {
+      "id": 23,
+      "question": "If 15% of Year 1 sales of 1,000 is collected in Year 2, the amount is:",
+      "options": {
+        "A": "85",
+        "B": "100",
+        "C": "150",
+        "D": "200"
+      },
+      "answer": "C",
+      "explanation": "1,000 × 15% = 150."
+    },
+    {
+      "id": 24,
+      "question": "Year 2 cash collected = 85% of Year 2 sales + 15% of Year 1 sales. If sales are 1,600 and 1,000, cash collected is:",
+      "options": {
+        "A": "1,360",
+        "B": "1,510",
+        "C": "1,600",
+        "D": "1,750"
+      },
+      "answer": "B",
+      "explanation": "1,360 + 150 = 1,510."
+    },
+    {
+      "id": 25,
+      "question": "Cash out of COGS means:",
+      "options": {
+        "A": "COGS recorded in the P&L",
+        "B": "COGS actually paid in cash",
+        "C": "Amortization",
+        "D": "Tax debt"
+      },
+      "answer": "B",
+      "explanation": "It means supplier/direct-cost cash paid."
+    },
+    {
+      "id": 26,
+      "question": "If COGS is 500 and 80% is paid in the same year, same-year cash paid is:",
+      "options": {
+        "A": "100",
+        "B": "250",
+        "C": "400",
+        "D": "500"
+      },
+      "answer": "C",
+      "explanation": "500 × 80% = 400."
+    },
+    {
+      "id": 27,
+      "question": "Operating Cash Flow includes:",
+      "options": {
+        "A": "Daily operating cash movements",
+        "B": "Only shareholders’ money",
+        "C": "Only investments",
+        "D": "Only debt repayment"
+      },
+      "answer": "A",
+      "explanation": "It includes operating receipts and payments."
+    },
+    {
+      "id": 28,
+      "question": "Investing Cash Flow mainly includes:",
+      "options": {
+        "A": "Capex and asset disposals",
+        "B": "Salaries",
+        "C": "Revenues",
+        "D": "Taxes only"
+      },
+      "answer": "A",
+      "explanation": "It tracks investment-related cash."
+    },
+    {
+      "id": 29,
+      "question": "Financing Cash Flow includes:",
+      "options": {
+        "A": "Equity raised, dividends, debt, and interest paid",
+        "B": "Only customer payments",
+        "C": "Only COGS",
+        "D": "Only fixed assets"
+      },
+      "answer": "A",
+      "explanation": "It tracks cash with shareholders and lenders."
+    },
+    {
+      "id": 30,
+      "question": "Free Cash Flow is usually:",
+      "options": {
+        "A": "Operating Cash Flow + Investing Cash Flow",
+        "B": "Net income + tax",
+        "C": "Revenues - COGS",
+        "D": "Cash - equity"
+      },
+      "answer": "A",
+      "explanation": "FCF is cash after operations and investments."
+    },
+    {
+      "id": 31,
+      "question": "Gross Fixed Assets means:",
+      "options": {
+        "A": "Total investments before amortization",
+        "B": "Cash in bank",
+        "C": "Total revenues",
+        "D": "Total debt"
+      },
+      "answer": "A",
+      "explanation": "It is the historical value of fixed assets."
+    },
+    {
+      "id": 32,
+      "question": "Net Fixed Assets are calculated as:",
+      "options": {
+        "A": "Gross Fixed Assets - Cumulative Amortization",
+        "B": "Revenues - COGS",
+        "C": "Cash - debt",
+        "D": "Equity - dividends"
+      },
+      "answer": "A",
+      "explanation": "Net value after accumulated amortization."
+    },
+    {
+      "id": 33,
+      "question": "Receivables / Créances Clients are:",
+      "options": {
+        "A": "Money customers still owe the company",
+        "B": "Money the company owes suppliers",
+        "C": "Bank loans",
+        "D": "Dividends"
+      },
+      "answer": "A",
+      "explanation": "Receivables are unpaid customer invoices."
+    },
+    {
+      "id": 34,
+      "question": "Payables / Dettes Fournisseurs are:",
+      "options": {
+        "A": "Money customers owe the company",
+        "B": "Money the company owes suppliers",
+        "C": "Shareholders’ money",
+        "D": "Cash already collected"
+      },
+      "answer": "B",
+      "explanation": "Payables are unpaid supplier invoices."
+    },
+    {
+      "id": 35,
+      "question": "Working Capital Requirement / BFR is mainly:",
+      "options": {
+        "A": "Receivables + inventories - payables",
+        "B": "Revenues - tax",
+        "C": "Debt - cash",
+        "D": "Equity + dividends"
+      },
+      "answer": "A",
+      "explanation": "BFR measures money blocked in operations."
+    },
+    {
+      "id": 36,
+      "question": "Net Cash / Net Debt is calculated as:",
+      "options": {
+        "A": "Cash Available - Financial Debt",
+        "B": "Revenues - COGS",
+        "C": "EBITDA - amortization",
+        "D": "Equity - reserves"
+      },
+      "answer": "A",
+      "explanation": "Cash minus debt."
+    },
+    {
+      "id": 37,
+      "question": "Shareholders’ Equity includes:",
+      "options": {
+        "A": "Equity injected + reserves / retained earnings",
+        "B": "Only cash",
+        "C": "Only debt",
+        "D": "Only COGS"
+      },
+      "answer": "A",
+      "explanation": "Equity belongs to shareholders."
+    },
+    {
+      "id": 38,
+      "question": "The Balance Sheet check is:",
+      "options": {
+        "A": "Net Fixed Assets + Working Capital + Net Cash = Shareholders’ Equity",
+        "B": "Revenues = COGS",
+        "C": "EBITDA = Cash",
+        "D": "Tax = Dividends"
+      },
+      "answer": "A",
+      "explanation": "This is the simplified balance sheet check."
+    },
+    {
+      "id": 39,
+      "question": "An investment is:",
+      "options": {
+        "A": "A cost consumed immediately",
+        "B": "A purchase used for more than one year",
+        "C": "A tax payment",
+        "D": "A salary payment"
+      },
+      "answer": "B",
+      "explanation": "Useful for more than one year = investment."
+    },
+    {
+      "id": 40,
+      "question": "Buying a PC for 300 used over 5 years gives yearly amortization of:",
+      "options": {
+        "A": "30",
+        "B": "50",
+        "C": "60",
+        "D": "300"
+      },
+      "answer": "C",
+      "explanation": "300 / 5 = 60."
+    },
+    {
+      "id": 41,
+      "question": "Amortization affects:",
+      "options": {
+        "A": "P&L, but not cash directly",
+        "B": "Cash flow as yearly cash payment",
+        "C": "Only the bank account",
+        "D": "Only dividends"
+      },
+      "answer": "A",
+      "explanation": "Amortization is non-cash."
+    },
+    {
+      "id": 42,
+      "question": "Capex affects:",
+      "options": {
+        "A": "Investing Cash Flow and Gross Fixed Assets",
+        "B": "Revenues only",
+        "C": "COGS only",
+        "D": "Tax only"
+      },
+      "answer": "A",
+      "explanation": "Capex is investment cash out and fixed asset increase."
+    },
+    {
+      "id": 43,
+      "question": "If a machine costs 10,000 and is amortized over 5 years, annual amortization is:",
+      "options": {
+        "A": "1,000",
+        "B": "2,000",
+        "C": "5,000",
+        "D": "10,000"
+      },
+      "answer": "B",
+      "explanation": "10,000 / 5 = 2,000."
+    },
+    {
+      "id": 44,
+      "question": "Cumulative amortization after 3 years on a 10,000 asset amortized over 5 years is:",
+      "options": {
+        "A": "2,000",
+        "B": "4,000",
+        "C": "6,000",
+        "D": "8,000"
+      },
+      "answer": "C",
+      "explanation": "2,000 × 3 = 6,000."
+    },
+    {
+      "id": 45,
+      "question": "The cash out for investment happens:",
+      "options": {
+        "A": "When the asset is bought",
+        "B": "Gradually through amortization",
+        "C": "Only when tax is paid",
+        "D": "Only when dividends are paid"
+      },
+      "answer": "A",
+      "explanation": "Capex cash is paid at purchase."
+    },
+    {
+      "id": 46,
+      "question": "Bank debt received by the company:",
+      "options": {
+        "A": "Increases cash and creates financial debt",
+        "B": "Decreases cash",
+        "C": "Is revenue",
+        "D": "Is net income"
+      },
+      "answer": "A",
+      "explanation": "A loan creates cash and debt."
+    },
+    {
+      "id": 47,
+      "question": "Interest expense affects:",
+      "options": {
+        "A": "P&L and cash flow",
+        "B": "Only revenues",
+        "C": "Only gross margin",
+        "D": "Only capital social"
+      },
+      "answer": "A",
+      "explanation": "Interest is an expense and cash payment."
+    },
+    {
+      "id": 48,
+      "question": "Repayment of loan principal:",
+      "options": {
+        "A": "Does not affect P&L, but reduces debt and cash",
+        "B": "Is recorded as COGS",
+        "C": "Increases EBITDA",
+        "D": "Increases revenues"
+      },
+      "answer": "A",
+      "explanation": "Only interest affects P&L."
+    },
+    {
+      "id": 49,
+      "question": "If debt is 800 and interest rate is 6%, yearly interest is:",
+      "options": {
+        "A": "36",
+        "B": "42",
+        "C": "48",
+        "D": "60"
+      },
+      "answer": "C",
+      "explanation": "800 × 6% = 48."
+    },
+    {
+      "id": 50,
+      "question": "If debt is repaid by 100 each year, outstanding debt after Year 1 from an 800 loan is:",
+      "options": {
+        "A": "800",
+        "B": "700",
+        "C": "600",
+        "D": "100"
+      },
+      "answer": "B",
+      "explanation": "800 - 100 = 700."
+    },
+    {
+      "id": 51,
+      "question": "With constant principal repayment, interest usually:",
+      "options": {
+        "A": "Decreases over time",
+        "B": "Increases forever",
+        "C": "Stays based on original revenue",
+        "D": "Disappears from P&L"
+      },
+      "answer": "A",
+      "explanation": "Debt decreases, so interest decreases."
+    },
+    {
+      "id": 52,
+      "question": "Capital social is:",
+      "options": {
+        "A": "Money invested by shareholders at company creation",
+        "B": "A bank loan",
+        "C": "A supplier debt",
+        "D": "A tax refund"
+      },
+      "answer": "A",
+      "explanation": "It is initial shareholder capital."
+    },
+    {
+      "id": 53,
+      "question": "One share usually gives:",
+      "options": {
+        "A": "One vote and ownership rights",
+        "B": "One salary",
+        "C": "One bank loan",
+        "D": "One tax exemption"
+      },
+      "answer": "A",
+      "explanation": "One share = ownership and voting rights."
+    },
+    {
+      "id": 54,
+      "question": "If capital social is 10,000 and nominal value is 1€/share, number of shares is:",
+      "options": {
+        "A": "1,000",
+        "B": "5,000",
+        "C": "10,000",
+        "D": "20,000"
+      },
+      "answer": "C",
+      "explanation": "10,000 / 1 = 10,000 shares."
+    },
+    {
+      "id": 55,
+      "question": "Share premium / prime d’émission appears when:",
+      "options": {
+        "A": "New shares are issued above nominal value",
+        "B": "Salaries are paid",
+        "C": "COGS increases",
+        "D": "A customer pays late"
+      },
+      "answer": "A",
+      "explanation": "It is the difference between economic value and nominal value."
+    },
+    {
+      "id": 56,
+      "question": "If economic value per share is 2€ and nominal value is 1€, share premium per share is:",
+      "options": {
+        "A": "0€",
+        "B": "1€",
+        "C": "2€",
+        "D": "3€"
+      },
+      "answer": "B",
+      "explanation": "2 - 1 = 1."
+    },
+    {
+      "id": 57,
+      "question": "Dividends are:",
+      "options": {
+        "A": "Money paid to shareholders from distributable profits",
+        "B": "Salaries",
+        "C": "Supplier payments",
+        "D": "COGS"
+      },
+      "answer": "A",
+      "explanation": "Dividends remunerate shareholders."
+    },
+    {
+      "id": 58,
+      "question": "Dividends paid affect:",
+      "options": {
+        "A": "Cash flow and reserves/equity",
+        "B": "Revenues",
+        "C": "Gross margin",
+        "D": "EBITDA"
+      },
+      "answer": "A",
+      "explanation": "They reduce cash and retained earnings."
+    },
+    {
+      "id": 59,
+      "question": "If Year 1 net income is 106.5 and 50% is paid as dividends in Year 2, dividend paid is:",
+      "options": {
+        "A": "35.5",
+        "B": "48",
+        "C": "53.25",
+        "D": "106.5"
+      },
+      "answer": "C",
+      "explanation": "106.5 × 50% = 53.25."
+    },
+    {
+      "id": 60,
+      "question": "Share buyback and cancellation usually:",
+      "options": {
+        "A": "Reduces cash and shareholders’ equity",
+        "B": "Increases revenues",
+        "C": "Increases EBITDA",
+        "D": "Reduces COGS"
+      },
+      "answer": "A",
+      "explanation": "The company pays cash to cancel shares."
+    },
+    {
+      "id": 61,
+      "question": "Corporate income tax is calculated mainly on:",
+      "options": {
+        "A": "EBT / result before tax",
+        "B": "Revenues only",
+        "C": "Cash only",
+        "D": "Gross fixed assets"
+      },
+      "answer": "A",
+      "explanation": "Tax is based on profit before tax."
+    },
+    {
+      "id": 62,
+      "question": "If EBT is 142 and tax rate is 25%, tax is:",
+      "options": {
+        "A": "22.25",
+        "B": "35.5",
+        "C": "48",
+        "D": "69.5"
+      },
+      "answer": "B",
+      "explanation": "142 × 25% = 35.5."
+    },
+    {
+      "id": 63,
+      "question": "In your midterm, corporate tax is:",
+      "options": {
+        "A": "Paid immediately in the same year",
+        "B": "Paid the following year",
+        "C": "Never paid",
+        "D": "Paid by shareholders personally"
+      },
+      "answer": "B",
+      "explanation": "The exercise says tax is paid next year."
+    },
+    {
+      "id": 64,
+      "question": "VAT affects:",
+      "options": {
+        "A": "Balance Sheet and Cash Flow, but not P&L revenue/costs",
+        "B": "Only EBITDA",
+        "C": "Only net income",
+        "D": "Only amortization"
+      },
+      "answer": "A",
+      "explanation": "P&L is HT, but cash can be TTC."
+    },
+    {
+      "id": 65,
+      "question": "TTC means:",
+      "options": {
+        "A": "Before tax",
+        "B": "Including tax",
+        "C": "Net income",
+        "D": "Cash flow"
+      },
+      "answer": "B",
+      "explanation": "TTC = toutes taxes comprises."
+    },
+    {
+      "id": 66,
+      "question": "HT means:",
+      "options": {
+        "A": "Excluding tax",
+        "B": "Including tax",
+        "C": "Debt repayment",
+        "D": "Gross salary"
+      },
+      "answer": "A",
+      "explanation": "HT = hors taxes."
+    },
+    {
+      "id": 67,
+      "question": "Revenues = 2,200 and gross margin = 55%. COGS equals:",
+      "options": {
+        "A": "990",
+        "B": "1,210",
+        "C": "880",
+        "D": "450"
+      },
+      "answer": "A",
+      "explanation": "COGS = 45% × 2,200 = 990."
+    },
+    {
+      "id": 68,
+      "question": "Revenues = 2,200 and COGS = 990. Gross margin equals:",
+      "options": {
+        "A": "990",
+        "B": "1,210",
+        "C": "1,600",
+        "D": "2,200"
+      },
+      "answer": "B",
+      "explanation": "2,200 - 990 = 1,210."
+    },
+    {
+      "id": 69,
+      "question": "EBITDA = 360 and amortization = 235. EBIT equals:",
+      "options": {
+        "A": "595",
+        "B": "360",
+        "C": "125",
+        "D": "89"
+      },
+      "answer": "C",
+      "explanation": "360 - 235 = 125."
+    },
+    {
+      "id": 70,
+      "question": "EBIT = 125 and interest = 36. EBT equals:",
+      "options": {
+        "A": "161",
+        "B": "125",
+        "C": "89",
+        "D": "66.75"
+      },
+      "answer": "C",
+      "explanation": "125 - 36 = 89."
+    },
+    {
+      "id": 71,
+      "question": "EBT = 89 and tax = 22.25. Net income equals:",
+      "options": {
+        "A": "66.75",
+        "B": "89",
+        "C": "111.25",
+        "D": "22.25"
+      },
+      "answer": "A",
+      "explanation": "89 - 22.25 = 66.75."
+    },
+    {
+      "id": 72,
+      "question": "Gross fixed assets Year 2 = 450 and cumulative amortization = 170. Net fixed assets equal:",
+      "options": {
+        "A": "620",
+        "B": "450",
+        "C": "280",
+        "D": "170"
+      },
+      "answer": "C",
+      "explanation": "450 - 170 = 280."
+    },
+    {
+      "id": 73,
+      "question": "Receivables = 240, payables = 144, tax debt = 69.5. Working capital is:",
+      "options": {
+        "A": "240 + 144 + 69.5",
+        "B": "240 - 144 - 69.5",
+        "C": "144 - 240",
+        "D": "69.5 - 240"
+      },
+      "answer": "B",
+      "explanation": "240 - 144 - 69.5 = 26.5."
+    },
+    {
+      "id": 74,
+      "question": "Cash = 1,355.25 and debt = 600. Net cash equals:",
+      "options": {
+        "A": "1,955.25",
+        "B": "755.25",
+        "C": "600",
+        "D": "1,355.25"
+      },
+      "answer": "B",
+      "explanation": "1,355.25 - 600 = 755.25."
+    },
+    {
+      "id": 75,
+      "question": "Equity injected = 800 and reserves = 261.75. Shareholders’ equity equals:",
+      "options": {
+        "A": "538.25",
+        "B": "800",
+        "C": "1,061.75",
+        "D": "261.75"
+      },
+      "answer": "C",
+      "explanation": "800 + 261.75 = 1,061.75."
+    },
+    {
+      "id": 76,
+      "question": "Which item is non-cash in the P&L?",
+      "options": {
+        "A": "Amortization",
+        "B": "Salary payment",
+        "C": "Supplier payment",
+        "D": "Loan repayment"
+      },
+      "answer": "A",
+      "explanation": "Amortization is accounting, not cash."
+    },
+    {
+      "id": 77,
+      "question": "Which item appears in Cash Flow but not in P&L?",
+      "options": {
+        "A": "Loan principal repayment",
+        "B": "Revenues",
+        "C": "COGS",
+        "D": "Amortization"
+      },
+      "answer": "A",
+      "explanation": "Principal repayment reduces debt, not profit."
+    },
+    {
+      "id": 78,
+      "question": "Which item appears in P&L but not directly as a cash payment?",
+      "options": {
+        "A": "Amortization",
+        "B": "Capex",
+        "C": "Debt drawdown",
+        "D": "Equity raised"
+      },
+      "answer": "A",
+      "explanation": "It reduces accounting profit without cash out."
+    },
+    {
+      "id": 79,
+      "question": "Buying a computer for 500 used for several years is usually:",
+      "options": {
+        "A": "COGS",
+        "B": "Opex",
+        "C": "Capex",
+        "D": "Revenue"
+      },
+      "answer": "C",
+      "explanation": "It is used for more than one year."
+    },
+    {
+      "id": 80,
+      "question": "Buying flour for a bakery is usually:",
+      "options": {
+        "A": "Capex",
+        "B": "COGS",
+        "C": "Equity",
+        "D": "Financial debt"
+      },
+      "answer": "B",
+      "explanation": "It is directly linked to sales."
+    },
+    {
+      "id": 81,
+      "question": "Paying salaries is usually:",
+      "options": {
+        "A": "Staff / Opex",
+        "B": "Capex",
+        "C": "Equity injection",
+        "D": "Revenue"
+      },
+      "answer": "A",
+      "explanation": "Salaries are operating expenses."
+    },
+    {
+      "id": 82,
+      "question": "Interest is located in the P&L:",
+      "options": {
+        "A": "Below EBIT",
+        "B": "Above revenues",
+        "C": "Inside COGS",
+        "D": "Inside gross margin"
+      },
+      "answer": "A",
+      "explanation": "Interest is financial result, below operating profit."
+    },
+    {
+      "id": 83,
+      "question": "A company with positive net income but many unpaid customers may have:",
+      "options": {
+        "A": "Cash problems",
+        "B": "No receivables",
+        "C": "No working capital",
+        "D": "No tax"
+      },
+      "answer": "A",
+      "explanation": "Profit can exist without cash collection."
+    },
+    {
+      "id": 84,
+      "question": "If customers pay late, which balance sheet item increases?",
+      "options": {
+        "A": "Receivables",
+        "B": "Payables",
+        "C": "Debt",
+        "D": "COGS"
+      },
+      "answer": "A",
+      "explanation": "Receivables increase when customers owe money."
+    },
+    {
+      "id": 85,
+      "question": "If the company pays suppliers late, which item increases?",
+      "options": {
+        "A": "Payables",
+        "B": "Receivables",
+        "C": "Revenues",
+        "D": "EBITDA"
+      },
+      "answer": "A",
+      "explanation": "Payables increase when supplier invoices are unpaid."
+    },
+    {
+      "id": 86,
+      "question": "Which formula is correct?",
+      "options": {
+        "A": "EBITDA = Revenues - COGS - Staff - Other Opex",
+        "B": "EBITDA = Net income + cash",
+        "C": "EBITDA = Cash - debt",
+        "D": "EBITDA = Equity - dividends"
+      },
+      "answer": "A",
+      "explanation": "EBITDA is operating performance before D&A."
+    },
+    {
+      "id": 87,
+      "question": "Which formula is correct?",
+      "options": {
+        "A": "EBIT = EBITDA - Amortization",
+        "B": "EBIT = EBITDA + Amortization",
+        "C": "EBIT = Revenues + Debt",
+        "D": "EBIT = Cash + Tax"
+      },
+      "answer": "A",
+      "explanation": "EBIT comes after amortization."
+    },
+    {
+      "id": 88,
+      "question": "Which formula is correct?",
+      "options": {
+        "A": "Net income = EBT - Corporate tax",
+        "B": "Net income = Revenues - Cash",
+        "C": "Net income = Equity - Debt",
+        "D": "Net income = Gross fixed assets - Capex"
+      },
+      "answer": "A",
+      "explanation": "Net income is after tax."
+    },
+    {
+      "id": 89,
+      "question": "Which formula is correct?",
+      "options": {
+        "A": "Ending cash = Beginning cash + Net cash flow",
+        "B": "Ending cash = Revenues + COGS",
+        "C": "Ending cash = EBITDA only",
+        "D": "Ending cash = Tax only"
+      },
+      "answer": "A",
+      "explanation": "Cash changes by the net cash flow."
+    },
+    {
+      "id": 90,
+      "question": "Which statement is false?",
+      "options": {
+        "A": "Amortization reduces EBIT",
+        "B": "Capex reduces cash",
+        "C": "Loan repayment reduces P&L net income directly",
+        "D": "Interest reduces EBT"
+      },
+      "answer": "C",
+      "explanation": "Loan principal repayment is not a P&L expense."
+    },
+    {
+      "id": 91,
+      "question": "Which statement is true?",
+      "options": {
+        "A": "Debt repayment is not an expense in the P&L",
+        "B": "Dividends are salaries",
+        "C": "COGS are fixed assets",
+        "D": "EBITDA includes amortization"
+      },
+      "answer": "A",
+      "explanation": "Only interest is an expense."
+    },
+    {
+      "id": 92,
+      "question": "If a company raises equity, what happens immediately?",
+      "options": {
+        "A": "Cash increases and equity increases",
+        "B": "Revenue increases",
+        "C": "COGS decreases",
+        "D": "Tax increases"
+      },
+      "answer": "A",
+      "explanation": "Equity raise brings cash and equity."
+    },
+    {
+      "id": 93,
+      "question": "If a company receives a bank loan, what happens immediately?",
+      "options": {
+        "A": "Cash increases and debt increases",
+        "B": "Revenue increases",
+        "C": "Equity decreases",
+        "D": "EBITDA increases"
+      },
+      "answer": "A",
+      "explanation": "Loan cash in creates financial debt."
+    },
+    {
+      "id": 94,
+      "question": "If a company repays loan principal, what happens?",
+      "options": {
+        "A": "Cash decreases and debt decreases",
+        "B": "Revenues increase",
+        "C": "EBITDA decreases",
+        "D": "Gross margin decreases"
+      },
+      "answer": "A",
+      "explanation": "Principal repayment reduces cash and debt."
+    },
+    {
+      "id": 95,
+      "question": "If a company pays dividends, what happens?",
+      "options": {
+        "A": "Cash decreases and reserves decrease",
+        "B": "Revenue decreases",
+        "C": "COGS increases",
+        "D": "Amortization increases"
+      },
+      "answer": "A",
+      "explanation": "Dividends reduce cash and retained earnings."
+    },
+    {
+      "id": 96,
+      "question": "What does Gross Margin show?",
+      "options": {
+        "A": "What remains after direct costs",
+        "B": "Final profit after tax",
+        "C": "Cash in bank",
+        "D": "Debt level"
+      },
+      "answer": "A",
+      "explanation": "It shows value generated after COGS."
+    },
+    {
+      "id": 97,
+      "question": "What does EBITDA show?",
+      "options": {
+        "A": "Operating performance before amortization, interest, and tax",
+        "B": "Net cash only",
+        "C": "Shareholder ownership only",
+        "D": "VAT only"
+      },
+      "answer": "A",
+      "explanation": "EBITDA measures operating performance."
+    },
+    {
+      "id": 98,
+      "question": "What does EBIT show?",
+      "options": {
+        "A": "Operating profit after amortization",
+        "B": "Cash collected from clients",
+        "C": "Total debt",
+        "D": "Capital social"
+      },
+      "answer": "A",
+      "explanation": "EBIT is operating profit after D&A."
+    },
+    {
+      "id": 99,
+      "question": "What does Operating Cash Flow show?",
+      "options": {
+        "A": "Cash generated by daily operations",
+        "B": "Cash from shareholders",
+        "C": "Cash used for capex only",
+        "D": "Cash from debt only"
+      },
+      "answer": "A",
+      "explanation": "It tracks operating cash movements."
+    },
+    {
+      "id": 100,
+      "question": "What does Shareholders’ Equity represent?",
+      "options": {
+        "A": "The accounting value belonging to shareholders",
+        "B": "Only bank debt",
+        "C": "Only customer payments",
+        "D": "Only tax payable"
+      },
+      "answer": "A",
+      "explanation": "It is capital plus retained earnings."
+    }
+  ]
+}

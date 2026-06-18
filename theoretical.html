@@ -23,11 +23,35 @@
       <button class="language-toggle" id="languageToggle" type="button" aria-label="Translate language"></button>
     </div>
 
-    <section class="card">
-      <div class="theory-layout" id="theoryContainer">
-        <div class="feedback show">Loading theoretical questions...</div>
+    <nav class="theory-tabs" aria-label="Theoretical study sections">
+      <button class="theory-tab-button active" type="button" data-theory-tab="lesson">Theory lesson</button>
+      <button class="theory-tab-button" type="button" data-theory-tab="mcq">MCQ questions</button>
+    </nav>
+
+    <div class="theory-tab-panel" id="lessonPanel">
+      <section class="card">
+        <div class="theory-layout" id="theoryContainer">
+          <div class="feedback show">Loading theoretical questions...</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="theory-tab-panel" id="mcqPanel" hidden>
+      <nav class="mcq-tabs" aria-label="MCQ views">
+        <button class="mcq-tab-button active" type="button" data-mcq-tab="all">All questions &amp; answers</button>
+        <button class="mcq-tab-button" type="button" data-mcq-tab="practice">Practice on MCQ</button>
+      </nav>
+
+      <div class="mcq-tab-panel" id="allMcqPanel">
+        <div class="mcq-list" id="allMcqContainer"></div>
       </div>
-    </section>
+
+      <div class="mcq-tab-panel" id="practiceMcqPanel" hidden>
+        <section class="card mcq-practice-card">
+          <div id="mcqPracticeContainer"></div>
+        </section>
+      </div>
+    </div>
   </main>
   <footer class="site-footer">
     <p>&copy; 2026 Mohamad Hassan IBRAHIM. All rights reserved.</p>
