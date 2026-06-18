@@ -47,7 +47,32 @@
       </div>
 
       <div class="mcq-tab-panel" id="practiceMcqPanel" hidden>
-        <section class="card mcq-practice-card">
+        <section class="card mcq-session-setup">
+          <h2>Configure MCQ practice</h2>
+          <div class="mcq-session-controls">
+            <div>
+              <label for="mcqPracticeMode">Practice mode</label>
+              <select id="mcqPracticeMode">
+                <option value="sequential">Sequential questions</option>
+                <option value="random">Random set</option>
+              </select>
+            </div>
+            <div id="mcqCategoryControl">
+              <label for="mcqPracticeCategory">Category</label>
+              <select id="mcqPracticeCategory"></select>
+            </div>
+            <div id="mcqSetSizeControl" hidden>
+              <label for="mcqPracticeSetSize">Number of questions</label>
+              <input id="mcqPracticeSetSize" type="number" min="1" max="100" value="15" />
+            </div>
+            <div class="mcq-start-control">
+              <button type="button" id="startMcqSessionBtn">Start session</button>
+            </div>
+          </div>
+          <p class="hint">Sequential mode can use all questions or one category. Random mode creates a new shuffled set.</p>
+        </section>
+
+        <section class="card mcq-practice-card" id="mcqPracticeCard" hidden>
           <div id="mcqPracticeContainer"></div>
         </section>
       </div>

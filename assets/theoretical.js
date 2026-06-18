@@ -4,6 +4,21 @@ const subtitleEl = document.getElementById("theorySubtitle");
 const languageToggle = document.getElementById("languageToggle");
 const allMcqContainer = document.getElementById("allMcqContainer");
 const mcqPracticeContainer = document.getElementById("mcqPracticeContainer");
+const mcqPracticeCard = document.getElementById("mcqPracticeCard");
+const mcqPracticeMode = document.getElementById("mcqPracticeMode");
+const mcqPracticeCategory = document.getElementById("mcqPracticeCategory");
+const mcqPracticeSetSize = document.getElementById("mcqPracticeSetSize");
+const mcqCategoryControl = document.getElementById("mcqCategoryControl");
+const mcqSetSizeControl = document.getElementById("mcqSetSizeControl");
+const startMcqSessionBtn = document.getElementById("startMcqSessionBtn");
+
+const MCQ_GROUPS = [
+  { id: "basic", title: "Basic theory", range: "1–20", from: 1, to: 20 },
+  { id: "cash-balance", title: "Cash / Balance Sheet mechanics", range: "21–38", from: 21, to: 38 },
+  { id: "finance", title: "Amortization, debt, equity", range: "39–60", from: 39, to: 60 },
+  { id: "tax", title: "Tax + calculations", range: "61–75", from: 61, to: 75 },
+  { id: "revision", title: "Exam revision", range: "76–100", from: 76, to: 100 }
+];
 
 const theoryTabButtons = [...document.querySelectorAll("[data-theory-tab]")];
 const theoryPanels = {
@@ -24,6 +39,9 @@ let currentTheoryTab = "lesson";
 let practiceIndex = 0;
 let practiceScore = 0;
 let practiceChecked = false;
+let practiceQuestions = [];
+let practiceResults = [];
+let activePracticeMode = "sequential";
 
 function escapeHtml(str) {
   return String(str)
@@ -32,6 +50,15 @@ function escapeHtml(str) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+}
+
+function shuffle(array) {
+  const copy = [...array];
+  for (let index = copy.length - 1; index > 0; index--) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [copy[index], copy[randomIndex]] = [copy[randomIndex], copy[index]];
+  }
+  return copy;
 }
 
 function renderParagraphs(paragraphs) {
@@ -110,15 +137,7 @@ function switchMcqTab(tabName) {
 }
 
 function renderAllMcqs() {
-  const groups = [
-    { title: "Basic theory", range: "1–20", from: 1, to: 20 },
-    { title: "Cash / Balance Sheet mechanics", range: "21–38", from: 21, to: 38 },
-    { title: "Amortization, debt, equity", range: "39–60", from: 39, to: 60 },
-    { title: "Tax + calculations", range: "61–75", from: 61, to: 75 },
-    { title: "Exam revision", range: "76–100", from: 76, to: 100 }
-  ];
-
-  allMcqContainer.innerHTML = groups.map((group, groupIndex) => `
+  allMcqContainer.innerHTML = MCQ_GROUPS.map((group, groupIndex) => `
     <details class="mcq-group" ${groupIndex === 0 ? "open" : ""}>
       <summary class="mcq-group-heading">
         <span class="mcq-group-arrow" aria-hidden="true"></span>
@@ -151,41 +170,72 @@ function renderAllMcqs() {
 }
 
 function renderPracticeQuestion() {
-  if (practiceIndex >= mcqData.questions.length) {
+  if (practiceIndex >= practiceQuestions.length) {
     renderPracticeResult();
     return;
   }
 
-  const question = mcqData.questions[practiceIndex];
+  const question = practiceQuestions[practiceIndex];
+  const isRandomSession = activePracticeMode === "random";
   practiceChecked = false;
   mcqPracticeContainer.innerHTML = `
-    <div class="mcq-practice-header">
-      <span class="pill dark">Question ${practiceIndex + 1}/${mcqData.questions.length}</span>
-      <span class="score">Answered: ${practiceIndex} · Score: ${practiceScore}</span>
-    </div>
-    <h2>${escapeHtml(question.question)}</h2>
-    <div class="mcq-option-grid" role="radiogroup" aria-label="Answer choices">
-      ${Object.entries(question.options).map(([letter, text]) => `
-        <label class="mcq-option" data-option="${letter}">
-          <input type="radio" name="practiceAnswer" value="${letter}" />
-          <span><b>${letter}</b>${escapeHtml(text)}</span>
-        </label>`).join("")}
-    </div>
-    <div class="feedback" id="mcqFeedback"></div>
-    <div class="button-row">
-      <button type="button" id="checkMcqBtn">Check answer</button>
-      <button class="secondary" type="button" id="nextMcqBtn" hidden>
-        ${practiceIndex === mcqData.questions.length - 1 ? "See final score" : "Next question"}
-      </button>
+    <div class="mcq-practice-layout ${isRandomSession ? "has-tracker" : ""}">
+      <div class="mcq-practice-main">
+        <div class="mcq-practice-header">
+          <span class="pill dark">Question ${practiceIndex + 1}/${practiceQuestions.length}</span>
+          <span class="score">Answered: ${practiceIndex} · Score: ${practiceScore}</span>
+        </div>
+        <h2>${escapeHtml(question.question)}</h2>
+        <div class="mcq-option-grid" role="radiogroup" aria-label="Answer choices">
+          ${Object.entries(question.options).map(([letter, text]) => `
+            <label class="mcq-option" data-option="${letter}">
+              <input type="radio" name="practiceAnswer" value="${letter}" />
+              <span><b>${letter}</b>${escapeHtml(text)}</span>
+            </label>`).join("")}
+        </div>
+        <div class="feedback" id="mcqFeedback"></div>
+        <div class="button-row">
+          <button type="button" id="checkMcqBtn" ${isRandomSession ? "hidden" : ""}>Check answer</button>
+          <button class="secondary" type="button" id="nextMcqBtn" hidden>
+            ${practiceIndex === practiceQuestions.length - 1 ? "See final score" : "Next question"}
+          </button>
+        </div>
+      </div>
+      ${isRandomSession ? renderRandomTracker() : ""}
     </div>`;
 
   document.getElementById("checkMcqBtn").addEventListener("click", checkPracticeAnswer);
   document.getElementById("nextMcqBtn").addEventListener("click", nextPracticeQuestion);
+  if (isRandomSession) {
+    document.querySelectorAll('input[name="practiceAnswer"]').forEach(input => {
+      input.addEventListener("change", checkPracticeAnswer);
+    });
+  }
+}
+
+function renderRandomTracker() {
+  return `
+    <aside class="mcq-random-tracker" aria-label="Random set progress">
+      <h3>Progress</h3>
+      <div class="mcq-tracker-grid">
+        ${practiceQuestions.map((_, index) => {
+          const result = practiceResults[index];
+          const stateClass = result === true ? "correct" : result === false ? "wrong" : "";
+          const currentClass = index === practiceIndex ? "current" : "";
+          const mark = result === true ? "✓" : result === false ? "×" : "";
+          return `
+            <div class="mcq-tracker-box ${stateClass} ${currentClass}" data-tracker-index="${index}">
+              <span>${index + 1}</span>
+              ${mark ? `<b>${mark}</b>` : ""}
+            </div>`;
+        }).join("")}
+      </div>
+    </aside>`;
 }
 
 function checkPracticeAnswer() {
   if (practiceChecked) return;
-  const question = mcqData.questions[practiceIndex];
+  const question = practiceQuestions[practiceIndex];
   const selected = document.querySelector('input[name="practiceAnswer"]:checked');
   const feedback = document.getElementById("mcqFeedback");
 
@@ -198,6 +248,7 @@ function checkPracticeAnswer() {
   practiceChecked = true;
   const isCorrect = selected.value === question.answer;
   if (isCorrect) practiceScore++;
+  practiceResults[practiceIndex] = isCorrect;
 
   document.querySelectorAll(".mcq-option").forEach(option => {
     const letter = option.dataset.option;
@@ -213,6 +264,15 @@ function checkPracticeAnswer() {
   feedback.className = "feedback show";
   document.getElementById("checkMcqBtn").hidden = true;
   document.getElementById("nextMcqBtn").hidden = false;
+
+  if (activePracticeMode === "random") {
+    const trackerBox = document.querySelector(`[data-tracker-index="${practiceIndex}"]`);
+    if (trackerBox) {
+      trackerBox.classList.remove("current");
+      trackerBox.classList.add(isCorrect ? "correct" : "wrong");
+      trackerBox.innerHTML = `<span>${practiceIndex + 1}</span><b>${isCorrect ? "✓" : "×"}</b>`;
+    }
+  }
 }
 
 function nextPracticeQuestion() {
@@ -222,14 +282,17 @@ function nextPracticeQuestion() {
 }
 
 function renderPracticeResult() {
-  const total = mcqData.questions.length;
+  const total = practiceQuestions.length;
   const percentage = Math.round((practiceScore / total) * 100);
   mcqPracticeContainer.innerHTML = `
-    <div class="mcq-result">
-      <span class="pill dark">Complete</span>
-      <h2>Final score: ${practiceScore}/${total}</h2>
-      <p>${percentage}% correct</p>
-      <button type="button" id="restartMcqBtn">Restart MCQ practice</button>
+    <div class="mcq-practice-layout ${activePracticeMode === "random" ? "has-tracker" : ""}">
+      <div class="mcq-result">
+        <span class="pill dark">Complete</span>
+        <h2>Final score: ${practiceScore}/${total}</h2>
+        <p>${percentage}% correct</p>
+        <button type="button" id="restartMcqBtn">Restart MCQ practice</button>
+      </div>
+      ${activePracticeMode === "random" ? renderRandomTracker() : ""}
     </div>`;
   document.getElementById("restartMcqBtn").addEventListener("click", restartPractice);
 }
@@ -237,7 +300,47 @@ function renderPracticeResult() {
 function restartPractice() {
   practiceIndex = 0;
   practiceScore = 0;
+  practiceResults = Array(practiceQuestions.length).fill(null);
   renderPracticeQuestion();
+}
+
+function populatePracticeCategories() {
+  mcqPracticeCategory.innerHTML = `
+    <option value="all">All questions (1–100)</option>
+    ${MCQ_GROUPS.map(group => `
+      <option value="${group.id}">${escapeHtml(group.title)} (${group.range})</option>`).join("")}`;
+}
+
+function updatePracticeSetup() {
+  const isRandom = mcqPracticeMode.value === "random";
+  mcqCategoryControl.hidden = isRandom;
+  mcqSetSizeControl.hidden = !isRandom;
+}
+
+function startPracticeSession() {
+  if (!mcqData) return;
+
+  activePracticeMode = mcqPracticeMode.value;
+  if (activePracticeMode === "random") {
+    const requestedSize = Number(mcqPracticeSetSize.value || 15);
+    const size = Math.max(1, Math.min(requestedSize, mcqData.questions.length));
+    mcqPracticeSetSize.value = size;
+    practiceQuestions = shuffle(mcqData.questions).slice(0, size);
+  } else {
+    const categoryId = mcqPracticeCategory.value;
+    const category = MCQ_GROUPS.find(group => group.id === categoryId);
+    practiceQuestions = category
+      ? mcqData.questions.filter(question => question.id >= category.from && question.id <= category.to)
+      : [...mcqData.questions];
+  }
+
+  practiceIndex = 0;
+  practiceScore = 0;
+  practiceChecked = false;
+  practiceResults = Array(practiceQuestions.length).fill(null);
+  mcqPracticeCard.hidden = false;
+  renderPracticeQuestion();
+  mcqPracticeCard.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 async function initTheory() {
@@ -265,7 +368,8 @@ async function initTheory() {
     };
     renderLanguage(theoryData.defaultLanguage || "fr");
     renderAllMcqs();
-    renderPracticeQuestion();
+    populatePracticeCategories();
+    updatePracticeSetup();
   } catch (error) {
     container.innerHTML = `<div class="feedback show"><b>Data loading failed.</b> Start a local server from this folder, then open the site through that server.</div>`;
     console.error(error);
@@ -279,5 +383,7 @@ theoryTabButtons.forEach(button => {
 mcqTabButtons.forEach(button => {
   button.addEventListener("click", () => switchMcqTab(button.dataset.mcqTab));
 });
+mcqPracticeMode.addEventListener("change", updatePracticeSetup);
+startMcqSessionBtn.addEventListener("click", startPracticeSession);
 
 initTheory();
