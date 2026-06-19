@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 5 Quiz - Graphs and Trees</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a href="../visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Chapter 5 pages">
+      <a href="../chapters/chapter-5.html">Chapter 5 Summary</a>
+      <a class="active" href="chapter-5-quiz.html">Chapter 5 Quiz</a>
+    </nav>
+
+    <form class="article quiz-form" id="chapter5Quiz">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 5</p>
+        <h1>Graphs and Trees Quiz</h1>
+        <p class="subtitle">Answer ten questions about graph representations, layouts, trees, and treemaps.</p>
+      </header>
+
+      <fieldset class="quiz-question" data-question="q1">
+        <legend><span>1</span> Node-link drawings primarily emphasize connectivity or structure rather than individual node attributes.</legend>
+        <label><input type="radio" name="q1" value="true" /> True</label>
+        <label><input type="radio" name="q1" value="false" /> False</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question matrix-question" data-question="q2">
+        <legend><span>2</span> Match each adjacency matrix to its graph structure.</legend>
+        <p class="quiz-hint">Choose the structure represented by each pattern.</p>
+        <div class="matrix-quiz-grid">
+          <label class="matrix-card">
+            <strong>Matrix A</strong>
+            <div class="matrix-visual matrix-a" data-matrix="a" aria-label="Matrix A: fully connected component"></div>
+            <select name="q2a"><option value="">Choose a structure...</option></select>
+          </label>
+          <label class="matrix-card">
+            <strong>Matrix B</strong>
+            <div class="matrix-visual matrix-b" data-matrix="b" aria-label="Matrix B: a single node connecting two cliques"></div>
+            <select name="q2b"><option value="">Choose a structure...</option></select>
+          </label>
+          <label class="matrix-card">
+            <strong>Matrix C</strong>
+            <div class="matrix-visual matrix-c" data-matrix="c" aria-label="Matrix C: bipartite graph"></div>
+            <select name="q2c"><option value="">Choose a structure...</option></select>
+          </label>
+        </div>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q3">
+        <legend><span>3</span> ConeTrees uses animation:</legend>
+        <label><input type="radio" name="q3" value="a" /> to make the visualization more pleasing</label>
+        <label><input type="radio" name="q3" value="b" /> because it was a new technology in the 1990s</label>
+        <label><input type="radio" name="q3" value="c" /> to help users track changes between views</label>
+        <label><input type="radio" name="q3" value="d" /> to fit more data into less space</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q4">
+        <legend><span>4</span> Treemaps:</legend>
+        <label><input type="radio" name="q4" value="a" /> are poor at showing both structure and node attributes</label>
+        <label><input type="radio" name="q4" value="b" /> show node attributes well, but make structure harder to see</label>
+        <label><input type="radio" name="q4" value="c" /> show both structure and node attributes well</label>
+        <label><input type="radio" name="q4" value="d" /> show structure well, but make node attributes harder to see</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q5">
+        <legend><span>5</span> In a fisheye focus+context display:</legend>
+        <label><input type="radio" name="q5" value="a" /> the drawing is most distorted at the edge of the focus region</label>
+        <label><input type="radio" name="q5" value="b" /> the drawing is least distorted within the focus region</label>
+        <label><input type="radio" name="q5" value="c" /> the drawing is least distorted at the edge of the focus region</label>
+        <label><input type="radio" name="q5" value="d" /> the drawing is most distorted throughout the context region</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q6">
+        <legend><span>6</span> When drawing trees, the root node should always be at the top.</legend>
+        <label><input type="radio" name="q6" value="true" /> True</label>
+        <label><input type="radio" name="q6" value="false" /> False</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q7">
+        <legend><span>7</span> Graph layoutâ€”also called graph drawingâ€”is frequently an NP-hard problem.</legend>
+        <label><input type="radio" name="q7" value="true" /> True</label>
+        <label><input type="radio" name="q7" value="false" /> False</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q8">
+        <legend><span>8</span> Which representation would you use for a dense graph?</legend>
+        <label><input type="radio" name="q8" value="a" /> A treemap</label>
+        <label><input type="radio" name="q8" value="b" /> A node-link diagram</label>
+        <label><input type="radio" name="q8" value="c" /> An adjacency matrix</label>
+        <label><input type="radio" name="q8" value="d" /> An adjacency list</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q9">
+        <legend><span>9</span> A graph is:</legend>
+        <label><input type="radio" name="q9" value="a" /> an abstract mathematical object describing vertices and edges</label>
+        <label><input type="radio" name="q9" value="b" /> a drawing made of connected dots</label>
+        <label><input type="radio" name="q9" value="c" /> a special case of a tree</label>
+        <label><input type="radio" name="q9" value="d" /> a quantitative chart such as a line chart or scatterplot</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q10">
+        <legend><span>10</span> Matrix drawings completely avoid the graph layout problem.</legend>
+        <label><input type="radio" name="q10" value="true" /> True</label>
+        <label><input type="radio" name="q10" value="false" /> False</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <div class="quiz-actions">
+        <button type="submit">Check answers</button>
+        <button class="secondary-button" id="resetQuiz" type="button">Try again</button>
+      </div>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <script src="../assets/chapter-5-quiz.js"></script>
+</body>
+</html>

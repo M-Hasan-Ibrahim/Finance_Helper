@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 4 Quiz - Visual Perception</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a href="../visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Chapter 4 pages">
+      <a href="../chapters/chapter-4.html">Chapter 4 Summary</a>
+      <a class="active" href="chapter-4-quiz.html">Chapter 4 Quiz</a>
+    </nav>
+
+    <form class="article quiz-form" id="chapter4Quiz">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 4</p>
+        <h1>Visual Perception Quiz</h1>
+        <p class="subtitle">Answer ten questions about pre-attentive processing, color, contrast, and visual variables.</p>
+      </header>
+
+      <fieldset class="quiz-question" data-question="q1">
+        <legend><span>1</span> An example of a potentially pre-attentive task is ______ detection.</legend>
+        <label class="text-answer">
+          <span>Your answer</span>
+          <input type="text" name="q1" autocomplete="off" placeholder="Enter a short answer" />
+        </label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q2">
+        <legend><span>2</span> Which of these sets of graphical properties are separable?</legend>
+        <p class="quiz-hint">Choose at least one response.</p>
+        <label><input type="checkbox" name="q2" value="a" /> Hue and saturation</label>
+        <label><input type="checkbox" name="q2" value="b" /> RGB component colors</label>
+        <label><input type="checkbox" name="q2" value="c" /> Width and height</label>
+        <label><input type="checkbox" name="q2" value="d" /> Position and color</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q3">
+        <legend><span>3</span> For two distant marks encoded using greyscale, their values are orderable.</legend>
+        <label><input type="radio" name="q3" value="true" /> True</label>
+        <label><input type="radio" name="q3" value="false" /> False</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q4">
+        <legend><span>4</span> Separability and integrality of visual variables refers to:</legend>
+        <label><input type="radio" name="q4" value="a" /> whether data cases are drawn far apart or overlap</label>
+        <label><input type="radio" name="q4" value="b" /> how well users can read them independently</label>
+        <label><input type="radio" name="q4" value="c" /> whether colors bleed together when printed</label>
+        <label><input type="radio" name="q4" value="d" /> how well users perceive small differences in value</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q5">
+        <legend><span>5</span> People can discriminate color pre-attentively.</legend>
+        <label><input type="radio" name="q5" value="true" /> True</label>
+        <label><input type="radio" name="q5" value="false" /> False</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+
+      <fieldset class="quiz-question" data-question="q6">
+        <legend><span>6</span> Choose all that apply. The rainbow color scale:</legend>
+        <label><input type="checkbox" name="q6" value="a" /> should encode relative values rather than absolute values</label>
+        <label><input type="checkbox" name="q6" value="b" /> is easy to order from high to low</label>
+        <label><input type="checkbox" name="q6" value="c" /> gives equal perceptual weight to all colors except green</label>
+        <label><input type="checkbox" name="q6" value="d" /> is useful because it makes a visualization more attractive</label>
+        <label><input type="checkbox" name="q6" value="e" /> none of these</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q7">
+        <legend><span>7</span> It is easier to detect a target than the absence of a target in a visualization.</legend>
+        <label><input type="radio" name="q7" value="true" /> True</label>
+        <label><input type="radio" name="q7" value="false" /> False</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q8">
+        <legend><span>8</span> People can discriminate shape pre-attentively.</legend>
+        <label><input type="radio" name="q8" value="true" /> True</label>
+        <label><input type="radio" name="q8" value="false" /> False</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q9">
+        <legend><span>9</span> The difference between foreground and background ______ is called contrast.</legend>
+        <label class="text-answer">
+          <span>Your answer</span>
+          <input type="text" name="q9" autocomplete="off" placeholder="Enter a short answer" />
+        </label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question matching-question" data-question="q10">
+        <legend><span>10</span> Match each visual operation to its definition.</legend>
+        <p class="quiz-hint">Drag a definition into each slot. You can also select a definition and then select a slot.</p>
+        <div class="matching-bank" id="matchingBank" aria-label="Available definitions"></div>
+        <div class="matching-grid" id="matchingGrid"></div>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+      <div class="quiz-actions">
+        <button type="submit">Check answers</button>
+        <button class="secondary-button" id="resetQuiz" type="button">Try again</button>
+      </div>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <script src="../assets/chapter-4-quiz.js"></script>
+</body>
+</html>

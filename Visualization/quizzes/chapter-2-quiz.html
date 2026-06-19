@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 2 Quiz - Visual Mappings</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a href="../visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Chapter 2 pages">
+      <a href="../chapters/chapter-2.html">Chapter 2 Summary</a>
+      <a class="active" href="chapter-2-quiz.html">Chapter 2 Quiz</a>
+    </nav>
+
+    <form class="article quiz-form" id="chapter2Quiz">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 2</p>
+        <h1>Visual Mappings Quiz</h1>
+        <p class="subtitle">Answer five questions about parallel coordinates, aggregation, and marks.</p>
+      </header>
+
+      <fieldset class="quiz-question" data-question="q1">
+        <legend><span>1</span> Parallel coordinates are useful for:</legend>
+        <p class="quiz-hint">Choose all correct responses.</p>
+        <label><input type="checkbox" name="q1" value="a" /> showing dozens of dimensions</label>
+        <label><input type="checkbox" name="q1" value="b" /> seeing the distribution of values within each dimension</label>
+        <label><input type="checkbox" name="q1" value="c" /> evolution over time</label>
+        <label><input type="checkbox" name="q1" value="d" /> identifying correlations between every pair of dimensions</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q2">
+        <legend><span>2</span> Parallel coordinates are most useful when users can interactively filter the data.</legend>
+        <label><input type="radio" name="q2" value="true" /> True</label>
+        <label><input type="radio" name="q2" value="false" /> False</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q3">
+        <legend><span>3</span> Which are used for univariate aggregation?</legend>
+        <p class="quiz-hint">Choose all correct responses.</p>
+        <label><input type="checkbox" name="q3" value="a" /> Box plot</label>
+        <label><input type="checkbox" name="q3" value="b" /> Line chart</label>
+        <label><input type="checkbox" name="q3" value="c" /> Bar chart</label>
+        <label><input type="checkbox" name="q3" value="d" /> Histogram</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q4">
+        <legend><span>4</span> Marks are:</legend>
+        <label><input type="radio" name="q4" value="a" /> scores</label>
+        <label><input type="radio" name="q4" value="b" /> graphical elements placed in space to encode data</label>
+        <label><input type="radio" name="q4" value="c" /> user annotations</label>
+        <label><input type="radio" name="q4" value="d" /> tick marks</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q5">
+        <legend><span>5</span> Which are examples of marks?</legend>
+        <label><input type="radio" name="q5" value="a" /> points, lines, areas, and volumes</label>
+        <label><input type="radio" name="q5" value="b" /> axes, legends, and titles</label>
+        <label><input type="radio" name="q5" value="c" /> colors, saturation, and luminance</label>
+        <label><input type="radio" name="q5" value="d" /> filters, zoom, and pan</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <div class="quiz-actions">
+        <button type="submit">Check answers</button>
+        <button class="secondary-button" id="resetQuiz" type="button">Try again</button>
+      </div>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <script src="../assets/chapter-2-quiz.js"></script>
+</body>
+</html>

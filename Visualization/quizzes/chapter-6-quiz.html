@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 6 Quiz - Tufte's Design Principles</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a href="../visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Chapter 6 pages">
+      <a href="../chapters/chapter-6.html">Chapter 6 Summary</a>
+      <a class="active" href="chapter-6-quiz.html">Chapter 6 Quiz</a>
+    </nav>
+
+    <form class="article quiz-form" id="chapter6Quiz">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 6</p>
+        <h1>Tufte's Design Principles Quiz</h1>
+        <p class="subtitle">Answer ten questions about integrity, density, data ink, and graphical design.</p>
+      </header>
+
+      <fieldset class="quiz-question" data-question="q1">
+        <legend><span>1</span> According to Tufte, a chart designer should:</legend>
+        <label><input type="radio" name="q1" value="a" /> choose colors that maximize data density</label>
+        <label><input type="radio" name="q1" value="b" /> increase, as much as reasonable, the number of data elements shown</label>
+        <label><input type="radio" name="q1" value="c" /> choose colors that minimize data density</label>
+        <label><input type="radio" name="q1" value="d" /> reduce data elements as much as possible to prevent overload</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q2">
+        <legend><span>2</span> Which three choices can make a visualization lie?</legend>
+        <p class="quiz-hint">Choose all correct responses.</p>
+        <label><input type="checkbox" name="q2" value="a" /> Not be clear</label>
+        <label><input type="checkbox" name="q2" value="b" /> Not show the baseline</label>
+        <label><input type="checkbox" name="q2" value="c" /> Use inappropriate colors</label>
+        <label><input type="checkbox" name="q2" value="d" /> Not show the context</label>
+        <label><input type="checkbox" name="q2" value="e" /> Not use natural conventions</label>
+        <label><input type="checkbox" name="q2" value="f" /> Use misleading size encodings</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q3">
+        <legend><span>3</span> Small multiples are:</legend>
+        <label><input type="radio" name="q3" value="a" /> possible only when the number of elements is a perfect square</label>
+        <label><input type="radio" name="q3" value="b" /> repeated visualizations showing different parts of the data</label>
+        <label><input type="radio" name="q3" value="c" /> a trick for showing more data from fewer elements</label>
+        <label><input type="radio" name="q3" value="d" /> one view containing overview and detail</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q4">
+        <legend><span>4</span> The graphic below is an example of:</legend>
+        <div class="mobility-small-multiples" id="mobilitySmallMultiples" role="img" aria-label="Nine repeated line charts comparing driving, transit, and walking mobility across cities"></div>
+        <label><input type="radio" name="q4" value="a" /> small multiples</label>
+        <label><input type="radio" name="q4" value="b" /> macro-micro readings</label>
+        <label><input type="radio" name="q4" value="c" /> lie factor</label>
+        <label><input type="radio" name="q4" value="d" /> chartjunk</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q5">
+        <legend><span>5</span> A chart that does not show context:</legend>
+        <label><input type="radio" name="q5" value="a" /> only shows a subset of its data points</label>
+        <label><input type="radio" name="q5" value="b" /> lacks enough information for correct interpretation</label>
+        <label><input type="radio" name="q5" value="c" /> does not describe the data source</label>
+        <label><input type="radio" name="q5" value="d" /> does not show the origin</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q6">
+        <legend><span>6</span> Escaping flatland refers to:</legend>
+        <label><input type="radio" name="q6" value="a" /> showing more than two dimensions of data at a time</label>
+        <label><input type="radio" name="q6" value="b" /> using layered elements to exploit selective attention</label>
+        <label><input type="radio" name="q6" value="c" /> using decorative 3D</label>
+        <label><input type="radio" name="q6" value="d" /> Edwin A. Abbott's novel about geometric shapes</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q7">
+        <legend><span>7</span> The axes of a chart should always start at zero.</legend>
+        <label><input type="radio" name="q7" value="true" /> True</label>
+        <label><input type="radio" name="q7" value="false" /> False</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q8">
+        <legend><span>8</span> Data ink is:</legend>
+        <label><input type="radio" name="q8" value="a" /> the number of pixels used in a drawing</label>
+        <label><input type="radio" name="q8" value="b" /> a special type of ink created by Tufte</label>
+        <label><input type="radio" name="q8" value="c" /> a measure of visualization accuracy</label>
+        <label><input type="radio" name="q8" value="d" /> the part of a visualization that conveys data</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q9">
+        <legend><span>9</span> The lie factor of a visualization is:</legend>
+        <label><input type="radio" name="q9" value="a" /> the ratio between an effect in the graphic and the corresponding effect in the data</label>
+        <label><input type="radio" name="q9" value="b" /> a measure of data-source accuracy</label>
+        <label><input type="radio" name="q9" value="c" /> the proportion of true data to all displayed data</label>
+        <label><input type="radio" name="q9" value="d" /> a measure of whether scales and context are accurate</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q10">
+        <legend><span>10</span> The graphic below is an example of:</legend>
+        <figure class="chartjunk-figure">
+          <img src="../images/monstrous-costs.png" alt="Monstrous Costs chart showing campaign expenditures inside a decorative monster" />
+          <figcaption>Monstrous Costs: total House and Senate campaign expenditures.</figcaption>
+        </figure>
+        <label><input type="radio" name="q10" value="a" /> small multiples</label>
+        <label><input type="radio" name="q10" value="b" /> lie factor</label>
+        <label><input type="radio" name="q10" value="c" /> chartjunk</label>
+        <label><input type="radio" name="q10" value="d" /> macro-micro readings</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <div class="quiz-actions">
+        <button type="submit">Check answers</button>
+        <button class="secondary-button" id="resetQuiz" type="button">Try again</button>
+      </div>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <script src="../assets/chapter-6-quiz.js"></script>
+</body>
+</html>
