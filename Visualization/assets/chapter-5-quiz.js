@@ -97,7 +97,7 @@ quiz.addEventListener("submit", (event) => {
   markQuestion(quiz.querySelector('[data-question="q2"]'), q2Correct, explanations.q2);
 
   result.className = `quiz-result show ${score >= 8 ? "strong-score" : ""}`;
-  result.innerHTML = `<strong>${score}/10</strong><span>${score === 10 ? "Excellentâ€”every answer is correct." : score >= 8 ? "Great work. Review the highlighted questions and try for full marks." : "Review Chapter 5 and try again when ready."}</span>`;
+  result.innerHTML = `<strong>${score}/10</strong><span>${score === 10 ? "Excellent - every answer is correct." : score >= 8 ? "Great work. Review the highlighted questions and try for full marks." : "Review Chapter 5 and try again when ready."}</span>`;
   result.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 

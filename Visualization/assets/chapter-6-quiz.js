@@ -80,7 +80,7 @@ const explanations = {
   q4: "The same line-chart design is repeated across cities to support comparison.",
   q5: "Context provides the scale, baseline, history, and surrounding information needed for interpretation.",
   q6: "Escaping flatland means representing richer multidimensional information on a flat surface.",
-  q7: "Not alwaysÃ¢â‚¬â€but scales must be explicit and non-misleading. Bar charts normally should begin at zero.",
+  q7: "Not always - scales must be explicit and non-misleading. Bar charts normally should begin at zero.",
   q8: "Data ink is the visual material that directly represents data. Data-ink ratio = data ink / total ink.",
   q9: "Lie factor = size of effect shown in the graphic / size of effect shown in the data.",
   q10: "The decorative monster adds clutter without improving understanding, making it chartjunk."
@@ -110,7 +110,7 @@ quiz.addEventListener("submit", (event) => {
   markQuestion(quiz.querySelector('[data-question="q2"]'), q2Correct, explanations.q2);
 
   result.className = `quiz-result show ${score >= 8 ? "strong-score" : ""}`;
-  result.innerHTML = `<strong>${score}/10</strong><span>${score === 10 ? "ExcellentÃ¢â‚¬â€every answer is correct." : score >= 8 ? "Great work. Review the highlighted questions and try for full marks." : "Review Chapter 6 and try again when ready."}</span>`;
+  result.innerHTML = `<strong>${score}/10</strong><span>${score === 10 ? "Excellent - every answer is correct." : score >= 8 ? "Great work. Review the highlighted questions and try for full marks." : "Review Chapter 6 and try again when ready."}</span>`;
   result.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 

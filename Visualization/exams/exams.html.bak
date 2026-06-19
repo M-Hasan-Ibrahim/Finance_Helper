@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visualization Exams</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a href="../visualization.html">Visualization</a>
+      <a class="active" href="exams.html">Exams</a>
+    </nav>
+
+    <nav class="section-tabs exam-year-tabs" role="tablist" aria-label="Exam years">
+      <button class="section-tab active" type="button" role="tab" aria-selected="true" data-exam-tab="exam2019">2019</button>
+      <button class="section-tab" type="button" role="tab" aria-selected="false" data-exam-tab="exam2018">2018</button>
+      <button class="section-tab" type="button" role="tab" aria-selected="false" data-exam-tab="exam2017">2017</button>
+    </nav>
+
+    <section class="exam-year-panel" id="exam2019">
+      <form class="article quiz-form exam-form" id="exam2019Form">
+        <header class="article-header">
+          <p class="eyebrow">Final Exam 2018&ndash;2019</p>
+          <h1>Information Visualization</h1>
+          <p class="subtitle">Questions 1&ndash;7 are automatically graded. Use the model answers to review Questions 8&ndash;15.</p>
+        </header>
+
+        <fieldset class="quiz-question" data-question="q1">
+          <legend><span>1</span> A good visualization should provide a dense view of the data.</legend>
+          <label><input type="radio" name="q1" value="true" /> True</label>
+          <label><input type="radio" name="q1" value="false" /> False</label>
+          <p class="question-feedback"></p>
+        </fieldset>
+
+        <fieldset class="quiz-question" data-question="q2">
+          <legend><span>2</span> A chart should always show zero as its baseline.</legend>
+          <label><input type="radio" name="q2" value="true" /> True</label>
+          <label><input type="radio" name="q2" value="false" /> False</label>
+          <p class="question-feedback"></p>
+        </fieldset>
+
+        <fieldset class="quiz-question" data-question="q3">
+          <legend><span>3</span> Greyscale color encoding is useful for showing relative values.</legend>
+          <label><input type="radio" name="q3" value="true" /> True</label>
+          <label><input type="radio" name="q3" value="false" /> False</label>
+          <p class="question-feedback"></p>
+        </fieldset>
+
+        <fieldset class="quiz-question" data-question="q4">
+          <legend><span>4</span> In a matrix drawing, a large filled square represents a fully connected clique.</legend>
+          <label><input type="radio" name="q4" value="true" /> True</label>
+          <label><input type="radio" name="q4" value="false" /> False</label>
+          <p class="question-feedback"></p>
+        </fieldset>
+
+        <fieldset class="quiz-question" data-question="q5">
+          <legend><span>5</span> In a graph-on-rails, the size of every graphical element is determined by its position.</legend>
+          <label><input type="radio" name="q5" value="true" /> True</label>
+          <label><input type="radio" name="q5" value="false" /> False</label>
+          <p class="question-feedback"></p>
+        </fieldset>
+
+        <fieldset class="quiz-question" data-question="q6">
+          <legend><span>6</span> Tableau, Altair, and D3 map data values to graphical properties.</legend>
+          <label><input type="radio" name="q6" value="true" /> True</label>
+          <label><input type="radio" name="q6" value="false" /> False</label>
+          <p class="question-feedback"></p>
+        </fieldset>
+
+        <fieldset class="quiz-question" data-question="q7">
+          <legend><span>7</span> Fill in the appropriate letter for each part of the InfoVis pipeline below. Some labels will remain blank. <small>(3 points)</small></legend>
+          <div class="exam-pipeline-scroll">
+            <div class="exam-pipeline" role="img" aria-label="Source Data flows through A, B, and C to the user, with feedback transformations D, E, and F">
+              <div class="exam-pipeline-box source-box">Source Data</div>
+              <span class="exam-flow-arrow flow-one"></span>
+              <div class="exam-pipeline-box pipeline-a">A</div>
+              <span class="exam-flow-arrow flow-two"></span>
+              <div class="exam-pipeline-box pipeline-b">B</div>
+              <span class="exam-flow-arrow flow-three"></span>
+              <div class="exam-pipeline-box pipeline-c">C</div>
+              <div class="exam-pipeline-user"><span></span><i></i></div>
+              <span class="exam-feedback-line"></span>
+              <span class="exam-feedback-arrow feedback-d"><b>D</b></span>
+              <span class="exam-feedback-arrow feedback-e2"><b>E</b></span>
+              <span class="exam-feedback-arrow feedback-f2"><b>F</b></span>
+            </div>
+          </div>
+          <div class="exam-matching-grid">
+            <label>View abstractions <select name="q7_view_abstractions"></select></label>
+            <label>Data transformations <select name="q7_data_transformations"></select></label>
+            <label>View transformations <select name="q7_view_transformations"></select></label>
+            <label>Views <select name="q7_views"></select></label>
+            <label>Visual mappings <select name="q7_visual_mappings"></select></label>
+            <label>Visual design <select name="q7_visual_design"></select></label>
+            <label>Data cleaning <select name="q7_data_cleaning"></select></label>
+            <label>Data tables <select name="q7_data_tables"></select></label>
+          </div>
+          <p class="question-feedback"></p>
+        </fieldset>
+
+        <section class="written-section">
+          <h2>Written and Drawing Questions</h2>
+          <p>Write your response first, then open the model answer to self-review.</p>
+        </section>
+
+        <section class="exam-written">
+          <h2><span>8</span> Game of Thrones visual mapping <small>(6 points)</small></h2>
+          <p>You are given a data set of episodes from <em>Game of Thrones</em>. For each episode, it contains the characters killed, their affiliation, the number of romantic encounters depicted, the average visual darkness of the image, and the episode's average rating. Choose two questions and create a single spatial mapping and encoding of three of these dimensions that helps answer these questions. Justify your response.</p>
+          <textarea placeholder="State two questions, describe or sketch one spatial mapping, and justify the three encodings..."></textarea>
+          <details><summary>Show model answer</summary><p><strong>Questions:</strong> Are darker episodes rated higher or lower? Do episodes with more romantic encounters have different ratings?</p><p><strong>Mapping:</strong> One point per episode; x-axis = average visual darkness; y-axis = average rating; point size = romantic encounters.</p><p><strong>Justification:</strong> Common-scale position accurately compares darkness and rating. Size adds a third quantitative dimension and supports finding correlations, clusters, and outliers.</p></details>
+        </section>
+
+        <section class="exam-written">
+          <h2><span>9</span> Graphical integrity <small>(3 points)</small></h2>
+          <p>Edward Tufte argues that a visualization should not lie about the data. <strong>a)</strong> What are three ways that we have seen for a visualization to lie? <strong>b)</strong> Choose two and draw an example.</p>
+          <textarea placeholder="List three ways, then describe or sketch two examples..."></textarea>
+          <details><summary>Show model answer</summary><p>Three ways are a truncated or misleading axis, missing context or cherry-picked data, and misleading area, volume, or 3D encoding.</p><p>Example 1: begin a bar-chart y-axis at 90, making a small difference look huge. Example 2: represent values 3 and 6 with circles but double the second circle's diameter, causing its area to exaggerate the difference.</p></details>
+        </section>
+
+        <section class="exam-written">
+          <h2><span>10</span> Rainbow color scale <small>(2 points)</small></h2>
+          <p>Describe two problems with using the full hue (rainbow) color scale to encode quantitative data.</p>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p>Rainbow hues have no clear natural order, so high and low values are difficult to interpret. The scale is also not perceptually uniform and creates artificial boundaries that make some differences look stronger than they are.</p></details>
+        </section>
+
+        <section class="exam-written">
+          <h2><span>11</span> Data dimensionality <small>(2 points)</small></h2>
+          <p>Give an example of a visualization technique for <strong>(a)</strong> univariate, <strong>(b)</strong> bivariate, <strong>(c)</strong> trivariate, and <strong>(d)</strong> hypervariate data.</p>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p><strong>a)</strong> Histogram. <strong>b)</strong> Scatterplot. <strong>c)</strong> Bubble chart. <strong>d)</strong> Parallel coordinates. Draw bars showing frequency, x/y points, x/y points with size or color, and polylines crossing multiple vertical axes respectively.</p></details>
+        </section>
+
+        <section class="exam-written">
+          <h2><span>12</span> Non-tree graph drawings <small>(4 points)</small></h2>
+          <p>Identify two distinct ways that we have seen in class for drawing a non-tree graph. Provide a name and a drawing of each.</p>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p><strong>Node-link diagram:</strong> circles as nodes and lines as edges. <strong>Adjacency matrix:</strong> the same nodes as rows and columns, with a filled cell wherever an edge exists.</p></details>
+        </section>
+
+        <section class="exam-written">
+          <h2><span>13</span> Separability <small>(6 points)</small></h2>
+          <p><strong>a)</strong> What is the notion of separability of graphical properties (or graphical channels) for marks, and why is it important? <strong>b)</strong> Describe two properties that are separable and two that are not separable.</p>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p>Separable channels can be read independently when used on the same mark. This matters because interference makes each encoded dimension difficult to understand.</p><p>Separable: position + color; shape + color. Not separable: x-position + y-position, which form one 2D location; width + height, which combine into area and shape.</p></details>
+        </section>
+
+        <section class="exam-written">
+          <h2><span>14</span> Analytic tasks <small>(6 points)</small></h2>
+          <p>Describe three analytic tasks seen in class. For each task, sketch a visualisation or interaction that helps demonstrate that task in action.</p>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p><strong>Identify:</strong> find one item's information; highlight a scatterplot point and show a tooltip. <strong>Compare:</strong> compare items; use aligned bars or points on one scale. <strong>Summarize:</strong> see the overall pattern; use a histogram or line chart.</p></details>
+        </section>
+
+        <section class="exam-written election-question">
+          <h2><span>15</span> Visualization critique <small>(6 points)</small></h2>
+          <p>Critique the visualization shown on the following page. <strong>a)</strong> Identify one pertinent task for which it is well-suited and one pertinent task for which it is ill-suited. <strong>b)</strong> Describe one problem with this visualization and how you would fix it. <strong>c)</strong> Describe one thing the design of this visualisation does well and why.</p>
+          <figure class="election-figure">
+            <img src="../images/election-outcomes-2000-2012.png" alt="Election outcomes in United States presidential elections from 2000 to 2012, shown as state small multiples arranged geographically" />
+            <figcaption>Election outcomes in United States presidential elections, 2000&ndash;2012, by state.</figcaption>
+          </figure>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p><strong>Well-suited:</strong> seeing state outcomes change over time and identifying stable versus swing states. <strong>Ill-suited:</strong> exact numerical or electoral-importance comparison because states have similar visual size despite different populations and electoral votes.</p><p><strong>Problem and fix:</strong> the panels are too small for precise reading. Enlarge them, add clearer axes and labels, or provide zoom and tooltips. Use a cartogram or size encoding if electoral importance matters.</p><p><strong>Strength:</strong> geographic small multiples preserve the approximate US map while allowing state election patterns to be compared over time.</p></details>
+        </section>
+        <div class="quiz-actions">
+          <button type="submit">Check objective answers</button>
+          <button class="secondary-button" id="resetExam" type="button">Reset exam</button>
+        </div>
+        <div class="quiz-result" id="examResult" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="exam-year-panel" id="exam2018" hidden>
+      <form class="article quiz-form exam-form" id="exam2018Form">
+        <header class="article-header">
+          <p class="eyebrow">Final Exam 2018</p>
+          <h1>Information Visualization</h1>
+          <p class="subtitle">Questions 1–6 are automatically graded. Review Questions 7–15 with the provided answers.</p>
+        </header>
+
+        <fieldset class="quiz-question" data-question="2018q1"><legend><span>1</span> A good visualization should be clear and understandable by any user.</legend><label><input type="radio" name="2018q1" value="true" /> True</label><label><input type="radio" name="2018q1" value="false" /> False</label><p class="question-feedback"></p></fieldset>
+        <fieldset class="quiz-question" data-question="2018q2"><legend><span>2</span> A chart should always show zero as its baseline.</legend><label><input type="radio" name="2018q2" value="true" /> True</label><label><input type="radio" name="2018q2" value="false" /> False</label><p class="question-feedback"></p></fieldset>
+        <fieldset class="quiz-question" data-question="2018q3"><legend><span>3</span> Greyscale color encoding is useful for showing absolute values.</legend><label><input type="radio" name="2018q3" value="true" /> True</label><label><input type="radio" name="2018q3" value="false" /> False</label><p class="question-feedback"></p></fieldset>
+        <fieldset class="quiz-question" data-question="2018q4"><legend><span>4</span> Tree maps best show the structure of homogenous hierarchical data.</legend><label><input type="radio" name="2018q4" value="true" /> True</label><label><input type="radio" name="2018q4" value="false" /> False</label><p class="question-feedback"></p></fieldset>
+        <fieldset class="quiz-question" data-question="2018q5"><legend><span>5</span> For all types of visualisation, the positions of graphical marks are determined by the data.</legend><label><input type="radio" name="2018q5" value="true" /> True</label><label><input type="radio" name="2018q5" value="false" /> False</label><p class="question-feedback"></p></fieldset>
+        <fieldset class="quiz-question" data-question="2018q6"><legend><span>6</span> Interactive visualisation is useful only when the user knows what to look for.</legend><label><input type="radio" name="2018q6" value="true" /> True</label><label><input type="radio" name="2018q6" value="false" /> False</label><p class="question-feedback"></p></fieldset>
+
+        <section class="written-section"><h2>Written and Drawing Questions</h2><p>Write your response first, then open the provided answer.</p></section>
+
+        <section class="exam-written">
+          <h2><span>7</span> InfoVis data pipeline <small>(3 points)</small></h2>
+          <p>Label each of the points, A–F, in the InfoVis data pipeline below.</p>
+          <figure class="exam-source-figure"><img src="../images/exam-2018-pipeline.png" alt="InfoVis data pipeline with labels A through F" /></figure>
+          <div class="exam-matching-grid">
+            <label>A <select name="2018q7a"></select></label><label>B <select name="2018q7b"></select></label><label>C <select name="2018q7c"></select></label><label>D <select name="2018q7d"></select></label><label>E <select name="2018q7e"></select></label><label>F <select name="2018q7f"></select></label>
+          </div>
+          <details><summary>Show answer</summary><p>A = Data tables<br>B = View abstractions<br>C = Views<br>D = Data transformations<br>E = Visual mappings<br>F = View transformations</p><p>The pipeline is:<br>Source Data → Data tables → View abstractions → Views</p><p>The arrows/transformations are:<br>D = Data transformations<br>E = Visual mappings<br>F = View transformations</p></details>
+        </section>
+
+        <section class="exam-written"><h2><span>8</span> Superhero data mapping <small>(6 points)</small></h2><p>You are given a data set of the number of people saved and lost by each of the following superheros: Iron Man, Wonderwoman, Luke Cage, and Jessica Jones. It contains the attributes: the superhero, whether the person was lost or saved, and the normalized date in the Marvel Universe when the event happened. Choose two questions and create a single spatial mapping and encoding of these three dimensions that helps answer these questions. Justify your response.</p><textarea></textarea><details><summary>Show answer</summary><p>Example questions:<br>1) Which superhero saves more people than they lose?<br>2) How does the number of saved/lost people change over Marvel Universe time?</p><p>Visualization:<br>Use a small-multiple timeline / diverging bar chart.</p><p>What to draw:<br>- Create one horizontal row for each superhero:<br>Iron Man, Wonderwoman, Luke Cage, Jessica Jones.<br>- X-axis = normalized date in the Marvel Universe.<br>- For each date, draw bars or dots representing events.<br>- Encode “saved” above the middle line and “lost” below the middle line.<br>- Use color to distinguish saved vs lost:<br>saved = green/blue<br>lost = red<br>- If many people are saved/lost at the same date, make the bar taller or stack dots.</p><p>Tasks supported:<br>- Compare saved vs lost for one superhero.<br>- Compare superheroes against each other.<br>- Find periods where many people were saved or lost.<br>- Identify outliers, such as one hero losing many people at one date.<br>- See trends over time.</p><p>Justification:<br>Date is ordered, so horizontal position is a strong encoding. Superhero is categorical, so separating heroes into rows is clear. Saved/lost is categorical/binary, so color and direction above/below baseline work well. Counts are quantitative, so bar height or number of stacked dots can encode amount.</p></details></section>
+
+        <section class="exam-written"><h2><span>9</span> Graphical integrity <small>(3 points)</small></h2><p>Edward Tufte argues that a visualization should not lie about the data. What are three ways that we have seen for a visualization to lie?</p><textarea></textarea><details><summary>Show answer</summary><p>1) Misleading or truncated axes.<br>Example: starting the y-axis at 90 instead of 0 to make a small change look huge.</p><p>2) Misleading area/volume/3D encodings.<br>Example: using circle diameter or 3D volume incorrectly so a value looks much larger than it really is.</p><p>3) Removing context / cherry-picking data.<br>Example: showing only selected years or selected categories that support one conclusion, while hiding the rest.</p><p>Other acceptable answers:<br>- Unequal scale intervals.<br>- Bad aspect ratio that exaggerates a trend.<br>- Chartjunk that distracts from the data.<br>- Using inappropriate visual encodings.</p></details></section>
+
+        <section class="exam-written"><h2><span>10</span> Rainbow color scale <small>(2 points)</small></h2><p>Describe two problems with the full hue (rainbow) color scale to encode quantitative data.</p><textarea></textarea><details><summary>Show answer</summary><p>1) Rainbow colors do not have a natural perceptual order, so it is hard to know which color means higher or lower.</p><p>2) Rainbow scales are not perceptually uniform. They create artificial boundaries and make some differences look stronger than they really are.</p><p>Other acceptable problem:<br>Rainbow color scales can be bad for colorblind users and may not print well in black and white.</p></details></section>
+
+        <section class="exam-written"><h2><span>11</span> Data dimensionality <small>(4 points, 1 point each)</small></h2><p>Give an example of a visualization technique for (a) univariate, (b) bivariate, (c) trivariate, and (d) hypervariate data.</p><textarea></textarea><details><summary>Show answer</summary><p>a) Univariate: histogram.<br>What to draw:<br>One variable on the x-axis, frequency/count on the y-axis.</p><p>b) Bivariate: scatterplot.<br>What to draw:<br>X-axis = variable 1, Y-axis = variable 2, one point per item.</p><p>c) Trivariate: bubble chart.<br>What to draw:<br>X-axis = variable 1, Y-axis = variable 2, point size or color = variable 3.</p><p>d) Hypervariate: parallel coordinates.<br>What to draw:<br>Several vertical axes, one per variable. Each data item is a polyline crossing all axes.</p><p>Other acceptable hypervariate answer:<br>Scatterplot matrix.</p></details></section>
+
+        <section class="exam-written"><h2><span>12</span> Tree drawings <small>(4 points)</small></h2><p>Identify two distinct ways that we have seen in class for drawing a tree. Provide a name and a drawing of each.</p><textarea></textarea><details><summary>Show answer</summary><p>1) Node-link tree.<br>What to draw:<br>Draw one root node at the top, children below it, and lines connecting parent nodes to child nodes.</p><p>2) Treemap.<br>What to draw:<br>Draw one large rectangle divided into nested smaller rectangles. Each nested rectangle represents a subtree or node.</p><p>Other acceptable answers:<br>- Radial tree: root in the center, children arranged outward.<br>- Icicle plot: stacked rectangles by hierarchy level.<br>- Sunburst: circular/radial version of an icicle plot.</p></details></section>
+
+        <section class="exam-written"><h2><span>13</span> Separability <small>(3 points)</small></h2><p>a) What is the notion of separability of graphical properties (or graphical channels) for marks and why is it important? b) Describe two properties that are separable and two properties that are not separable.</p><textarea></textarea><details><summary>Show answer</summary><p>a) Separability means that two visual channels can be perceived independently when used together on the same mark.</p><p>It is important because if channels are separable, the viewer can read two encoded data dimensions separately. If they are not separable, the dimensions interfere with each other.</p><p>b) Separable properties:<br>- Position and color.<br>- Shape and color.</p><p>Not separable properties:<br>- X-position and Y-position, because they combine into one perceived 2D location.<br>- Width and height of a rectangle, because they combine into perceived area/shape.</p><p>Other acceptable non-separable examples:<br>- Red/green and yellow/blue color components.<br>- Size and area perception.</p></details></section>
+
+        <section class="exam-written"><h2><span>14</span> Analytic tasks <small>(3 points)</small></h2><p>Describe three analytic tasks seen in class. For each task, sketch a visualisation or interaction that helps demonstrate that task in action.</p><textarea></textarea><details><summary>Show answer</summary><p>1) Identify.<br>Meaning:<br>Find information about one item.</p><p>What to draw:<br>A scatterplot with one point highlighted and a tooltip showing its value/name.</p><p>2) Compare.<br>Meaning:<br>Compare two or more items.</p><p>What to draw:<br>Two bars sharing the same baseline, or two highlighted points on the same axis.</p><p>3) Summarize.<br>Meaning:<br>Understand the overall pattern of the whole dataset.</p><p>What to draw:<br>A histogram showing the distribution, or a line chart showing an overall trend.</p><p>Other acceptable tasks:<br>- Lookup: known item, known location.<br>- Locate: known item, unknown location.<br>- Browse: unknown item, known location.<br>- Explore: unknown item, unknown location.</p></details></section>
+
+        <section class="exam-written spending-question"><h2><span>15</span> Visualization critique <small>(6 points)</small></h2><p>Critique the visualization shown on the following page. a) Identify one pertinent task for which it is well-suited and one pertinent task for which it is ill-suited. b) Describe one problem with this visualization and how you would fix it. c) Describe one thing the design of this visualisation does well and why.</p><figure class="exam-source-figure spending-figure"><img src="../images/exam-2018-spending.png" alt="Stacked visualization of average annual spending by income group" /></figure><textarea></textarea><details><summary>Show answer</summary><p>Visualization shown:<br>A stacked spending visualization showing average annual spending by income group. It has income groups on the horizontal direction and spending categories such as housing, food and beverage, transportation, health care, entertainment, apparel/services, education, pensions, cash contributions, and other.</p><p>a) Well-suited task:<br>It is well-suited for seeing the overall composition of spending across income groups. For example, it helps show that housing, food, and transportation take large parts of spending, and that the proportions change with income.</p><p>Ill-suited task:<br>It is ill-suited for exact comparison of one spending category across income groups, especially categories in the middle of the stack, because they do not share a common baseline.</p><p>b) One problem + fix:<br>Problem:<br>Stacked areas make it hard to compare categories that are not aligned to the same baseline. For example, comparing health care or entertainment across income groups is difficult.</p><p>Fix:<br>Use small multiples: one aligned line chart or bar chart per spending category. Another fix is to use grouped bars with a common baseline for each category.</p><p>Another possible problem:<br>There are many colors and categories, making the chart visually busy.</p><p>Fix:<br>Reduce the number of categories by grouping small ones into “Other”, or use direct labels and a clearer legend.</p><p>Another possible problem:<br>The rotated income labels are hard to read.</p><p>Fix:<br>Use horizontal labels, more spacing, or a cleaner axis.</p><p>c) One thing the design does well:<br>It uses a stacked part-to-whole layout, so the viewer can quickly see how total spending is divided among categories. It also orders income groups from low to high, which makes trends across income easier to see.</p></details></section>
+
+        <div class="quiz-actions"><button type="submit">Check objective answers</button><button class="secondary-button" id="resetExam2018" type="button">Reset exam</button></div>
+        <div class="quiz-result" id="exam2018Result" aria-live="polite"></div>
+      </form>
+    </section>
+    <section class="exam-year-panel" id="exam2017" hidden>
+      <form class="article quiz-form exam-form" id="exam2017Form">
+        <header class="article-header">
+          <p class="eyebrow">Final Exam 2017</p>
+          <h1>Information Visualization</h1>
+          <p class="subtitle">Questions 1–6 are automatically graded. Review Questions 7–13 with the model answers.</p>
+        </header>
+
+        <fieldset class="quiz-question" data-question="2017q1">
+          <legend><span>1</span> The axes of a chart should always start at zero.</legend>
+          <label><input type="radio" name="2017q1" value="true" /> True</label>
+          <label><input type="radio" name="2017q1" value="false" /> False</label>
+          <p class="question-feedback"></p>
+        </fieldset>
+        <fieldset class="quiz-question" data-question="2017q2">
+          <legend><span>2</span> Selections in D3 are useful for associating data to visual attributes.</legend>
+          <label><input type="radio" name="2017q2" value="true" /> True</label>
+          <label><input type="radio" name="2017q2" value="false" /> False</label>
+          <p class="question-feedback"></p>
+        </fieldset>
+        <fieldset class="quiz-question" data-question="2017q3">
+          <legend><span>3</span> Three important things in visualization are: tasks, representations, and interaction.</legend>
+          <label><input type="radio" name="2017q3" value="true" /> True</label>
+          <label><input type="radio" name="2017q3" value="false" /> False</label>
+          <p class="question-feedback"></p>
+        </fieldset>
+        <fieldset class="quiz-question" data-question="2017q4">
+          <legend><span>4</span> Tree-maps are good for showing edge attributes in a hierarchy.</legend>
+          <label><input type="radio" name="2017q4" value="true" /> True</label>
+          <label><input type="radio" name="2017q4" value="false" /> False</label>
+          <p class="question-feedback"></p>
+        </fieldset>
+        <fieldset class="quiz-question" data-question="2017q5">
+          <legend><span>5</span> In a matrix drawing of a graph, a fully-connected subcomponent (clique) looks like a plus.</legend>
+          <label><input type="radio" name="2017q5" value="true" /> True</label>
+          <label><input type="radio" name="2017q5" value="false" /> False</label>
+          <p class="question-feedback"></p>
+        </fieldset>
+        <fieldset class="quiz-question" data-question="2017q6">
+          <legend><span>6</span> Visualization, machine learning, and statistical methods compete with each other.</legend>
+          <label><input type="radio" name="2017q6" value="true" /> True</label>
+          <label><input type="radio" name="2017q6" value="false" /> False</label>
+          <p class="question-feedback"></p>
+        </fieldset>
+
+        <section class="written-section"><h2>Written and Drawing Questions</h2><p>Write your response, then open the model answer to review it.</p></section>
+
+        <section class="exam-written">
+          <h2><span>7</span> Variable types <small>(3 points, 1 point each)</small></h2>
+          <p>Give an example of a nominal dataset, a dataset that is ordinal but not quantitative, and a quantitative dataset.</p>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p><strong>Nominal:</strong> Star Trek captains, uniform colors, country names, or fruit names. <strong>Ordinal but not quantitative:</strong> captain ranking, low/medium/high, or small/medium/large. <strong>Quantitative:</strong> vessel top speed, age, price, temperature, or number of deaths.</p></details>
+        </section>
+
+        <section class="exam-written">
+          <h2><span>8</span> Star Trek spatial mapping <small>(6 points)</small></h2>
+          <p>You are given a dataset of crew members lost for each of the Star Trek captains and commanders: James T. Kirk, Jean-Luc Picard, Benjamin Sisko, Kathryn Janeway, and Jonathan Archer. It contains the commander, episode number, and uniform color (red, blue, gold/yellow). Define a spatial mapping and encode these three dimensions. What tasks does your mapping satisfy? Justify your response.</p>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p>Use a dot plot or small-multiples plot. Put commander on separate y-axis rows and episode number on the x-axis. Each lost crew member is a dot colored red, blue, or gold/yellow; stack dots when multiple losses occur in one episode.</p><p>This supports comparing deaths across captains, locating deaths over episode progression, comparing uniform colors, finding high-loss episodes, and detecting patterns. Episode number is ordered, commander is categorical, and uniform color is categorical, making these encodings appropriate.</p></details>
+        </section>
+
+        <section class="exam-written">
+          <h2><span>9</span> Graphical integrity <small>(3 points)</small></h2>
+          <p>Edward Tufte argues that a visualization should not lie about the data. What are three ways that we have seen for a visualization to lie?</p>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p>Use misleading axes, such as a truncated y-axis; omit context, such as cherry-picking a supportive time range; or use misleading encodings, such as incorrect circle area/diameter or exaggerated 3D effects.</p></details>
+        </section>
+
+        <section class="exam-written">
+          <h2><span>10</span> Greyscale encoding <small>(2 points)</small></h2>
+          <p>Describe one advantage and one problem with using a greyscale encoding (for example: ■ ▓ ▒ ░ □).</p>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p><strong>Advantage:</strong> greyscale has a smooth, naturally ordered light-to-dark progression suitable for relative values. <strong>Problem:</strong> it is affected by surrounding colors and backgrounds, and exact or distant grey-level comparisons are difficult.</p></details>
+        </section>
+
+        <section class="exam-written">
+          <h2><span>11</span> Data dimensionality <small>(4 points, 1 point each)</small></h2>
+          <p>Give an example of a visualization technique for <strong>(a)</strong> univariate, <strong>(b)</strong> bivariate, <strong>(c)</strong> trivariate, and <strong>(d)</strong> hypervariate data.</p>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p><strong>a)</strong> Histogram. <strong>b)</strong> Line chart or scatterplot. <strong>c)</strong> Scatterplot using color or size for the third variable. <strong>d)</strong> Scatterplot matrix or parallel coordinates.</p></details>
+        </section>
+
+        <section class="exam-written">
+          <h2><span>12</span> Tree drawings <small>(4 points)</small></h2>
+          <p>Identify two distinct ways that we have seen in class for drawing a tree. Provide a name and a drawing of each.</p>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p><strong>Node-link tree:</strong> a root, children, and parent-child edges. <strong>Treemap:</strong> nested rectangles for nodes and subtrees. Sunbursts, icicle trees, and radial node-link trees are also acceptable.</p></details>
+        </section>
+
+        <section class="exam-written bloomberg-question">
+          <h2><span>13</span> Visualization critique <small>(6 points)</small></h2>
+          <p>Critique the visualization shown on the following page. <strong>a)</strong> Identify one pertinent task for which it is well-suited and one pertinent task for which it is ill-suited. <strong>b)</strong> Describe two problems with this visualization and, for each problem, how you would fix it.</p>
+          <div class="bloomberg-figure" role="img" aria-label="United States gasoline price, affordability, and income spent compared with other countries by region">
+            <header><h3>United States</h3><div class="region-legend"><span class="asia">Asia-Pacific</span><span class="europe">Europe</span><span class="mea">Middle East &amp; Africa</span><span class="north">North America</span><span class="south">South America</span></div></header>
+            <section><h4>Gasoline Price <b>#10</b></h4><p>The average price of a liter of gas is 0.63 EUR.</p><div class="country-rail rail-price"><i class="us-marker"></i><i class="fr-marker"></i></div><div class="rail-scale"><span>0</span><span>1.77 EUR</span></div><em class="fr-label">France #50<br><b>1.37 EUR</b></em></section>
+            <section><h4>Affordability <b>#3</b></h4><p>With an average daily income of 150.50 EUR, it takes <strong>0.42%</strong> of a day's wages to afford a liter of gas.</p><div class="country-rail rail-afford"><i class="us-marker"></i><i class="compare-marker"></i></div><div class="rail-scale"><span>0</span><small>&larr; more affordable &nbsp; less affordable &rarr;</small><span>21.29%</span></div><em class="compare-label">#23 <b>1.43%</b></em></section>
+            <section><h4>Income Spent <b>#46</b></h4><p>The average driver uses 1,595.76 liters a year, which eats up <strong>1.82%</strong> of the typical salary.</p><div class="country-rail rail-income"><i class="us-marker"></i><i class="compare-marker"></i></div><div class="rail-scale"><span>0</span><span>10.2%</span></div><em class="income-label">#4 <b>0.53%</b></em></section><footer>Source: Bloomberg</footer>
+          </div>
+          <textarea></textarea>
+          <details><summary>Show model answer</summary><p><strong>Well-suited:</strong> showing each measure's distribution and locating the United States relative to other countries. <strong>Ill-suited:</strong> finding a named country's value or comparing specific countries over time because most countries are unlabeled and the view is static.</p><p><strong>Problem 1:</strong> thin, crowded, unlabeled marks make countries difficult to find. Add search, tooltips, or a labeled ranked view. <strong>Problem 2:</strong> faded regional colors do little for the main task. Use clearer grouping or neutral marks with color reserved for selections. A third issue is the lack of time; add a time slider, temporal small multiples, or selected-country line charts.</p></details>
+        </section>
+        <div class="quiz-actions"><button type="submit">Check objective answers</button><button class="secondary-button" id="resetExam2017" type="button">Reset exam</button></div>
+        <div class="quiz-result" id="exam2017Result" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <script src="../assets/exam-2019.js"></script>
+</body>
+</html>
