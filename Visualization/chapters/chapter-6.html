@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 6 - Tufte's Design Principles</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a class="active" href="../visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Visualization chapters">
+      <a href="chapter-1.html">Chapter 1</a>
+      <a href="chapter-2.html">Chapter 2</a>
+      <a href="chapter-3.html">Chapter 3</a>
+      <a href="chapter-4.html">Chapter 4</a>
+      <a href="chapter-5.html">Chapter 5</a>
+      <a class="active" href="chapter-6.html">Chapter 6</a>
+    </nav>
+
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 6</p>
+        <h1>Tufte's Design Principles</h1>
+        <p class="subtitle">Designing truthful, clear, and efficient graphics that keep attention on the data.</p>
+      </header>
+
+      <section>
+        <h2>Graphical Excellence</h2>
+        <p>Edward Tufte defines graphical excellence as the well-designed presentation of interesting data. It combines:</p>
+        <ul>
+          <li><strong>Substance:</strong> meaningful data.</li>
+          <li><strong>Statistics:</strong> correct representation.</li>
+          <li><strong>Design:</strong> clear communication.</li>
+        </ul>
+        <div class="formula">Graphical excellence = clarity + precision + efficiency</div>
+        <p>A strong visualization communicates many ideas quickly, with little ink and in limited space.</p>
+      </section>
+
+      <section>
+        <h2>Graphical Integrity</h2>
+        <p>Graphical integrity means telling the truth about the data without exaggerating, hiding, or distorting its message.</p>
+        <div class="task-grid">
+          <span>Where is the baseline?</span>
+          <span>What is the scale?</span>
+          <span>What is the context?</span>
+          <span>Is relevant data missing?</span>
+        </div>
+        <p>Truncated axes, unusual scales, and missing context can make small changes appear dramatic.</p>
+      </section>
+
+      <section>
+        <h2>Show the Data in Context</h2>
+        <p>A point or trend should not be isolated when its surrounding context changes its meaning. A short time interval can exaggerate a change that appears ordinary within a longer historical view.</p>
+        <div class="formula">data without context &rarr; possibly misleading interpretation</div>
+      </section>
+
+      <section>
+        <h2>Size Coding</h2>
+        <p>One-dimensional values should not be carelessly encoded with area or volume. If a value doubles, its visual effect should also double rather than grow disproportionately.</p>
+        <div class="formula">height or width &ne; area or volume</div>
+      </section>
+
+      <section>
+        <h2>Lie Factor</h2>
+        <p>The <strong>lie factor</strong> measures graphical distortion:</p>
+        <div class="ratio-card">
+          <strong>Lie Factor</strong>
+          <span>size of effect shown in graphic</span>
+          <i></i>
+          <span>size of effect shown in data</span>
+        </div>
+        <p>A value close to 1 indicates fidelity. A much larger or smaller value indicates a misleading visual effect.</p>
+      </section>
+
+      <section>
+        <h2>Design Aesthetics</h2>
+        <p>Good design is not decoration. Its purpose is to make the data easier to understand by removing unnecessary ink and ensuring that each remaining element is useful.</p>
+      </section>
+
+      <section>
+        <h2>Data-Ink Ratio</h2>
+        <p>The <strong>data-ink ratio</strong> measures the proportion of graphic ink that communicates data.</p>
+        <div class="ratio-card">
+          <strong>Data-Ink Ratio</strong>
+          <span>data ink</span>
+          <i></i>
+          <span>total ink used in graphic</span>
+        </div>
+        <blockquote class="definition">Maximize the data-ink ratio.</blockquote>
+        <ul>
+          <li>Erase non-data ink.</li>
+          <li>Erase redundant data ink.</li>
+          <li>Keep what helps explain the data.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Above All Else, Show the Data</h2>
+        <blockquote class="definition">Above all else, show the data.</blockquote>
+        <p>The viewer should focus on the substance rather than decorative effects, unnecessary styling, or the technology used to produce the chart.</p>
+      </section>
+
+      <section>
+        <h2>Data Density</h2>
+        <p>Data density measures how much information is shown within a given graphic area.</p>
+        <div class="ratio-card">
+          <strong>Data Density</strong>
+          <span>number of data entries</span>
+          <i></i>
+          <span>area of data graphic</span>
+        </div>
+        <p>Density should be maximized only while the visualization remains readable.</p>
+      </section>
+
+      <section>
+        <h2>Chartjunk</h2>
+        <p><strong>Chartjunk</strong> consists of decorative elements that do not communicate data: unnecessary pictures, 3D effects, heavy backgrounds, excessive patterns, or distracting ornament.</p>
+        <div class="formula">chartjunk &rarr; less clarity</div>
+      </section>
+
+      <section>
+        <h2>Multifunctioning Graphical Elements</h2>
+        <p>A useful element can perform several jobsâ€”for example, simultaneously encoding position, category, and quantity.</p>
+        <div class="comparison-grid">
+          <div><strong>Macro reading</strong><span>See the global structure and overall pattern.</span></div>
+          <div><strong>Micro reading</strong><span>Inspect local values and fine details.</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Small Multiples</h2>
+        <p>Small multiples repeat the same chart structure and scale with different data, making comparison easier.</p>
+        <div class="formula">same design + different data &rarr; easy comparison</div>
+        <p>They work especially well for time, categories, and related experimental conditions.</p>
+      </section>
+
+      <section>
+        <h2>Show Mechanism, Process, Dynamics, and Causality</h2>
+        <p>A strong visualization should help explain how something worksâ€”not merely what its values are.</p>
+        <div class="task-grid">
+          <span>Mechanism</span>
+          <span>Process</span>
+          <span>Dynamics</span>
+          <span>Cause and effect</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Escape Flatland</h2>
+        <p>Escaping flatland means representing multidimensional information on a flat page or screen without creating confusion.</p>
+        <ul>
+          <li>Small multiples</li>
+          <li>Layering</li>
+          <li>Color</li>
+          <li>Annotation</li>
+          <li>Maps and time sequences</li>
+          <li>Combined text and graphics</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Layering and Separation</h2>
+        <p>Layering organizes types of information, while separation makes those layers visually distinct. Poor overlap creates visual noise.</p>
+        <div class="formula">1 + 1 = 3 or more</div>
+        <p>The expression describes unwanted perceptual effects created when visual elements interfere with one another.</p>
+      </section>
+
+      <section>
+        <h2>Narratives of Space and Time</h2>
+        <p>Graphics can guide viewers through sequences, movements, processes, and historical developments when the data has temporal or spatial structure.</p>
+      </section>
+
+      <section>
+        <h2>Content is King</h2>
+        <p>Beautiful design cannot rescue weak or meaningless data. Design must support the content rather than replace it.</p>
+        <div class="formula">good design &ne; substitute for good content</div>
+      </section>
+
+      <section>
+        <h2>Use of Color</h2>
+        <blockquote class="definition">Above all, do no harm.</blockquote>
+        <p>Color can label categories, measure quantities, represent reality, or add appropriate visual interestâ€”but it should never make the data harder to read.</p>
+      </section>
+
+      <section>
+        <h2>Good Graphical Displays</h2>
+        <ul>
+          <li>Show the data and emphasize its substance.</li>
+          <li>Avoid distortion.</li>
+          <li>Present many numbers in a small space.</li>
+          <li>Make large datasets coherent.</li>
+          <li>Encourage comparison.</li>
+          <li>Combine words, numbers, and drawings.</li>
+          <li>Avoid content-free decoration.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Information Overload</h2>
+        <blockquote class="definition">Clutter and confusion are failures of design, not attributes of information.</blockquote>
+        <p>A visualization can contain substantial information if that information is organized clearly.</p>
+      </section>
+
+      <section class="takeaway">
+        <h2>Chapter Takeaway</h2>
+        <p>Tufte's principles prioritize truth, clarity, and efficiency. Show data honestly, preserve context, remove useless decoration, support comparison, and make every design decision serve the content.</p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

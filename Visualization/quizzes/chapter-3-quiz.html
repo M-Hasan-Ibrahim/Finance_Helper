@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 3 Quiz - Tasks and Interaction</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a href="../visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Chapter 3 pages">
+      <a href="../chapters/chapter-3.html">Chapter 3 Summary</a>
+      <a class="active" href="chapter-3-quiz.html">Chapter 3 Quiz</a>
+    </nav>
+
+    <form class="article quiz-form" id="chapter3Quiz">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 3</p>
+        <h1>Tasks and Interaction Quiz</h1>
+        <p class="subtitle">Answer four multiple-choice questions and arrange Shneiderman's Mantra.</p>
+      </header>
+
+      <fieldset class="quiz-question" data-question="q1">
+        <legend><span>1</span> The Pirolli &amp; Card model of sensemaking describes _____.</legend>
+        <label><input type="radio" name="q1" value="a" /> a linear process of transforming raw data into tables, visual mappings, and visualizations</label>
+        <label><input type="radio" name="q1" value="b" /> a collection of loops around data foraging, interpretation, and presentation</label>
+        <label><input type="radio" name="q1" value="c" /> a fixed sequence from data to shoebox, evidence file, schemas, hypotheses, and presentations</label>
+        <label><input type="radio" name="q1" value="d" /> only how data workers manage uncertainty and alternatives</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q2">
+        <legend><span>2</span> Understanding a user's analytic tasks is useful for _____.</legend>
+        <label><input type="radio" name="q2" value="a" /> choosing between chart types</label>
+        <label><input type="radio" name="q2" value="b" /> evaluating visualization toolkits</label>
+        <label><input type="radio" name="q2" value="c" /> choosing between mouse, pen, and touch</label>
+        <label><input type="radio" name="q2" value="d" /> understanding the questions a visualization should help answer</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q3">
+        <legend><span>3</span> Which is a fundamental challenge when visualizing Big Data?</legend>
+        <label><input type="radio" name="q3" value="a" /> Network connections are too slow</label>
+        <label><input type="radio" name="q3" value="b" /> Human cognitive and perceptual capabilities are limited</label>
+        <label><input type="radio" name="q3" value="c" /> RAM and fast processors are expensive</label>
+        <label><input type="radio" name="q3" value="d" /> It is hard to know which data is pertinent</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question ordering-question" data-question="q4">
+        <legend><span>4</span> Arrange the three phases of Shneiderman's Mantra.</legend>
+        <p class="quiz-hint">Drag the items into order, or use the arrow buttons.</p>
+        <ol class="ordering-list" id="mantraOrder" aria-label="Shneiderman's Mantra order"></ol>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q5">
+        <legend><span>5</span> Which interaction type was seen in class?</legend>
+        <label><input type="radio" name="q5" value="a" /> Join</label>
+        <label><input type="radio" name="q5" value="b" /> Load</label>
+        <label><input type="radio" name="q5" value="c" /> Click</label>
+        <label><input type="radio" name="q5" value="d" /> Select</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <div class="quiz-actions">
+        <button type="submit">Check answers</button>
+        <button class="secondary-button" id="resetQuiz" type="button">Try again</button>
+      </div>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <script src="../assets/chapter-3-quiz.js"></script>
+</body>
+</html>

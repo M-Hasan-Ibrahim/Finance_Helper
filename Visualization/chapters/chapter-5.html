@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 5 - Graphs and Trees</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a class="active" href="../visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Visualization chapters">
+      <a href="chapter-1.html">Chapter 1</a>
+      <a href="chapter-2.html">Chapter 2</a>
+      <a href="chapter-3.html">Chapter 3</a>
+      <a href="chapter-4.html">Chapter 4</a>
+      <a class="active" href="chapter-5.html">Chapter 5</a>
+      <a href="chapter-6.html">Chapter 6</a>
+    </nav>
+
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 5</p>
+        <h1>Graphs and Trees</h1>
+        <p class="subtitle">Visualizing relationships, networks, and hierarchical structures while balancing readability and scale.</p>
+      </header>
+
+      <section>
+        <h2>Critiquing a Visualization</h2>
+        <p>A visualization should do more than look attractive. A useful critique considers:</p>
+        <ul>
+          <li><strong>Chart integrity:</strong> does it represent the data faithfully?</li>
+          <li><strong>Users and tasks:</strong> who is it for, and which questions should it answer?</li>
+          <li><strong>Visual design:</strong> are perception, color, layout, and encodings used effectively?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What is a Graph?</h2>
+        <p>A graph is an abstract mathematical object made of <strong>vertices</strong>, also called nodes, and <strong>edges</strong>, also called links.</p>
+        <div class="formula">Graph = vertices + edges</div>
+        <p>Nodes can represent people, cities, websites, or stations. Edges can represent friendships, roads, hyperlinks, or transport lines.</p>
+      </section>
+
+      <section>
+        <h2>Ways to Represent a Graph</h2>
+        <div class="comparison-grid">
+          <div><strong>Adjacency matrix</strong><span>A table whose cells indicate connections between node pairs.</span></div>
+          <div><strong>Adjacency list</strong><span>A list containing the neighbors of each node.</span></div>
+          <div><strong>Node-link diagram</strong><span>A visual drawing of nodes as marks and edges as lines.</span></div>
+        </div>
+        <p>The mathematical graph remains abstract; visualization gives it a concrete visual form.</p>
+      </section>
+
+      <section>
+        <h2>Types and Properties of Graphs</h2>
+        <ul>
+          <li><strong>Directed:</strong> edges have a direction.</li>
+          <li><strong>Undirected:</strong> edges have no direction.</li>
+          <li><strong>Cycles:</strong> paths return to their starting node.</li>
+          <li><strong>Degree:</strong> the number of edges connected to a node.</li>
+          <li><strong>Weights:</strong> numerical values attached to edges.</li>
+        </ul>
+        <p>A road network may be undirected, while a citation network is directed.</p>
+      </section>
+
+      <section>
+        <h2>What Can Be Modeled as a Graph?</h2>
+        <div class="task-grid">
+          <span>Social networks</span>
+          <span>Train and metro networks</span>
+          <span>Telephone systems</span>
+          <span>The World Wide Web</span>
+          <span>Software call graphs</span>
+          <span>Distribution networks</span>
+          <span>Semantic maps</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Graph Drawing</h2>
+        <p>Graph drawing determines where nodes are placed and how edges are routed. Good layouts aim to:</p>
+        <ul>
+          <li>minimize edge crossings and total edge length,</li>
+          <li>avoid extremely long edges,</li>
+          <li>keep edge lengths reasonably uniform,</li>
+          <li>minimize bends,</li>
+          <li>use available space efficiently,</li>
+          <li>preserve overall readability.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Graph Layout Problems</h2>
+        <p>Large graphs can become a <strong>ball of string</strong>, with overlapping nodes and edges. Small data changes may also cause large layout changes, disrupting users' spatial memory.</p>
+      </section>
+
+      <section>
+        <h2>Types of Node-Link Drawings</h2>
+        <ul>
+          <li><strong>Straight-line:</strong> edges are simple straight segments.</li>
+          <li><strong>Polyline:</strong> edges contain several line segments.</li>
+          <li><strong>Orthogonal:</strong> edges use horizontal and vertical segments.</li>
+          <li><strong>Planar:</strong> crossings are avoided whenever possible.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Encoding Node and Edge Properties</h2>
+        <div class="comparison-grid">
+          <div><strong>Nodes</strong><span>Shape, color, size, position, and labels.</span></div>
+          <div><strong>Edges</strong><span>Thickness, color, labels, direction, form, and curvature.</span></div>
+        </div>
+        <p>Extra encodings can communicate more information, but too many properties create clutter.</p>
+      </section>
+
+      <section>
+        <h2>Clustering in Graphs</h2>
+        <p>Clustering aggregates highly connected subgraphs to reduce complexity and reveal global structure.</p>
+        <div class="formula">many connected nodes &rarr; one cluster</div>
+        <p>The tradeoff is that aggregation may hide detailed relationships.</p>
+      </section>
+
+      <section>
+        <h2>Graphs with Long Edge Labels</h2>
+        <p>Long relationship labels create layout pressure. Drawing the label as part of the edge keeps it connected to its relationship, but the result must remain legible.</p>
+      </section>
+
+      <section>
+        <h2>Focus and Context</h2>
+        <p>Focus+context techniques enlarge an important region while keeping the surrounding structure visible. A fisheye view, for example, magnifies the focus and compresses its context.</p>
+        <p>Potential problems include curved lines, unreadable labels, unrecognizable symbols, and strong distortion near the focus boundary.</p>
+
+        <h3>SchemeLens</h3>
+        <p>SchemeLens is a topology-aware focus+context technique for large technical diagrams. Its vector-based zooming attempts to preserve orthogonal lines, alignment, and topological relationships.</p>
+      </section>
+
+      <section>
+        <h2>Matrix Views for Graphs</h2>
+        <p>An adjacency matrix places nodes along rows and columns and uses a cell mark to show a connection. Matrix views eliminate edge crossings and work well for dense graphs, although they may be less immediately intuitive than node-link diagrams.</p>
+      </section>
+
+      <section>
+        <h2>What is a Tree?</h2>
+        <p>A tree is a special graph that represents hierarchy. Each child usually has one parent, and the structure has no cycles.</p>
+        <div class="task-grid">
+          <span>Family histories</span>
+          <span>File systems</span>
+          <span>Organization charts</span>
+          <span>Biological classification</span>
+          <span>Class structures</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Tree Visualizations</h2>
+        <p>Node-link trees show parent-child relationships clearly for small hierarchies. As trees grow, limited space and overlapping nodes make them harder to read.</p>
+
+        <h3>3D Tree Visualizations</h3>
+        <div class="comparison-grid">
+          <div><strong>Advantages</strong><span>More layout space, animated transitions, and visual appeal.</span></div>
+          <div><strong>Disadvantages</strong><span>Occlusion, complexity, higher graphics requirements, and less accurate reading.</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Treemaps</h2>
+        <p>A treemap is a space-filling hierarchy visualization. Instead of links, it represents parent-child relationships through containment.</p>
+        <div class="formula">parent rectangle &rarr; contained child rectangles</div>
+        <ul>
+          <li><strong>Area</strong> commonly encodes a quantitative variable.</li>
+          <li><strong>Color</strong> can encode a second variable.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Slice-and-Dice Treemaps</h2>
+        <p>The original treemap algorithm recursively divides rectangles horizontally and vertically.</p>
+        <div class="pipeline">
+          <span>Divide parent rectangle</span><b>&rarr;</b>
+          <span>Assign child rectangles</span><b>&rarr;</b>
+          <span>Repeat recursively</span>
+        </div>
+        <p>It uses space efficiently but can create long, thin rectangles that are difficult to compare.</p>
+      </section>
+
+      <section>
+        <h2>Problems with Treemaps</h2>
+        <ul>
+          <li>Areas are harder to compare than lengths.</li>
+          <li>Long, thin rectangles are difficult to read.</li>
+          <li>Labels may not fit inside small rectangles.</li>
+          <li>Zero values have no visible area.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Treemap Layout Algorithms</h2>
+        <p>Algorithms are compared using aspect ratio, structural stability, and readability.</p>
+        <div class="task-grid">
+          <span>Slice-and-dice</span>
+          <span>Cluster treemaps</span>
+          <span>Squarified treemaps</span>
+          <span>Strip treemaps</span>
+          <span>Pivot-based treemaps</span>
+        </div>
+        <p>Squarified treemaps are often preferred because they reduce extreme rectangle shapes.</p>
+      </section>
+
+      <section>
+        <h2>Map of the Market</h2>
+        <p>The Map of the Market uses nested rectangles to represent stock sectors and companies. It supports:</p>
+        <ul>
+          <li><strong>Macro reading:</strong> understanding the global market structure.</li>
+          <li><strong>Micro reading:</strong> inspecting individual companies.</li>
+          <li><strong>Interaction:</strong> exploring details on demand.</li>
+        </ul>
+      </section>
+
+      <section class="takeaway">
+        <h2>Chapter Takeaway</h2>
+        <p>Graphs visualize relationships, while trees specialize in hierarchies. Node-link diagrams are intuitive but can become cluttered; matrix views, clustering, and focus+context improve scalability. Treemaps use containment and space efficiently, but require careful layout to remain readable.</p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

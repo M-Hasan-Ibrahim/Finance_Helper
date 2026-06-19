@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 4 - Visual Perception</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a class="active" href="../visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Visualization chapters">
+      <a href="chapter-1.html">Chapter 1</a>
+      <a href="chapter-2.html">Chapter 2</a>
+      <a href="chapter-3.html">Chapter 3</a>
+      <a class="active" href="chapter-4.html">Chapter 4</a>
+      <a href="chapter-5.html">Chapter 5</a>
+      <a href="chapter-6.html">Chapter 6</a>
+    </nav>
+
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 4</p>
+        <h1>Visual Perception</h1>
+        <p class="subtitle">How the human visual system affects the speed, accuracy, and clarity of visualization.</p>
+      </header>
+
+      <section>
+        <h2>Why Perception Matters</h2>
+        <p>Users do not read every visual element one at a time. The visual system detects some properties faster and more accurately than others, so visualization design should match human perceptual strengths.</p>
+        <ul>
+          <li><strong>Psychophysics:</strong> studies how humans perceive physical stimuli.</li>
+          <li><strong>Cognitive psychology:</strong> studies thought, memory, and interpretation.</li>
+          <li><strong>Semiotics:</strong> studies symbols and how they communicate meaning.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Two-Stage Model of Visual Processing</h2>
+        <div class="pipeline">
+          <span>Stage 1: Parallel low-level processing</span>
+          <b>&rarr;</b>
+          <span>Stage 2: Sequential goal-directed processing</span>
+        </div>
+
+        <h3>Stage 1: Low-Level Parallel Processing</h3>
+        <p>This stage is fast and automatic. It detects color, texture, shape, motion, orientation, and spatial position in parallel, making visual <strong>pop-out</strong> possible.</p>
+
+        <h3>Stage 2: Sequential Goal-Directed Processing</h3>
+        <p>This slower, attention-dependent stage handles object recognition, memory, interpretation, symbolic reasoning, and action planning.</p>
+      </section>
+
+      <section>
+        <h2>Pre-attentive Processing and Pop-Out</h2>
+        <p>Pre-attentive features are detected almost immediately without focused attention, often in less time than a single eye movement.</p>
+        <div class="formula">200 to 250 ms</div>
+        <p>Common pop-out features include hue, size, length, width, curvature, orientation, motion, intensity, closure, and depth cues.</p>
+      </section>
+
+      <section>
+        <h2>Visual Search Tasks</h2>
+        <ul>
+          <li><strong>Target detection:</strong> determine whether an item is present.</li>
+          <li><strong>Boundary detection:</strong> determine whether elements form groups.</li>
+          <li><strong>Counting:</strong> count elements of a particular type.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Hue, Shape, and Conjunction Search</h2>
+        <p>A single feature such as hue or shape can often be detected pre-attentively. A red circle among blue circles or a square among circles is easy to find.</p>
+        <p>A target defined by both hue and shape requires a <strong>conjunction search</strong>. Finding a red circle among red squares and blue circles is slower because attention must examine combinations of features.</p>
+        <div class="comparison-grid">
+          <div><strong>Single feature</strong><span>Fast search</span></div>
+          <div><strong>Combined features</strong><span>Slower search</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Guided Search Principles</h2>
+        <ul>
+          <li><strong>Set size:</strong> more distractors generally increase search time.</li>
+          <li><strong>Presence:</strong> an absent target usually takes longer to confirm.</li>
+          <li><strong>Target similarity:</strong> a more distinctive target is easier to find.</li>
+          <li><strong>Distractor heterogeneity:</strong> varied distractors make search harder.</li>
+          <li><strong>Flanking:</strong> nearby distractors can slow search.</li>
+          <li><strong>Asymmetry:</strong> searching for A among B may differ from searching for B among A.</li>
+          <li><strong>Guidance:</strong> visual cues can direct attention.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Change Blindness and Attention</h2>
+        <p><strong>Change blindness</strong> occurs when viewers fail to notice a change because attention is limited. Even large changes can be missed when attention is directed elsewhere.</p>
+        <ul>
+          <li><strong>Attentional blink:</strong> missing a second target shortly after seeing the first.</li>
+          <li><strong>Selective attention:</strong> focusing on one task hides other visible events.</li>
+          <li><strong>Optical illusions:</strong> perceived reality differs from physical reality.</li>
+        </ul>
+        <p>Designers should never assume that users will automatically notice every visual change.</p>
+      </section>
+
+      <section>
+        <h2>Visualization Components</h2>
+        <ul>
+          <li><strong>Space:</strong> where data is placed.</li>
+          <li><strong>Marks:</strong> visible objects representing data.</li>
+          <li><strong>Implantation:</strong> how marks are placed in space.</li>
+          <li><strong>Visual variables:</strong> properties used to encode data.</li>
+        </ul>
+        <p>The main mark types are points, lines, and areas.</p>
+      </section>
+
+      <section>
+        <h2>Visual Variables</h2>
+        <p>Position, color, length, area, angle, size, shape, brightness, and texture are all visual variables. Their selection determines how accurately users can read the encoded data.</p>
+      </section>
+
+      <section>
+        <h2>Luminance and Brightness</h2>
+        <ul>
+          <li><strong>Luminance:</strong> the physical amount of light coming from a surface.</li>
+          <li><strong>Brightness:</strong> the amount of light a person perceives.</li>
+        </ul>
+        <p>Brightness is not a linear function of luminance. Foreground and background colors therefore need strong luminance contrast for text and marks to remain readable.</p>
+      </section>
+
+      <section>
+        <h2>Greyscale</h2>
+        <p>Greyscale can encode ordered data, but contrast depends heavily on context, surface orientation, and background. It becomes unreliable when too many levels must be distinguished.</p>
+        <div class="formula">Approximately 10 distinguishable shades</div>
+      </section>
+
+      <section>
+        <h2>Visual Operations</h2>
+        <ul>
+          <li><strong>Selective:</strong> can targets be selected using the attribute?</li>
+          <li><strong>Associative:</strong> can targets be grouped using the attribute?</li>
+          <li><strong>Quantitative:</strong> can a numerical value be read from it?</li>
+          <li><strong>Orderable:</strong> is an ordering perceptible?</li>
+          <li><strong>Discriminability:</strong> how many distinct levels can be distinguished?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Color</h2>
+        <p>The HSV model describes color through three components:</p>
+        <ul>
+          <li><strong>Hue:</strong> what people normally call color.</li>
+          <li><strong>Saturation:</strong> intensity from gray to pure color.</li>
+          <li><strong>Value:</strong> lightness or darkness.</li>
+        </ul>
+
+        <h3>Color for Categories</h3>
+        <p>Categorical color should be limited to a manageable number of clearly different colors.</p>
+        <div class="formula">&le; 12 distinct colors</div>
+
+        <h3>Color for Ordered Data</h3>
+        <p>Ordered values require a perceptually ordered scale. Suitable choices include greyscale, single-hue sequential scales, multi-hue sequential scales, and diverging scales.</p>
+
+        <h3>The Rainbow Scale Problem</h3>
+        <p>Rainbow color maps create artificial bands and sharp transitions that can look like real patterns.</p>
+        <div class="formula">rainbow scale &rarr; false visual boundaries</div>
+      </section>
+
+      <section>
+        <h2>Color Design Rules</h2>
+        <ul>
+          <li>Maintain high luminance contrast between foreground and background.</li>
+          <li>Use only a few distinct colors.</li>
+          <li>Prefer red, green, yellow, and blue first for categorical distinctions.</li>
+          <li>Use muted colors for large areas.</li>
+          <li>Check that the design remains understandable for color-blind users.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Accuracy of Visual Variables</h2>
+        <p>People judge some visual encodings more accurately than others:</p>
+        <div class="formula">position and length &gt; area &gt; volume</div>
+        <p>Length is estimated relatively well, while area and volume are often underestimated. This is why bar charts are generally easier to read accurately than bubble charts or 3D volume charts.</p>
+      </section>
+
+      <section>
+        <h2>Combining Visual Variables</h2>
+        <p><strong>Separable</strong> variables can be read independently, while <strong>integral</strong> variables interfere with one another and are perceived together.</p>
+        <div class="comparison-grid">
+          <div><strong>Separable</strong><span>Position and color</span></div>
+          <div><strong>More integral</strong><span>Width and height, or combined color dimensions</span></div>
+        </div>
+      </section>
+
+      <section class="takeaway">
+        <h2>Chapter Takeaway</h2>
+        <p>Visual properties are not equally effective. Good visualization design uses perceptual strengths, avoids misleading encodings, limits unnecessary complexity, and chooses visual variables that match both the data and the user's task.</p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

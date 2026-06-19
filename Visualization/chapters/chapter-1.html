@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 1 - Introduction to Information Visualization</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a class="active" href="../visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Visualization chapters">
+      <a class="active" href="chapter-1.html">Chapter 1</a>
+      <a href="chapter-2.html">Chapter 2</a>
+      <a href="chapter-3.html">Chapter 3</a>
+      <a href="chapter-4.html">Chapter 4</a>
+      <a href="chapter-5.html">Chapter 5</a>
+      <a href="chapter-6.html">Chapter 6</a>
+    </nav>
+
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 1</p>
+        <h1>Introduction to Information Visualization</h1>
+        <p class="subtitle">How visual representations transform raw data into insight, understanding, and better decisions.</p>
+      </header>
+
+      <section>
+        <h2>What is Information Visualization?</h2>
+        <p>Information Visualization is the use of visual representations of data to help people understand, analyze, and communicate information. Its goal is not simply to create images, but to produce <strong>insight</strong> through discovery, decision-making, and explanation.</p>
+      </section>
+
+      <section>
+        <h2>Why Visualization is Needed</h2>
+        <p>Modern society produces massive amounts of data from the internet, finance, weather, sensors, logs, images, videos, and many other sources. This creates <strong>data overload</strong>: people have access to more data than they can easily understand.</p>
+        <p>The challenge is to transform raw data into useful information. Visualization makes patterns, trends, relationships, and outliers easier to identify.</p>
+      </section>
+
+      <section>
+        <h2>Why Use Human Vision?</h2>
+        <p>Human vision is the highest-bandwidth sense. It is fast, parallel, and highly effective at pattern recognition. Visual displays also extend memory and cognitive capacity by placing information outside the mind, where it can be inspected and compared.</p>
+        <p>A well-designed visualization can therefore reveal relationships much faster than tables of numbers alone.</p>
+      </section>
+
+      <section>
+        <h2>Example: Anscombe's Quartet</h2>
+        <p>Anscombe's Quartet demonstrates that datasets can share the same statistical propertiesÃ¢â‚¬â€including mean, variance, correlation, and regression lineÃ¢â‚¬â€while having very different visual patterns. Summary statistics alone can therefore hide important structures.</p>
+        <div class="formula">Same statistics &ne; same data pattern</div>
+        <p>Visualization matters because it can reveal structures that numerical summaries miss.</p>
+      </section>
+
+      <section>
+        <h2>Main Definition</h2>
+        <blockquote class="definition">The use of computer-supported, interactive visual representations of data to amplify cognition.</blockquote>
+        <p>In other words, visualization uses interactive visual tools to help people think more effectively.</p>
+      </section>
+
+      <section>
+        <h2>Three Related Subfields</h2>
+        <ul>
+          <li><strong>Scientific Visualization:</strong> visualizes physical or geometric phenomena, such as airflow, clouds, or stress on a structure.</li>
+          <li><strong>Information Visualization:</strong> visualizes abstract data without a direct physical shape, such as tables, networks, or statistics.</li>
+          <li><strong>Visual Analytics:</strong> combines visualization with data mining while keeping the human in control of the analysis.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Key Attributes of Visualization</h2>
+        <ul>
+          <li><strong>Scale:</strong> visualization often needs to handle very large datasets.</li>
+          <li><strong>Interactivity:</strong> users need to explore data from multiple perspectives.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>The InfoVis Pipeline</h2>
+        <p>The visualization process transforms raw data into a useful view for a particular task.</p>
+        <div class="pipeline">
+          <span>Source Data</span><b>&rarr;</b>
+          <span>Data Tables</span><b>&rarr;</b>
+          <span>Visual Abstraction</span><b>&rarr;</b>
+          <span>Views</span><b>&rarr;</b>
+          <span>Task</span>
+        </div>
+        <p>Raw data is structured, mapped to visual elements, and then used by a person to perform a task.</p>
+      </section>
+
+      <section>
+        <h2>Data Tables</h2>
+        <ul>
+          <li>Rows represent <strong>cases</strong> or individual items.</li>
+          <li>Columns represent <strong>variables</strong> or attributes.</li>
+          <li>Cells contain the value of a variable for a particular case.</li>
+        </ul>
+        <div class="formula">f(case<sub>i</sub>) = &lang;value<sub>i,1</sub>, value<sub>i,2</sub>, &hellip;, value<sub>i,n</sub>&rang;</div>
+      </section>
+
+      <section>
+        <h2>Variable Types</h2>
+        <ul>
+          <li><strong>Nominal:</strong> categories with no inherent order, such as gender or color.</li>
+          <li><strong>Ordinal:</strong> ordered categories, such as rank or school year.</li>
+          <li><strong>Quantitative:</strong> numerical values for which mathematical operations are meaningful, such as age, salary, or temperature.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Metadata</h2>
+        <p>Metadata is descriptive information that explains how data should be interpreted. It can identify a variable's type, the date of collection, units, or logical constraints.</p>
+        <div class="formula">number of home runs &le; number of at-bats</div>
+        <p>Metadata matters because a data table alone is often insufficient to explain the data's meaning.</p>
+      </section>
+
+      <section class="takeaway">
+        <h2>Chapter Takeaway</h2>
+        <p>Information Visualization transforms large and complex data into visual forms that support understanding. It combines human vision, external memory, and interaction to help users discover patterns, compare information, detect outliers, and make better decisions.</p>
+      </section>
+
+      <section class="quiz-cta">
+        <div>
+          <p class="eyebrow">Test your knowledge</p>
+          <h2>Ready for the Chapter 1 quiz?</h2>
+          <p>Answer five questions and receive instant feedback on your results.</p>
+        </div>
+        <a href="../quizzes/chapter-1-quiz.html">Take the quiz &rarr;</a>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

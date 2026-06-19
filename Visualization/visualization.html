@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information Visualization</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../index.html">All courses</a>
+      <a class="active" href="visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="section-tabs" role="tablist" aria-label="Visualization sections">
+      <button class="section-tab active" type="button" role="tab" aria-selected="true" aria-controls="coursesPanel" data-section-tab="coursesPanel">Courses</button>
+      <button class="section-tab" type="button" role="tab" aria-selected="false" aria-controls="examsPanel" data-section-tab="examsPanel">Exams</button>
+    </nav>
+
+    <section class="section-panel" id="coursesPanel" role="tabpanel">
+      <header class="course-heading">
+        <p class="eyebrow">Course summaries</p>
+        <h1>Information Visualization</h1>
+        <p class="subtitle">Chapter summaries, key definitions, and concepts for revision.</p>
+      </header>
+
+      <div class="chapter-grid" aria-label="Visualization chapters">
+        <a class="chapter-card" href="chapters/chapter-1.html">
+          <span class="chapter-number">Chapter 1</span>
+          <h2>Introduction to Information Visualization</h2>
+          <p>Why visualization matters, the InfoVis pipeline, data tables, variable types, and metadata.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
+        <a class="chapter-card" href="chapters/chapter-2.html">
+          <span class="chapter-number">Chapter 2</span>
+          <h2>Visual Mappings</h2>
+          <p>Spatial substrates, marks, graphical properties, visualization types, dimensionality, and parallel coordinates.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
+        <a class="chapter-card" href="chapters/chapter-3.html">
+          <span class="chapter-number">Chapter 3</span>
+          <h2>Tasks and Interaction</h2>
+          <p>Analytic tasks, sensemaking, interaction techniques, dynamic queries, response time, and big-data aggregation.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
+        <a class="chapter-card" href="chapters/chapter-4.html">
+          <span class="chapter-number">Chapter 4</span>
+          <h2>Visual Perception</h2>
+          <p>Pre-attentive processing, visual search, attention, color, luminance, and perceptual accuracy.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
+        <a class="chapter-card" href="chapters/chapter-5.html">
+          <span class="chapter-number">Chapter 5</span>
+          <h2>Graphs and Trees</h2>
+          <p>Networks, graph layouts, focus+context, matrix views, hierarchies, and treemap algorithms.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
+        <a class="chapter-card" href="chapters/chapter-6.html">
+          <span class="chapter-number">Chapter 6</span>
+          <h2>Tufte's Design Principles</h2>
+          <p>Graphical integrity, lie factor, data-ink ratio, chartjunk, small multiples, and information density.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section-panel empty-panel" id="examsPanel" role="tabpanel" hidden>
+      <h1>Exams</h1>
+      <p>Exam materials will be added here later.</p>
+      <span>Coming soon</span>
+    </section>
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

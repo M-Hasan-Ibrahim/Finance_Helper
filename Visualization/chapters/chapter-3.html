@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 3 - Tasks and Interaction</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a class="active" href="../visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Visualization chapters">
+      <a href="chapter-1.html">Chapter 1</a>
+      <a href="chapter-2.html">Chapter 2</a>
+      <a class="active" href="chapter-3.html">Chapter 3</a>
+      <a href="chapter-4.html">Chapter 4</a>
+      <a href="chapter-5.html">Chapter 5</a>
+      <a href="chapter-6.html">Chapter 6</a>
+    </nav>
+
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 3</p>
+        <h1>Tasks and Interaction</h1>
+        <p class="subtitle">How visualization helps users analyze data, make sense of information, and interact with complex datasets.</p>
+      </header>
+
+      <section>
+        <h2>From Data to Task</h2>
+        <p>A visualization is not only about showing data. It must help users perform tasks such as finding values, filtering, comparing, detecting anomalies, and discovering patterns.</p>
+        <div class="pipeline">
+          <span>Source Data</span><b>&rarr;</b>
+          <span>Data Tables</span><b>&rarr;</b>
+          <span>Visual Abstraction</span><b>&rarr;</b>
+          <span>Views</span><b>&rarr;</b>
+          <span>Task</span>
+        </div>
+        <p>The first stages explain how data becomes a visual display. The final stage describes what the user wants to accomplish with it.</p>
+      </section>
+
+      <section>
+        <h2>Sensemaking</h2>
+        <p>Sensemaking is the process through which people understand data, manage uncertainty, build interpretations, and make decisions. It is iterative rather than linear: users move between collecting data, organizing information, finding evidence, creating hypotheses, and presenting results.</p>
+        <p>Visualization supports this process by making patterns visible, helping users compare alternatives, and allowing them to refine their understanding step by step.</p>
+      </section>
+
+      <section>
+        <h2>Low-Level Analytic Tasks</h2>
+
+        <h3>Retrieve Value</h3>
+        <p>Find the attributes of a particular data caseÃ¢â‚¬â€for example, selecting a country to see its income, population, or education level.</p>
+        <div class="formula">Given a case &rarr; find its values</div>
+
+        <h3>Filter</h3>
+        <p>Show only cases that satisfy selected conditions, such as houses within a price range and with a minimum number of rooms.</p>
+        <div class="formula">Show cases where condition = true</div>
+
+        <h3>Compute Derived Value</h3>
+        <p>Calculate an aggregate or new value from existing data.</p>
+        <div class="formula">average &nbsp;&middot;&nbsp; sum &nbsp;&middot;&nbsp; percentage &nbsp;&middot;&nbsp; difference</div>
+
+        <h3>Find Extremum</h3>
+        <p>Find the cases with the minimum or maximum value for an attribute.</p>
+        <div class="formula">min(x), &nbsp; max(x)</div>
+
+        <h3>Sort</h3>
+        <p>Rank cases according to an ordered metric so high and low values are easier to compare.</p>
+        <div class="formula">x<sub>1</sub> &le; x<sub>2</sub> &le; x<sub>3</sub> &le; &hellip;</div>
+
+        <h3>Determine Range</h3>
+        <p>Identify the span of values in a set of cases.</p>
+        <div class="formula">range = x<sub>max</sub> &minus; x<sub>min</sub></div>
+
+        <h3>Characterize Distribution</h3>
+        <p>Understand common and rare values, concentration, spread, skewness, and the overall shape of a distribution. Histograms, density plots, and box plots commonly support this task.</p>
+
+        <h3>Find Anomalies</h3>
+        <p>Identify values that differ strongly from the expected pattern, such as outliers, strange peaks, unexpected drops, or unusual relationships.</p>
+        <div class="formula">anomaly = case that differs strongly from expectation</div>
+
+        <h3>Cluster</h3>
+        <p>Discover groups of similar cases, categories, or patterns in the data.</p>
+        <div class="formula">similar cases &rarr; same cluster</div>
+
+        <h3>Correlate</h3>
+        <p>Determine whether two attributes are related. Scatterplots are commonly used to reveal positive or negative relationships.</p>
+        <div class="formula">x &uarr; &rArr; y &uarr; &nbsp;&nbsp; or &nbsp;&nbsp; x &uarr; &rArr; y &darr;</div>
+      </section>
+
+      <section>
+        <h2>Summary of Analytic Tasks</h2>
+        <div class="task-grid">
+          <span>Retrieve value</span>
+          <span>Filter</span>
+          <span>Compute derived value</span>
+          <span>Find extremum</span>
+          <span>Sort</span>
+          <span>Determine range</span>
+          <span>Characterize distribution</span>
+          <span>Find anomalies</span>
+          <span>Cluster</span>
+          <span>Correlate</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Interaction in Visualization</h2>
+        <p>Interaction allows users to change what they see and how they see it. This becomes particularly important for large or complex datasets that cannot be understood through a single static view.</p>
+
+        <h3>Select</h3>
+        <p>Mark an item as interesting, such as clicking a point in a scatterplot to highlight it.</p>
+
+        <h3>Explore</h3>
+        <p>Navigate through the data to reveal other elements or regions.</p>
+
+        <h3>Reconfigure</h3>
+        <p>Change the arrangement by reordering axes, sorting bars differently, or reorganizing the layout.</p>
+
+        <h3>Encode</h3>
+        <p>Change the visual representation, such as switching chart types or assigning a different variable to color.</p>
+
+        <h3>Abstract or Elaborate</h3>
+        <p>Show less or more detail. Zooming out provides a summary, while zooming in exposes individual cases.</p>
+        <div class="formula">abstract = less detail &nbsp;&nbsp;&middot;&nbsp;&nbsp; elaborate = more detail</div>
+
+        <h3>Filter</h3>
+        <p>Use controls such as sliders or checkboxes to display data conditionally.</p>
+
+        <h3>Connect</h3>
+        <p>Reveal related items, such as highlighting the neighboring nodes connected to a selected network node.</p>
+      </section>
+
+      <section>
+        <h2>Shneiderman's Mantra</h2>
+        <blockquote class="definition">Overview first, zoom and filter, details on demand.</blockquote>
+        <ol>
+          <li><strong>Overview first:</strong> present the global structure of the data.</li>
+          <li><strong>Zoom and filter:</strong> let users focus on the relevant portion.</li>
+          <li><strong>Details on demand:</strong> reveal exact information only when requested.</li>
+        </ol>
+        <p>This avoids overwhelming users with details at the beginning of an analysis.</p>
+      </section>
+
+      <section>
+        <h2>Dynamic Queries</h2>
+        <p>Dynamic queries let users filter data interactively and see the result immediately. Rather than writing a database query, a person can move sliders and instantly see which cases match.</p>
+        <div class="formula">200,000 &le; price &le; 400,000</div>
+        <p>This makes filtering faster, more visual, and easier to understand.</p>
+      </section>
+
+      <section>
+        <h2>Response Time</h2>
+        <p>Interaction must be fast enough to preserve the user's thinking process.</p>
+        <div class="response-grid">
+          <div><strong>0.1 s</strong><span>Feels instantaneous and preserves visual continuity.</span></div>
+          <div><strong>1 s</strong><span>The delay is noticeable, but the interaction still feels connected.</span></div>
+          <div><strong>10 s</strong><span>Focus is lost and the cognitive process is interrupted.</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Dealing with Big Data</h2>
+        <p>Datasets containing millions or billions of records cannot usually be shown directly. A common solution is <strong>aggregation</strong>, which combines many cases into a summary representation.</p>
+        <div class="formula">many cases &rarr; summary representation</div>
+      </section>
+
+      <section>
+        <h2>Case Study: Twitter Log Data</h2>
+        <p>Twitter user-event logs can reach terabytes per day. Instead of visualizing every event, systems summarize behavioral sequences such as:</p>
+        <div class="formula">web:home:mentions:stream:avatar:profile_click</div>
+        <p>The aim is to reveal changes in behavioral patterns over time while preserving interactive performance.</p>
+      </section>
+
+      <section class="takeaway">
+        <h2>Chapter Takeaway</h2>
+        <p>Visualization design should begin with user tasks. Analytic tasks define what users need to discover, while interaction techniques help them move from overview to focused analysis and details. Effective systems must also provide fast feedback and remain interactive at large data scales.</p>
+      </section>
+      <section class="quiz-cta">
+        <div>
+          <p class="eyebrow">Test your knowledge</p>
+          <h2>Ready for the Chapter 3 quiz?</h2>
+          <p>Answer five questions, including a drag-and-drop ordering task.</p>
+        </div>
+        <a href="../quizzes/chapter-3-quiz.html">Take the quiz &rarr;</a>
+      </section>    </article>
+  </main>
+</body>
+</html>

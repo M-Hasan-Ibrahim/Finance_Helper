@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 1 Quiz - Information Visualization</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a href="../visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Chapter 1 pages">
+      <a href="../chapters/chapter-1.html">Chapter 1 Summary</a>
+      <a class="active" href="chapter-1-quiz.html">Chapter 1 Quiz</a>
+    </nav>
+
+    <form class="article quiz-form" id="chapter1Quiz">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 1</p>
+        <h1>Introduction to Information Visualization Quiz</h1>
+        <p class="subtitle">Answer all five questions, then check your score.</p>
+      </header>
+
+      <fieldset class="quiz-question" data-question="q1">
+        <legend><span>1</span> Information Visualization uses computer-supported, interactive visual representations of data to _____.</legend>
+        <label><input type="radio" name="q1" value="a" /> support learning</label>
+        <label><input type="radio" name="q1" value="b" /> reveal the data</label>
+        <label><input type="radio" name="q1" value="c" /> amplify cognition</label>
+        <label><input type="radio" name="q1" value="d" /> build models</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q2">
+        <legend><span>2</span> Information Visualization is primarily about making pictures of data.</legend>
+        <label><input type="radio" name="q2" value="true" /> True</label>
+        <label><input type="radio" name="q2" value="false" /> False</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q3">
+        <legend><span>3</span> When data has a direct spatial mapping into space, we are probably dealing with:</legend>
+        <label><input type="radio" name="q3" value="a" /> Scientific Visualization</label>
+        <label><input type="radio" name="q3" value="b" /> Visual Analytics</label>
+        <label><input type="radio" name="q3" value="c" /> Information Visualization</label>
+        <label><input type="radio" name="q3" value="d" /> Raw data</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question pipeline-question" data-question="q4">
+        <legend><span>4</span> Complete the InfoVis pipeline diagram.</legend>
+        <p class="quiz-hint">Select the correct label for each letter.</p>
+        <div class="infovis-diagram-scroll">
+          <div class="infovis-diagram" aria-label="Information visualization pipeline diagram">
+            <label class="diagram-stage stage-a"><b>A</b><select name="q4a"><option value="">Choose...</option></select></label>
+            <span class="diagram-arrow arrow-ab" aria-hidden="true"></span>
+            <label class="diagram-stage stage-b"><b>B</b><select name="q4b"><option value="">Choose...</option></select></label>
+            <span class="diagram-arrow arrow-bc" aria-hidden="true"></span>
+            <label class="diagram-stage stage-c"><b>C</b><select name="q4c"><option value="">Choose...</option></select></label>
+            <span class="diagram-arrow arrow-cd" aria-hidden="true"></span>
+            <label class="diagram-stage stage-d"><b>D</b><select name="q4d"><option value="">Choose...</option></select></label>
+
+            <div class="diagram-user" aria-label="User">
+              <span class="user-head"></span>
+              <span class="user-body"></span>
+              <small>User</small>
+            </div>
+
+            <span class="feedback-line" aria-hidden="true"></span>
+            <span class="feedback-arrow feedback-e" aria-hidden="true"></span>
+            <span class="feedback-arrow feedback-f" aria-hidden="true"></span>
+            <span class="feedback-arrow feedback-g" aria-hidden="true"></span>
+
+            <label class="diagram-transform transform-e"><b>E</b><select name="q4e"><option value="">Choose...</option></select></label>
+            <label class="diagram-transform transform-f"><b>F</b><select name="q4f"><option value="">Choose...</option></select></label>
+            <label class="diagram-transform transform-g"><b>G</b><select name="q4g"><option value="">Choose...</option></select></label>
+          </div>
+        </div>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="quiz-question" data-question="q5">
+        <legend><span>5</span> Why do we use the visual communication channel in information visualization?</legend>
+        <label><input type="radio" name="q5" value="a" /> Seeing is believing</label>
+        <label><input type="radio" name="q5" value="b" /> It has the highest bandwidth of human senses</label>
+        <label><input type="radio" name="q5" value="c" /> A picture is worth a thousand words</label>
+        <label><input type="radio" name="q5" value="d" /> It is called visualization</label>
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <div class="quiz-actions">
+        <button type="submit">Check answers</button>
+        <button class="secondary-button" id="resetQuiz" type="button">Try again</button>
+      </div>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <script src="../assets/chapter-1-quiz.js"></script>
+</body>
+</html>

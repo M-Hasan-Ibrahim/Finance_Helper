@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 2 - Visual Mappings</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a class="active" href="../visualization.html">Visualization</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Visualization chapters">
+      <a href="chapter-1.html">Chapter 1</a>
+      <a class="active" href="chapter-2.html">Chapter 2</a>
+      <a href="chapter-3.html">Chapter 3</a>
+      <a href="chapter-4.html">Chapter 4</a>
+      <a href="chapter-5.html">Chapter 5</a>
+      <a href="chapter-6.html">Chapter 6</a>
+    </nav>
+
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 2</p>
+        <h1>Visual Mappings</h1>
+        <p class="subtitle">How raw data is transformed into visual forms that people can understand.</p>
+      </header>
+
+      <section>
+        <h2>What is Visual Mapping?</h2>
+        <p>Visual mapping is the process of transforming raw data into a visual form. It answers the central design question: <strong>How do we show the data?</strong></p>
+      </section>
+
+      <section>
+        <h2>The InfoVis Pipeline</h2>
+        <div class="pipeline">
+          <span>Source Data</span><b>&rarr;</b>
+          <span>Data Tables</span><b>&rarr;</b>
+          <span>Visual Abstractions</span><b>&rarr;</b>
+          <span>Views</span>
+        </div>
+        <ul>
+          <li><strong>Source data:</strong> raw data before processing.</li>
+          <li><strong>Data tables:</strong> structured data, usually organized into rows and columns.</li>
+          <li><strong>Visual abstraction:</strong> the mapping of data to visual elements.</li>
+          <li><strong>Views:</strong> the final visual representation shown to the user.</li>
+        </ul>
+        <p>The pipeline explains how a visualization is constructed technically, but does not fully describe how people interpret and make sense of data.</p>
+      </section>
+
+      <section>
+        <h2>Main Components of Visualization</h2>
+        <ul>
+          <li><strong>Spatial substrate:</strong> the space in which the visualization is drawn.</li>
+          <li><strong>Marks:</strong> visual objects such as points, lines, areas, and volumes.</li>
+          <li><strong>Graphical properties:</strong> position, color, shape, size, texture, and orientation.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Spatial Substrate</h2>
+        <p>The spatial substrate is the available visual space. Because screen pixels are limited, designers must use this space efficiently to reveal relationships, comparisons, patterns, and structures.</p>
+      </section>
+
+      <section>
+        <h2>Marks</h2>
+        <p>Marks are the basic objects that communicate information:</p>
+        <ul>
+          <li><strong>Points</strong></li>
+          <li><strong>Lines</strong></li>
+          <li><strong>Areas</strong></li>
+          <li><strong>Volumes</strong></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Graphical Properties</h2>
+        <p>Graphical properties control how marks appear and encode differences in the data. They include position, color, shape, size, texture, and orientation.</p>
+      </section>
+
+      <section>
+        <h2>Basic Types of Visualizations</h2>
+        <h3>1. Data Tables</h3>
+        <p>Tables organize data into rows and columns. Rows usually represent cases, while columns represent variables.</p>
+
+        <h3>2. Graphs on Rails and Planes</h3>
+        <p>Graphs on rails place values along one-dimensional positions or axes. Graphs on planes use both an <em>x</em>-axis and a <em>y</em>-axis, allowing two variables to be compared simultaneously.</p>
+
+        <h3>3. Geospatial Graphs</h3>
+        <p>Geospatial graphs use position to represent meaningful physical space. A major challenge is projecting the round Earth onto a flat surface without excessive distortion.</p>
+
+        <h3>4. Network Diagrams and Graphs</h3>
+        <p>Network diagrams emphasize relationships and connectivity. Exact geographic position may be simplifiedâ€”as in subway mapsâ€”to make connections easier to understand.</p>
+
+        <h3>5. Conceptual Symbols and Text</h3>
+        <p>Symbols and text can form part of a larger visual structure, communicating an idea collectively rather than as isolated elements.</p>
+      </section>
+
+      <section>
+        <h2>Infographics</h2>
+        <p>Infographics combine charts, maps, symbols, text, and diagrams. Their primary purpose is usually clear communication and explanation rather than deep data exploration.</p>
+      </section>
+
+      <section>
+        <h2>Visualizations by Number of Variables</h2>
+        <h3>Univariate Data</h3>
+        <p>Univariate data contains one main variable. Common representations include dot plots, box plots, line plots, and histograms. They reveal distributions, trends, and outliers.</p>
+
+        <h3>Bivariate Data</h3>
+        <p>Bivariate data contains two variables. A scatterplot maps each case to a pair of coordinates:</p>
+        <div class="formula">(x, y)</div>
+        <p>Scatterplots reveal relationships, correlations, clusters, and outliers. For temporal data, time commonly appears on the horizontal axis.</p>
+
+        <h3>Trivariate Data</h3>
+        <p>Trivariate data contains three variables. Instead of a difficult-to-read 3D plot, a 2D layout can encode the third variable with color, size, or shape.</p>
+        <div class="mapping-list">
+          <div><strong>x</strong><span>&rarr;</span> horizontal position</div>
+          <div><strong>y</strong><span>&rarr;</span> vertical position</div>
+          <div><strong>z</strong><span>&rarr;</span> color, size, or shape</div>
+        </div>
+        <p>The data can also be divided into several separate 2D views.</p>
+
+        <h3>Hypervariate Data</h3>
+        <p>Hypervariate data contains many variables and is difficult to represent directly because people perceive only a limited number of spatial dimensions.</p>
+        <ul>
+          <li><strong>Multiple views:</strong> separate displays for different dimensions.</li>
+          <li><strong>Small multiples:</strong> repeated charts that support comparison.</li>
+          <li><strong>Scatterplot matrix:</strong> a scatterplot for every pair of variables.</li>
+          <li><strong>Table lens:</strong> a table-like representation of many dimensions.</li>
+          <li><strong>Parallel coordinates:</strong> each data case becomes a line crossing several vertical axes.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Parallel Coordinates</h2>
+        <p>Each variable is represented by a vertical axis and every data item becomes a line crossing all axes. Variables with different ranges normally need to be normalized:</p>
+        <div class="formula">x&prime; = (x &minus; x<sub>min</sub>) / (x<sub>max</sub> &minus; x<sub>min</sub>)</div>
+        <div class="formula">x&prime; &isin; [0, 1]</div>
+        <p>Normalization makes variables with different units and ranges comparable on the same visual scale.</p>
+      </section>
+
+      <section>
+        <h2>Other Ways to Classify Data</h2>
+        <ul>
+          <li><strong>Temporal data:</strong> data involving time.</li>
+          <li><strong>Geospatial data:</strong> data involving physical or geographic space.</li>
+          <li><strong>Relational data:</strong> data involving connections or networks.</li>
+          <li><strong>Textual data:</strong> data based on words, documents, or language.</li>
+        </ul>
+      </section>
+
+      <section class="takeaway">
+        <h2>Chapter Takeaway</h2>
+        <p>Visual mappings connect data to visual representations through space, marks, and graphical properties. Choosing an effective mapping depends on the nature of the data, the number of variables, and the user's task.</p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
