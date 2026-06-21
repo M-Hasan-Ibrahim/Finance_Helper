@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Innovation</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../index.html">All courses</a>
+      <a class="active" href="innovation.html">Innovation</a>
+    </nav>
+
+    <nav class="section-tabs" role="tablist" aria-label="Innovation sections">
+      <button class="section-tab active" type="button" role="tab" aria-selected="true" aria-controls="coursesPanel" data-section-tab="coursesPanel">Courses</button>
+      <button class="section-tab" type="button" role="tab" aria-selected="false" aria-controls="quizzesPanel" data-section-tab="quizzesPanel">Quizzes</button>
+      <button class="section-tab" type="button" role="tab" aria-selected="false" aria-controls="examsPanel" data-section-tab="examsPanel">Exams</button>
+    </nav>
+
+    <section class="section-panel" id="coursesPanel" role="tabpanel">
+      <p class="eyebrow">Course summaries</p>
+      <h1>Innovation</h1>
+      <p class="subtitle">Chapter summaries and key concepts will be collected here.</p>
+      <div class="empty-state">
+        <h2>Course structure ready</h2>
+        <p>Add chapter pages to the <code>chapters</code> folder as course material becomes available.</p>
+      </div>
+    </section>
+
+    <section class="section-panel" id="quizzesPanel" role="tabpanel" hidden>
+      <p class="eyebrow">Practice</p>
+      <h1>Innovation Quizzes</h1>
+      <p class="subtitle">Interactive chapter quizzes will appear here.</p>
+      <div class="empty-state">
+        <h2>Quiz structure ready</h2>
+        <p>Add quiz pages to the <code>quizzes</code> folder and their scripts to <code>assets</code>.</p>
+      </div>
+    </section>
+
+    <section class="section-panel" id="examsPanel" role="tabpanel" hidden>
+      <p class="eyebrow">Past papers</p>
+      <h1>Innovation Exams</h1>
+      <p class="subtitle">Past exams and model answers will appear here.</p>
+      <div class="empty-state">
+        <h2>Exam structure ready</h2>
+        <p>Add exam pages to the <code>exams</code> folder.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
