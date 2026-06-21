@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -13,43 +13,56 @@
       <a class="active" href="innovation.html">Innovation</a>
     </nav>
 
-    <nav class="section-tabs" role="tablist" aria-label="Innovation sections">
-      <button class="section-tab active" type="button" role="tab" aria-selected="true" aria-controls="coursesPanel" data-section-tab="coursesPanel">Courses</button>
-      <button class="section-tab" type="button" role="tab" aria-selected="false" aria-controls="quizzesPanel" data-section-tab="quizzesPanel">Quizzes</button>
-      <button class="section-tab" type="button" role="tab" aria-selected="false" aria-controls="examsPanel" data-section-tab="examsPanel">Exams</button>
-    </nav>
-
-    <section class="section-panel" id="coursesPanel" role="tabpanel">
+    <section class="section-panel innovation-courses">
       <p class="eyebrow">Course summaries</p>
       <h1>Innovation</h1>
       <p class="subtitle">Chapter summaries and key concepts will be collected here.</p>
-      <div class="empty-state">
-        <h2>Course structure ready</h2>
-        <p>Add chapter pages to the <code>chapters</code> folder as course material becomes available.</p>
+      <div class="chapter-grid" aria-label="Innovation chapters">
+        <a class="chapter-card" href="chapters/chapter-1.html">
+          <span class="chapter-number">Chapter 1</span>
+          <h2>Climate and Energy</h2>
+          <p>Greenhouse gases, climate targets, mitigation, energy transformations, and the transition to a low-carbon society.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
+        <a class="chapter-card" href="chapters/chapter-2.html">
+          <span class="chapter-number">Chapter 2</span>
+          <h2>System Thinking and System Dynamics</h2>
+          <p>Complex systems, causality, feedback loops, stocks and flows, boundaries, and effective intervention points.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
+        <a class="chapter-card" href="chapters/chapter-3.html">
+          <span class="chapter-number">Chapter 3</span>
+          <h2>Environmental Impacts of Digital Technology</h2>
+          <p>Metals, water, energy, electronic waste, rebound effects, digital growth loops, and systemic interventions.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
+        <a class="chapter-card" href="chapters/chapter-4.html">
+          <span class="chapter-number">Chapter 4</span>
+          <h2>Measuring the Environmental Footprint of IT</h2>
+          <p>Carbon accounting, emission scopes, life-cycle assessment, equipment formulas, data-centre indicators, and cloud measurement.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
+        <a class="chapter-card" href="chapters/chapter-5.html">
+          <span class="chapter-number">Chapter 5</span>
+          <h2>Deploying a Sustainable IT Strategy</h2>
+          <p>Systemic strategy, measurement, awareness, responsible purchasing, governance, infrastructure, cloud, and the TGV Wi-Fi case study.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
+        <a class="chapter-card" href="chapters/chapter-6.html">
+          <span class="chapter-number">Chapter 6</span>
+          <h2>Digital Eco-design and Responsible Practices</h2>
+          <p>Digital lifecycle impacts, resource-intensive uses, responsible behaviour, web eco-design, and verifiable good-practice rules.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
+        <a class="chapter-card" href="chapters/chapter-7.html">
+          <span class="chapter-number">Chapter 7</span>
+          <h2>Eco-design Standards and Web Measurement</h2>
+          <p>French legal frameworks, RGESN criteria, environmental measurement tools, essential web metrics, and sober website design.</p>
+          <span class="chapter-link">Read summary &rarr;</span>
+        </a>
       </div>
-    </section>
 
-    <section class="section-panel" id="quizzesPanel" role="tabpanel" hidden>
-      <p class="eyebrow">Practice</p>
-      <h1>Innovation Quizzes</h1>
-      <p class="subtitle">Interactive chapter quizzes will appear here.</p>
-      <div class="empty-state">
-        <h2>Quiz structure ready</h2>
-        <p>Add quiz pages to the <code>quizzes</code> folder and their scripts to <code>assets</code>.</p>
-      </div>
-    </section>
-
-    <section class="section-panel" id="examsPanel" role="tabpanel" hidden>
-      <p class="eyebrow">Past papers</p>
-      <h1>Innovation Exams</h1>
-      <p class="subtitle">Past exams and model answers will appear here.</p>
-      <div class="empty-state">
-        <h2>Exam structure ready</h2>
-        <p>Add exam pages to the <code>exams</code> folder.</p>
-      </div>
     </section>
   </main>
-
-  <script src="assets/app.js"></script>
 </body>
 </html>

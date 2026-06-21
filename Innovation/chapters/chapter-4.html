@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 4 - Measuring the Environmental Footprint of IT</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="top-nav" aria-label="Main pages">
+      <a href="../../index.html">All courses</a>
+      <a class="active" href="../innovation.html">Innovation</a>
+    </nav>
+
+    <nav class="chapter-nav" aria-label="Innovation chapters">
+      <a href="chapter-1.html">Chapter 1</a>
+      <a href="chapter-2.html">Chapter 2</a>
+      <a href="chapter-3.html">Chapter 3</a>
+      <a class="active" href="chapter-4.html">Chapter 4</a>
+      <a href="chapter-5.html">Chapter 5</a>
+      <a href="chapter-6.html">Chapter 6</a>
+      <a href="chapter-7.html">Chapter 7</a>
+    </nav>
+
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow">Chapter 4</p>
+        <h1>Measuring the Environmental Footprint of IT</h1>
+        <p class="subtitle">Choosing appropriate boundaries, assumptions, and methods to measure impacts and identify actions that physically reduce them.</p>
+      </header>
+
+      <section>
+        <h2>1. Main Measurement Methods</h2>
+        <div class="method-grid">
+          <div class="method-card"><h3>Carbon Footprint</h3><p>Measures an organization's greenhouse-gas emissions and supports reporting and reduction strategies.</p></div>
+          <div class="method-card"><h3>GHG Protocol</h3><p>Provides the international standard used for organizational carbon accounting.</p></div>
+          <div class="method-card"><h3>Life Cycle Assessment</h3><p>Evaluates several environmental impacts of a product or service throughout its life cycle.</p></div>
+        </div>
+        <p>Carbon accounting is useful for organizational reporting. <strong>Life Cycle Assessment (LCA)</strong> is better suited to comparing products, services, or technical solutions.</p>
+      </section>
+
+      <section>
+        <h2>2. Emission Scopes</h2>
+        <div class="scope-stack">
+          <div class="scope-card scope-one"><strong>Scope 1</strong><span>Direct emissions from fuel combustion, backup generators, and refrigerant leaks.</span></div>
+          <div class="scope-card scope-two"><strong>Scope 2</strong><span>Indirect emissions from purchased electricity.</span></div>
+          <div class="scope-card scope-three"><strong>Scope 3</strong><span>Other indirect emissions, including manufacturing, transport, disposal, cloud, and external IT services.</span></div>
+        </div>
+        <p>For IT systems, equipment manufacturing is generally <strong>Scope 3</strong>, while electricity consumption is <strong>Scope 2</strong>. External IT and cloud services are also Scope 3.</p>
+      </section>
+
+      <section>
+        <h2>3. Measuring Electricity Emissions</h2>
+        <div class="comparison-grid">
+          <div class="comparison-card"><h3>Location-based</h3><p>Uses the average electricity mix of the region where the electricity is physically consumed.</p></div>
+          <div class="comparison-card"><h3>Market-based</h3><p>Uses the supplier's electricity contract or renewable-energy certificates.</p></div>
+        </div>
+        <div class="callout">
+          <h3>Why the distinction matters</h3>
+          <p>Buying certificates does not necessarily create new renewable production or provide renewable electricity at the same place and time. Location-based measurement therefore better represents the electricity physically consumed.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>4. Life Cycle Assessment</h2>
+        <p>LCA studies every stage from raw-material extraction through manufacturing, transport, use, and end of life.</p>
+        <div class="pipeline lifecycle-chain" aria-label="Product life cycle">
+          <span>Raw materials</span><b>&rarr;</b>
+          <span>Manufacturing</span><b>&rarr;</b>
+          <span>Transport</span><b>&rarr;</b>
+          <span>Use</span><b>&rarr;</b>
+          <span>End of life</span>
+        </div>
+        <p>It can examine climate change, resource depletion, water and energy consumption, human toxicity, and ecosystem toxicity.</p>
+        <div class="callout">
+          <h3>Functional unit</h3>
+          <p>An LCA must define the exact service being studied, such as “reading a 300-page novel” or “watching a film for one hour.”</p>
+        </div>
+        <p>Results depend heavily on assumptions about device type, lifespan, country, network, and usage. This explains why estimates for an action such as sending an email can vary greatly.</p>
+      </section>
+
+      <section>
+        <h2>5. Attributional and Consequential Approaches</h2>
+        <div class="comparison-grid">
+          <div class="comparison-card"><h3>Attributional analysis</h3><p>Assigns each use a share of existing infrastructure emissions. It primarily answers an accounting question.</p></div>
+          <div class="comparison-card"><h3>Consequential analysis</h3><p>Measures emissions directly caused or avoided by a change in usage. It primarily answers a decision question.</p></div>
+        </div>
+        <p>Sending one fewer email rarely changes the number of servers or devices. Its immediate avoided impact is therefore very small, even if attributional accounting assigns the email a share of infrastructure emissions.</p>
+        <p>The method must match the question: <strong>reporting total impacts</strong> or <strong>identifying actions that physically reduce them</strong>.</p>
+      </section>
+
+      <section>
+        <h2>6. Top-Down and Bottom-Up Measurement</h2>
+        <div class="comparison-grid">
+          <div class="comparison-card"><h3>Top-down</h3><p>Uses expenses, general ratios, location, or total consumption. It is quick but less precise.</p></div>
+          <div class="comparison-card"><h3>Bottom-up</h3><p>Builds a detailed inventory of devices, infrastructure, electricity, manufacturing impacts, and lifetimes. It is more accurate but data intensive.</p></div>
+        </div>
+        <div class="formula-box">
+          <span>Annual emissions</span>
+          <strong>=</strong>
+          <span>Manufacturing impact ÷ lifetime</span>
+          <strong>+</strong>
+          <span>Electricity consumption × emission factor</span>
+        </div>
+        <p>Reliable inventories such as <strong>Configuration Management Databases (CMDB)</strong> and IT Asset Management databases are essential for bottom-up measurement.</p>
+      </section>
+
+      <section>
+        <h2>7. Important Reduction Factors</h2>
+        <p>Manufacturing often represents a major share of equipment emissions. Extending device lifetime is therefore one of the strongest reduction actions.</p>
+        <p>Usage emissions depend on electricity consumption and the country's electricity mix. Efficient equipment can reduce electricity use, but replacing working equipment too early may create more manufacturing emissions than it saves.</p>
+        <div class="action-grid">
+          <div>Extend equipment lifetime</div>
+          <div>Repair, reuse, and refurbish</div>
+          <div>Reduce unnecessary equipment</div>
+          <div>Rationalize applications and infrastructure</div>
+          <div>Practise digital sufficiency</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>8. Data Centres</h2>
+        <p>Data-centre emissions include Scope 1 emissions from generators and refrigerants, Scope 2 emissions from IT equipment and cooling electricity, and Scope 3 emissions from manufacturing and external services.</p>
+        <div class="formula-box compact-formula">
+          <span>PUE</span><strong>=</strong><span>Total data-centre energy ÷ IT equipment energy</span>
+        </div>
+        <p>A <strong>Power Usage Effectiveness (PUE)</strong> close to 1 means that little additional energy is used for cooling and facilities. However, PUE says nothing about manufacturing, water, total consumption, or equipment-renewal policies.</p>
+        <div class="indicator-grid">
+          <div><strong>PUE</strong><span>Power usage effectiveness</span></div>
+          <div><strong>WUE</strong><span>Water usage effectiveness</span></div>
+          <div><strong>CUE</strong><span>Carbon usage effectiveness</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>9. Cloud Measurement</h2>
+        <p>Cloud providers often emphasize efficiency and renewable electricity while disclosing little about hardware manufacturing, replacement rates, water, pollution, and rebound effects.</p>
+        <p>Cloud emissions can be estimated using:</p>
+        <ul>
+          <li>Bills and purchased services.</li>
+          <li>Provider reports and calculators.</li>
+          <li>Server type, location, and data volume.</li>
+          <li>Monetary emission factors.</li>
+          <li>The local electricity mix.</li>
+        </ul>
+        <div class="callout">
+          <h3>No automatic benefit</h3>
+          <p>Moving to the cloud is not automatically environmentally beneficial. Its complete impact must be measured rather than inferred from carbon-neutrality claims.</p>
+        </div>
+      </section>
+
+      <section class="takeaway">
+        <h2>Main Idea</h2>
+        <p>Environmental measurement depends heavily on boundaries, assumptions, and methods. It should not merely produce a carbon number: it must help organizations identify physical actions that reduce equipment, energy, and resource consumption.</p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
