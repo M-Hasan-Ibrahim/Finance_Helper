@@ -11,6 +11,7 @@ const mcqPracticeSetSize = document.getElementById("mcqPracticeSetSize");
 const mcqCategoryControl = document.getElementById("mcqCategoryControl");
 const mcqSetSizeControl = document.getElementById("mcqSetSizeControl");
 const startMcqSessionBtn = document.getElementById("startMcqSessionBtn");
+const extraNotesContainer = document.getElementById("extraNotesContainer");
 
 const MCQ_GROUPS = [
   { id: "basic", title: "Basic theory", range: "1–20", from: 1, to: 20 },
@@ -23,7 +24,8 @@ const MCQ_GROUPS = [
 const theoryTabButtons = [...document.querySelectorAll("[data-theory-tab]")];
 const theoryPanels = {
   lesson: document.getElementById("lessonPanel"),
-  mcq: document.getElementById("mcqPanel")
+  mcq: document.getElementById("mcqPanel"),
+  notes: document.getElementById("notesPanel")
 };
 
 const mcqTabButtons = [...document.querySelectorAll("[data-mcq-tab]")];
@@ -362,14 +364,16 @@ function startPracticeSession() {
 
 async function initTheory() {
   try {
-    const [theoryResponse, mcqResponse, mcqFrenchResponse] = await Promise.all([
+    const [theoryResponse, mcqResponse, mcqFrenchResponse, extraNotesResponse] = await Promise.all([
       fetch("data/theoretical_questions.json"),
       fetch("data/mcq_questions.json"),
-      fetch("data/mcq_questions_fr.json")
+      fetch("data/mcq_questions_fr.json"),
+      fetch("data/extra_course_notes.html")
     ]);
     if (!theoryResponse.ok) throw new Error(`Could not load theoretical_questions.json (${theoryResponse.status})`);
     if (!mcqResponse.ok) throw new Error(`Could not load mcq_questions.json (${mcqResponse.status})`);
     if (!mcqFrenchResponse.ok) throw new Error(`Could not load mcq_questions_fr.json (${mcqFrenchResponse.status})`);
+    if (!extraNotesResponse.ok) throw new Error(`Could not load extra_course_notes.html (${extraNotesResponse.status})`);
 
     theoryData = await theoryResponse.json();
     const englishMcqs = await mcqResponse.json();
@@ -383,6 +387,7 @@ async function initTheory() {
         }))
         .sort((a, b) => a.id - b.id)
     };
+    extraNotesContainer.innerHTML = await extraNotesResponse.text();
     renderLanguage(theoryData.defaultLanguage || "fr");
     renderAllMcqs();
     populatePracticeCategories();

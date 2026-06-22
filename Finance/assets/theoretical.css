@@ -135,6 +135,156 @@
   line-height: 1.5;
 }
 
+.extra-notes-shell {
+  max-width: 1040px;
+  margin-inline: auto;
+}
+
+.extra-notes {
+  display: grid;
+  gap: 18px;
+}
+
+.extra-notes-header {
+  padding: 22px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #07364a, #0e617d);
+  color: white;
+}
+
+.extra-notes-header h2 {
+  margin: 0 0 8px;
+  color: white;
+  font-size: clamp(24px, 4vw, 34px);
+}
+
+.extra-notes-header p {
+  margin: 0;
+  color: #dff3f9;
+  line-height: 1.5;
+}
+
+.notes-summary-grid,
+.notes-method-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.notes-stat,
+.notes-method {
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #f8fafc;
+}
+
+.notes-stat b,
+.notes-method h4 {
+  display: block;
+  margin: 0 0 6px;
+  color: #07364a;
+}
+
+.notes-stat strong {
+  display: block;
+  color: var(--teal);
+  font-size: 22px;
+}
+
+.notes-section {
+  overflow: hidden;
+  border: 1px solid #d7e0e7;
+  border-radius: 9px;
+  background: white;
+}
+
+.notes-section > h3 {
+  margin: 0;
+  padding: 11px 14px;
+  background: var(--teal);
+  color: white;
+  font-size: 18px;
+}
+
+.notes-section-body {
+  padding: 14px;
+  line-height: 1.55;
+}
+
+.notes-section-body > :first-child {
+  margin-top: 0;
+}
+
+.notes-section-body > :last-child {
+  margin-bottom: 0;
+}
+
+.notes-callout {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-left: 5px solid var(--teal);
+  border-radius: 7px;
+  background: #e6f4f8;
+  color: #07364a;
+  font-weight: 700;
+}
+
+.notes-formula {
+  margin: 12px 0;
+  padding: 12px;
+  overflow-x: auto;
+  border: 1px solid #b7d7e2;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #07364a;
+  font-family: Cambria, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.notes-table-wrap {
+  margin: 12px 0;
+  overflow-x: auto;
+}
+
+.notes-table {
+  min-width: 620px;
+}
+
+.notes-table th,
+.notes-table td {
+  text-align: right;
+}
+
+.notes-table th:first-child,
+.notes-table td:first-child {
+  text-align: left;
+}
+
+.notes-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.notes-flow span {
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: #dff3f9;
+  color: #07364a;
+  font-weight: 700;
+}
+
+.notes-flow b {
+  color: var(--teal);
+  font-size: 20px;
+}
+
 .mcq-list {
   display: grid;
   gap: 24px;

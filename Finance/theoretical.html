@@ -27,6 +27,7 @@
     <nav class="theory-tabs" aria-label="Theoretical study sections">
       <button class="theory-tab-button active" type="button" data-theory-tab="lesson">Theory lesson</button>
       <button class="theory-tab-button" type="button" data-theory-tab="mcq">MCQ questions</button>
+      <button class="theory-tab-button" type="button" data-theory-tab="notes">Extra course notes</button>
     </nav>
 
     <div class="theory-tab-panel" id="lessonPanel">
@@ -77,6 +78,14 @@
           <div id="mcqPracticeContainer"></div>
         </section>
       </div>
+    </div>
+
+    <div class="theory-tab-panel" id="notesPanel" hidden>
+      <section class="card extra-notes-shell">
+        <div id="extraNotesContainer">
+          <div class="feedback show">Loading extra course notes...</div>
+        </div>
+      </section>
     </div>
   </main>
   <footer class="site-footer">
