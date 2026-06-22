@@ -22,6 +22,7 @@
     <nav class="sub-tabs" aria-label="Practical question sections">
       <button class="sub-tab-button active" type="button" data-practical-tab="memorization">Table memorization</button>
       <button class="sub-tab-button" type="button" data-practical-tab="calculation">Solve tables with numbers</button>
+      <button class="sub-tab-button" type="button" data-practical-tab="exam">Full exam question</button>
     </nav>
 
     <div class="sub-tab-panel" id="memorizationPanel">
@@ -96,6 +97,17 @@
       </section>
 
       <div id="exerciseTables"></div>
+    </div>
+
+    <div class="sub-tab-panel" id="examPanel" hidden>
+      <section class="card">
+        <h2>Full Exam Question</h2>
+        <p class="subtitle">Build all three financial tables from the information below. Table names, row names, and figures are all part of the question.</p>
+        <p class="hint">Answers may be written in English or French. For figures, you can enter a number or a simple expression.</p>
+        <div id="examGiven"></div>
+      </section>
+
+      <div id="examTables"></div>
     </div>
   </main>
   <footer class="site-footer">

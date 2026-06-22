@@ -297,6 +297,45 @@ tbody tr.strong-row td {
   background: #fdecec;
 }
 
+.exam-table-heading {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) minmax(220px, 420px);
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.exam-table-heading label {
+  color: #07364a;
+  font-weight: 700;
+}
+
+.exam-table-heading input,
+.exam-label-input {
+  width: 100%;
+  padding: 7px 8px;
+  border: 1px solid #aebdca;
+  border-radius: 6px;
+  background: white;
+  font-size: 13px;
+}
+
+.exam-table-heading .cell-answer {
+  grid-column: 2;
+}
+
+.exam-label-input.correct,
+.exam-table-heading input.correct {
+  border-color: var(--good);
+  background: #e8f7ee;
+}
+
+.exam-label-input.wrong,
+.exam-table-heading input.wrong {
+  border-color: var(--bad);
+  background: #fdecec;
+}
+
 .row-help {
   position: relative;
   display: inline-block;
@@ -445,6 +484,14 @@ tbody tr.strong-row td {
     min-width: 88px;
     padding: 7px 6px;
     font-size: 12px;
+  }
+
+  .exam-table-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .exam-table-heading .cell-answer {
+    grid-column: 1;
   }
 
   .row-help {

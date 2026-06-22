@@ -2,6 +2,7 @@ const ROUND_LENGTH = 10;
 
 let TABLES = [];
 let EXERCISE = null;
+let EXAM = null;
 let activeExerciseId = null;
 let current = null;
 let missingIndexes = [];
@@ -29,13 +30,16 @@ const els = {
   feedback: document.getElementById("feedback"),
   calculationExerciseTabs: document.getElementById("calculationExerciseTabs"),
   exerciseGiven: document.getElementById("exerciseGiven"),
-  exerciseTables: document.getElementById("exerciseTables")
+  exerciseTables: document.getElementById("exerciseTables"),
+  examGiven: document.getElementById("examGiven"),
+  examTables: document.getElementById("examTables")
 };
 
 const practicalTabButtons = [...document.querySelectorAll(".sub-tab-button")];
 const practicalPanels = {
   memorization: document.getElementById("memorizationPanel"),
-  calculation: document.getElementById("calculationPanel")
+  calculation: document.getElementById("calculationPanel"),
+  exam: document.getElementById("examPanel")
 };
 
 function normalize(text) {
@@ -631,6 +635,114 @@ function showExerciseAnswers(tableId) {
   });
 }
 
+function aliasesForExamTable(tableId) {
+  return TABLES.find(table => table.id === tableId);
+}
+
+function renderExam() {
+  if (!EXAM) return;
+
+  els.examGiven.innerHTML = `
+    <div class="given-grid">
+      ${EXAM.given.map(section => `
+        <div class="given-card">
+          <h3>${escapeHtml(section.title)}</h3>
+          <ul>${section.items.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        </div>`).join("")}
+    </div>`;
+
+  els.examTables.innerHTML = EXAM.tables.map((table, tableIndex) => {
+    const rows = table.rows.map((row, rowIndex) => `
+      <tr class="${row.type === "strong" ? "strong-row" : row.type === "total" ? "total-row" : ""}">
+        <td>
+          <input class="exam-label-input" type="text" data-exam-label="${table.id}-${rowIndex}"
+            aria-label="Table ${tableIndex + 1}, row ${rowIndex + 1} name" placeholder="Write row ${rowIndex + 1} name" />
+          <div class="cell-answer" data-exam-label-answer="${table.id}-${rowIndex}"></div>
+        </td>
+        ${row.answers.map((_, yearIndex) => `
+          <td>
+            <input type="text" inputmode="decimal" data-exam-number="${table.id}-${rowIndex}-${yearIndex}"
+              aria-label="Table ${tableIndex + 1}, row ${rowIndex + 1}, ${escapeHtml(EXAM.years[yearIndex])}" placeholder="0" />
+            <div class="cell-answer" data-exam-number-answer="${table.id}-${rowIndex}-${yearIndex}"></div>
+          </td>`).join("")}
+      </tr>`).join("");
+
+    return `
+      <section class="card exercise-card exam-card">
+        <div class="exam-table-heading">
+          <label for="exam-title-${escapeHtml(table.id)}">Table ${tableIndex + 1} name</label>
+          <input id="exam-title-${escapeHtml(table.id)}" type="text" data-exam-title="${escapeHtml(table.id)}" placeholder="Write the table name" />
+          <div class="cell-answer" data-exam-title-answer="${escapeHtml(table.id)}"></div>
+        </div>
+        <div class="table-wrap">
+          <table class="exercise-table exam-table" aria-label="Blank financial table ${tableIndex + 1}">
+            <thead><tr><th>Row names</th>${EXAM.years.map(year => `<th>${escapeHtml(year)}</th>`).join("")}</tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+        <div class="button-row">
+          <button type="button" data-check-exam="${escapeHtml(table.id)}">Check this table</button>
+          <button class="secondary" type="button" data-show-exam="${escapeHtml(table.id)}">Show answers</button>
+          <span class="score" id="examScore-${escapeHtml(table.id)}"></span>
+        </div>
+      </section>`;
+  }).join("");
+
+  els.examTables.querySelectorAll("[data-check-exam]").forEach(button => {
+    button.addEventListener("click", () => checkExamTable(button.dataset.checkExam));
+  });
+  els.examTables.querySelectorAll("[data-show-exam]").forEach(button => {
+    button.addEventListener("click", () => showExamAnswers(button.dataset.showExam));
+  });
+}
+
+function checkExamTable(tableId, showAnswers = false) {
+  const table = EXAM.tables.find(item => item.id === tableId);
+  const reference = aliasesForExamTable(tableId);
+  const titleInput = document.querySelector(`[data-exam-title="${tableId}"]`);
+  const titleAnswer = document.querySelector(`[data-exam-title-answer="${tableId}"]`);
+  const titleOk = answerMatches(titleInput.value, [reference.title, ...reference.titleAliases]);
+  let score = titleOk ? 1 : 0;
+  let total = 1;
+
+  titleInput.classList.toggle("correct", titleOk);
+  titleInput.classList.toggle("wrong", !titleOk);
+  titleAnswer.textContent = showAnswers ? `Correct: ${table.title}` : titleOk ? "Correct" : "Wrong";
+  titleAnswer.className = `cell-answer show ${titleOk ? "correct" : "wrong"}`;
+
+  table.rows.forEach((row, rowIndex) => {
+    const referenceRow = reference.rows[rowIndex];
+    const labelInput = document.querySelector(`[data-exam-label="${tableId}-${rowIndex}"]`);
+    const labelAnswer = document.querySelector(`[data-exam-label-answer="${tableId}-${rowIndex}"]`);
+    const labelOk = answerMatches(labelInput.value, [referenceRow.label, ...referenceRow.aliases]);
+    total++;
+    if (labelOk) score++;
+    labelInput.classList.toggle("correct", labelOk);
+    labelInput.classList.toggle("wrong", !labelOk);
+    labelAnswer.textContent = showAnswers ? `Correct: ${row.label}` : labelOk ? "Correct" : "Wrong";
+    labelAnswer.className = `cell-answer show ${labelOk ? "correct" : "wrong"}`;
+
+    row.answers.forEach((answer, yearIndex) => {
+      const input = document.querySelector(`[data-exam-number="${tableId}-${rowIndex}-${yearIndex}"]`);
+      const answerBox = document.querySelector(`[data-exam-number-answer="${tableId}-${rowIndex}-${yearIndex}"]`);
+      const value = parseNumericAnswer(input.value);
+      const ok = Math.abs(value - answer) <= 0.01;
+      total++;
+      if (ok) score++;
+      input.classList.toggle("correct", ok);
+      input.classList.toggle("wrong", !ok);
+      answerBox.textContent = showAnswers ? `Correct: ${formatNumber(answer)}` : ok ? "Correct" : "Wrong";
+      answerBox.className = `cell-answer show ${ok ? "correct" : "wrong"}`;
+    });
+  });
+
+  document.getElementById(`examScore-${tableId}`).textContent = `Score: ${score}/${total}`;
+}
+
+function showExamAnswers(tableId) {
+  checkExamTable(tableId, true);
+}
+
 function populateTableSelect() {
   TABLES.forEach(table => {
     const option = document.createElement("option");
@@ -642,16 +754,20 @@ function populateTableSelect() {
 
 async function init() {
   try {
-    const [tablesResponse, exerciseResponse] = await Promise.all([
+    const [tablesResponse, exerciseResponse, examResponse] = await Promise.all([
       fetch("data/tables.json"),
-      fetch("data/calculation_exercise.json")
+      fetch("data/calculation_exercise.json"),
+      fetch("data/full_exam.json")
     ]);
     if (!tablesResponse.ok) throw new Error(`Could not load tables.json (${tablesResponse.status})`);
     if (!exerciseResponse.ok) throw new Error(`Could not load calculation_exercise.json (${exerciseResponse.status})`);
+    if (!examResponse.ok) throw new Error(`Could not load full_exam.json (${examResponse.status})`);
     TABLES = await tablesResponse.json();
     EXERCISE = await exerciseResponse.json();
+    EXAM = await examResponse.json();
     populateTableSelect();
     renderExercise();
+    renderExam();
     els.missingCount.max = Math.max(...TABLES.map(table => table.rows.length));
     newQuiz();
   } catch (error) {

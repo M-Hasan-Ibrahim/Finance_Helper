@@ -1,0 +1,105 @@
+{
+  "title": "Full exam question",
+  "years": ["Année 1", "Année 2", "Année 3"],
+  "given": [
+    {
+      "title": "Contexte",
+      "items": ["La société est créée le premier jour de l’année 1."]
+    },
+    {
+      "title": "Année 1",
+      "items": [
+        "600 € de ventes (85 % encaissés dans l’année, 15 % l’année suivante)",
+        "Marge brute de 55 % (80 % des COGS sont payés dans l’année)",
+        "120 € de frais de personnel",
+        "30 € d’autres opex",
+        "Acquisition d’un ordinateur à 120 € le premier jour (amortissement sur 4 ans)",
+        "Prêt bancaire de 600 € reçu le premier jour, au taux d’intérêt de 8 %",
+        "Amortissement constant du prêt sur 5 ans : 120 € remboursés chaque année, dès l’année 1",
+        "Levée de fonds de 900 €",
+        "Impôt sur les sociétés de 25 %, payé l’année suivante"
+      ]
+    },
+    {
+      "title": "Année 2",
+      "items": [
+        "1 200 € de ventes (75 % encaissés dans l’année, 25 % l’année suivante)",
+        "Marge brute de 55 % (80 % des COGS sont payés dans l’année)",
+        "280 € de frais de personnel",
+        "70 € d’autres opex",
+        "Acquisition d’un téléphone à 240 € le premier jour (amortissement sur 4 ans)",
+        "120 € remboursés sur le prêt et paiement des intérêts",
+        "40 % du résultat net de l’année 1 est versé en dividendes"
+      ]
+    },
+    {
+      "title": "Année 3",
+      "items": [
+        "2 000 € de ventes (90 % encaissés dans l’année, 10 % l’année suivante)",
+        "Marge brute de 55 % (80 % des COGS sont payés dans l’année)",
+        "520 € de frais de personnel",
+        "160 € d’autres opex",
+        "120 € remboursés sur le prêt et paiement des intérêts",
+        "60 % du résultat net de l’année 2 est versé en dividendes"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "id": "pnl",
+      "title": "P&L / CDR",
+      "rows": [
+        { "label": "Revenues / Chiffre d'affaires", "answers": [600, 1200, 2000] },
+        { "label": "COGS / Coûts Directs", "answers": [-270, -540, -900] },
+        { "label": "Gross Margin / Marge Brute", "type": "strong", "answers": [330, 660, 1100] },
+        { "label": "Staff / Equipe", "answers": [-120, -280, -520] },
+        { "label": "Other Opex / Autres Coûts Opér.", "answers": [-30, -70, -160] },
+        { "label": "EBITDA", "type": "strong", "answers": [180, 310, 420] },
+        { "label": "Amortization / Amortissements", "answers": [-30, -90, -90] },
+        { "label": "EBIT", "type": "strong", "answers": [150, 220, 330] },
+        { "label": "Interests", "answers": [-48, -38.4, -28.8] },
+        { "label": "EBT / RNAI", "type": "strong", "answers": [102, 181.6, 301.2] },
+        { "label": "Corporate Income Tax / IS", "answers": [-25.5, -45.4, -75.3] },
+        { "label": "Net income / Résultat Net", "type": "strong", "answers": [76.5, 136.2, 225.9] }
+      ]
+    },
+    {
+      "id": "cashflow",
+      "title": "Cash Flow / TFT",
+      "rows": [
+        { "label": "Cash in of Revenues / Encaissements", "answers": [510, 990, 2100] },
+        { "label": "Cash out of COGS / Décaissements COGS", "answers": [-216, -486, -828] },
+        { "label": "Cash out of Opex / Décaissements Opex", "answers": [-150, -350, -680] },
+        { "label": "Corporate Income Tax / IS", "answers": [0, -25.5, -45.4] },
+        { "label": "Operating Cash Flow / Flux d'activité", "type": "total", "answers": [144, 128.5, 546.6] },
+        { "label": "Capex", "answers": [-120, -240, 0] },
+        { "label": "Investing Cash Flow / Flux d'Invest.", "type": "total", "answers": [-120, -240, 0] },
+        { "label": "Equity Raised / Levée de fonds", "answers": [900, 0, 0] },
+        { "label": "Dividends Paid / Dividendes payés", "answers": [0, -30.6, -81.72] },
+        { "label": "Debt Drawn / Paid Back / Dettes financières", "answers": [480, -120, -120] },
+        { "label": "Interests Paid", "answers": [-48, -38.4, -28.8] },
+        { "label": "Financing Cash Flow / Flux de financement", "type": "total", "answers": [1332, -189, -230.52] },
+        { "label": "Net Cash Flow / Variation de trésorerie", "type": "total", "answers": [1356, -300.5, 316.08] }
+      ]
+    },
+    {
+      "id": "balance",
+      "title": "Balance Sheet / Bilan",
+      "rows": [
+        { "label": "Gross Fixed Assets / Immobilisations brutes", "answers": [120, 360, 360] },
+        { "label": "Cumulative Amortization", "answers": [-30, -120, -210] },
+        { "label": "Net Fixed Assets / Immobilisations nettes", "type": "total", "answers": [90, 240, 150] },
+        { "label": "Receivables / Créances clients", "answers": [90, 300, 200] },
+        { "label": "Payables / Dettes Fournisseurs", "answers": [-54, -108, -180] },
+        { "label": "Corporate Income Tax Debt / Dette d'IS", "answers": [-25.5, -45.4, -75.3] },
+        { "label": "Working Capital / BFR", "type": "total", "answers": [10.5, 146.6, -55.3] },
+        { "label": "Cash Available / Trésorerie disponible", "answers": [1356, 1055.5, 1371.58] },
+        { "label": "Outstanding Debt / Dettes financières restantes", "answers": [-480, -360, -240] },
+        { "label": "Net Cash / (Net Debt)", "type": "total", "answers": [876, 695.5, 1131.58] },
+        { "label": "Equity Injected / Capital Social", "answers": [900, 900, 900] },
+        { "label": "Reserves & Cumulative Net Inc. / Réserves", "answers": [76.5, 182.1, 326.28] },
+        { "label": "Shareholders Equity / Capitaux Propres", "type": "total", "answers": [976.5, 1082.1, 1226.28] }
+      ]
+    }
+  ]
+}
