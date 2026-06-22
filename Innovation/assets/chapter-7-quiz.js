@@ -13,7 +13,8 @@ const questions = [
   { text: "Which resource generally needs direct file optimization rather than relying mainly on transfer compression?", options: ["HTML", "JSON", "JavaScript", "Images"], answer: 3, explanation: "Images, audio, video, fonts, PDFs, and ZIP files generally need the source files themselves to be optimized." },
   { text: "What does proportionate technology mean?", options: ["Always choose the most complex CMS and framework.", "Match the technical solution to the actual service need.", "Use artificial intelligence for every feature.", "Build for maximum hypothetical traffic regardless of reality."], answer: 1, explanation: "A sober service uses technology whose complexity and scale are proportionate to its genuine requirements." },
   { text: "What is a digital service's functional unit?", options: ["The actual service delivered, such as buying a ticket or reading an article", "The number of servers in a data centre", "The legal name of the development team", "The total number of possible features"], answer: 0, explanation: "The functional unit defines the real user service that the digital system is intended to provide." },
-  { text: "Which design choice best supports a sober user journey?", options: ["Display every possible feature at once", "Add steps so users remain longer", "Help users complete their goal directly and leave quickly", "Use heavy technology even for simple content"], answer: 2, explanation: "Sober design prioritizes useful functions, direct content, fewer steps, and efficient completion of the user's goal." }
+  { text: "Which design choice best supports a sober user journey?", options: ["Display every possible feature at once", "Add steps so users remain longer", "Help users complete their goal directly and leave quickly", "Use heavy technology even for simple content"], answer: 2, explanation: "Sober design prioritizes useful functions, direct content, fewer steps, and efficient completion of the user's goal." },
+  { text: "Why does the legal and reference framework not remove the need for critical thinking?", options: ["Legal references are unrelated to eco-design.", "RGESN applies only to public institutions.", "Criteria guide decisions, but teams still need to interpret needs, trade-offs, metrics, and context.", "Technical metrics are always more important than user needs."], answer: 2, explanation: "Frameworks structure decisions, but teams must still judge relevance, trade-offs, measurement limits, and the real context of use." }
 ];
 
 window.innovationQuizQuestions = questions;
@@ -50,13 +51,14 @@ quiz.addEventListener("submit", (event) => {
     markQuestion(quiz.querySelector(`[data-question="q${index + 1}"]`), isCorrect, question.explanation);
   });
 
+  const strongScore = Math.ceil(questions.length * 0.8);
   const message = score === questions.length
     ? "Excellent - every answer is correct."
-    : score >= 12
+    : score >= strongScore
       ? "Great work. Review the highlighted questions and try for full marks."
       : "Review Chapter 7, then try again when you are ready.";
 
-  result.className = `quiz-result show ${score >= 12 ? "strong-score" : ""}`;
+  result.className = `quiz-result show ${score >= strongScore ? "strong-score" : ""}`;
   result.innerHTML = `<strong>${score}/${questions.length}</strong><span>${message}</span>`;
   result.scrollIntoView({ behavior: "smooth", block: "center" });
 });

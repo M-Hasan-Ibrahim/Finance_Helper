@@ -13,7 +13,10 @@ const questions = [
   { text: "When is optimization most likely to deliver lasting environmental benefits?", options: ["When total consumption has limits or constraints", "When services are made free", "When all demand is encouraged", "When infrastructure expands automatically"], answer: 0, explanation: "Efficiency is more likely to reduce total impact when limits prevent usage growth from absorbing the savings." },
   { text: "How can new digital infrastructure create additional demand?", options: ["Companies encourage new uses to make the infrastructure profitable.", "Infrastructure permanently fixes the number of users.", "New infrastructure makes digital services unavailable.", "Infrastructure removes economic incentives."], answer: 0, explanation: "Once infrastructure exists, firms have incentives to increase usage and revenue, so infrastructure can generate new needs." },
   { text: "What is the purpose of France's REEN law?", options: ["To increase electronic-waste exports", "To reduce the environmental footprint of digital technology", "To prohibit all cloud services", "To replace regulation with voluntary advertising"], answer: 1, explanation: "The REEN law was introduced to reduce digital technology's environmental footprint." },
-  { text: "Which actions does the chapter describe as the most effective systemic interventions?", options: ["Improving technical efficiency only", "Changing rules, objectives, business models, and underlying paradigms", "Increasing data production without limits", "Treating electronic waste only after disposal"], answer: 1, explanation: "High-leverage action changes the structures, incentives, goals, and beliefs that drive continued digital growth." }
+  { text: "Which actions does the chapter describe as the most effective systemic interventions?", options: ["Improving technical efficiency only", "Changing rules, objectives, business models, and underlying paradigms", "Increasing data production without limits", "Treating electronic waste only after disposal"], answer: 1, explanation: "High-leverage action changes the structures, incentives, goals, and beliefs that drive continued digital growth." },
+  { text: "Which statement best describes the stock/flow view of the digital system?", options: ["Data, terminals, and infrastructures are flows, while traffic is a stock.", "Only electricity consumption matters because physical equipment is negligible.", "Digital technology has no meaningful stocks because it is immaterial.", "Data and infrastructure can be treated as growing stocks, while traffic, production, and usage are flows that feed the system."], answer: 3, explanation: "Data and infrastructure accumulate as stocks, while production, traffic, and usage act as flows that expand and sustain the digital system." },
+  { text: "Why are regulation and digital sobriety preferable to waiting for scarcity or pollution to limit growth?", options: ["Resource scarcity has no effect on digital systems.", "Regulation eliminates all environmental impacts instantly.", "Sobriety is only a communication strategy.", "Regulation and sobriety are chosen balancing loops, while scarcity and environmental damage are suffered balancing loops."], answer: 3, explanation: "Planned regulation and sobriety constrain growth deliberately, instead of allowing harmful physical limits to impose change after damage occurs." },
+  { text: "What is the best interpretation of the opposition between IT for Green and IT for Brown?", options: ["Digital technology is always environmentally beneficial if it uses artificial intelligence.", "The environmental value of digital technology depends on the final purpose and system it reinforces.", "Green IT only concerns recycling computers.", "IT for Brown means old technology, while IT for Green means new technology."], answer: 1, explanation: "A digital solution must be judged by the wider activity and system it supports, not by digital technology alone." }
 ];
 
 window.innovationQuizQuestions = questions;
@@ -50,13 +53,14 @@ quiz.addEventListener("submit", (event) => {
     markQuestion(quiz.querySelector(`[data-question="q${index + 1}"]`), isCorrect, question.explanation);
   });
 
+  const strongScore = Math.ceil(questions.length * 0.8);
   const message = score === questions.length
     ? "Excellent - every answer is correct."
-    : score >= 12
+    : score >= strongScore
       ? "Great work. Review the highlighted questions and try for full marks."
       : "Review Chapter 3, then try again when you are ready.";
 
-  result.className = `quiz-result show ${score >= 12 ? "strong-score" : ""}`;
+  result.className = `quiz-result show ${score >= strongScore ? "strong-score" : ""}`;
   result.innerHTML = `<strong>${score}/${questions.length}</strong><span>${message}</span>`;
   result.scrollIntoView({ behavior: "smooth", block: "center" });
 });

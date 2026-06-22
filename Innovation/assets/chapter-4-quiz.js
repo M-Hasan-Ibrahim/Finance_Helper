@@ -13,7 +13,11 @@ const questions = [
   { text: "Which description best fits bottom-up measurement?", options: ["Quick estimates based mainly on spending ratios", "A detailed inventory of equipment, energy, manufacturing impacts, and lifetimes", "Measurement based only on company revenue", "A method that ignores device quantities"], answer: 1, explanation: "Bottom-up measurement builds a detailed technical inventory and is more accurate but data intensive." },
   { text: "Why can replacing working equipment too early increase total emissions?", options: ["New devices never save electricity.", "Manufacturing emissions may exceed the operational savings.", "Old equipment has no manufacturing footprint.", "Electricity use is always Scope 3."], answer: 1, explanation: "The embodied impact of manufacturing a replacement may be larger than the electricity saved during use." },
   { text: "What does a data-centre PUE close to 1 indicate?", options: ["The data centre uses no water.", "Little additional energy is used beyond the IT equipment.", "All hardware has been recycled.", "The electricity is carbon free."], answer: 1, explanation: "A PUE near 1 means cooling and facility overhead are small relative to IT equipment energy." },
-  { text: "Why is moving to the cloud not automatically environmentally beneficial?", options: ["Cloud systems never use efficient hardware.", "Complete impacts such as manufacturing, water, replacement, and rebound effects must still be measured.", "Cloud services cannot use renewable electricity.", "Cloud emissions belong only to Scope 1."], answer: 1, explanation: "Efficiency or carbon-neutrality claims do not replace a complete assessment of the cloud service's physical impacts." }
+  { text: "Why is moving to the cloud not automatically environmentally beneficial?", options: ["Cloud systems never use efficient hardware.", "Complete impacts such as manufacturing, water, replacement, and rebound effects must still be measured.", "Cloud services cannot use renewable electricity.", "Cloud emissions belong only to Scope 1."], answer: 1, explanation: "Efficiency or carbon-neutrality claims do not replace a complete assessment of the cloud service's physical impacts." },
+  { text: "Why should product carbon footprints provided by manufacturers be used carefully?", options: ["They are always intentionally false.", "Results depend strongly on assumptions, scope, lifetime, usage scenario, and methodology.", "They never include manufacturing.", "They are only useful for Scope 2."], answer: 1, explanation: "Manufacturer footprints can be useful, but comparisons require checking boundaries, assumptions, lifetimes, scenarios, and methods." },
+  { text: "What does the bottom-up annualized-impact formula mainly show?", options: ["Only electricity matters for workplace IT.", "Equipment lifetime has no effect on annualized impact.", "Embodied construction and end-of-life impacts must be considered together with use-phase electricity.", "A bottom-up approach removes the need for inventories."], answer: 2, explanation: "Annual impact combines embodied impacts spread over equipment lifetime with annual electricity use multiplied by its emission factor." },
+  { text: "When is a top-down measurement approach useful?", options: ["When a complete detailed inventory is already available.", "When only high-level financial, location, or ratio data is available and an order of magnitude is needed.", "When the goal is to avoid making assumptions.", "When Scope 3 must be ignored."], answer: 1, explanation: "Top-down methods provide quicker approximate results when detailed technical inventories are unavailable." },
+  { text: "What is the best way to reduce the Scope 2 emissions of a data centre?", options: ["Buy renewable certificates and stop the analysis there.", "Move accounting emissions elsewhere without questioning usage.", "Focus only on server efficiency without changing demand.", "Combine real electricity-demand reductions, efficiency, lower location-based carbon intensity, and preferably direct low-carbon supply."], answer: 3, explanation: "Credible Scope 2 reduction combines lower demand, efficient operation, a cleaner physical grid or location, and genuine low-carbon supply rather than accounting claims alone." }
 ];
 
 window.innovationQuizQuestions = questions;
@@ -50,13 +54,14 @@ quiz.addEventListener("submit", (event) => {
     markQuestion(quiz.querySelector(`[data-question="q${index + 1}"]`), isCorrect, question.explanation);
   });
 
+  const strongScore = Math.ceil(questions.length * 0.8);
   const message = score === questions.length
     ? "Excellent - every answer is correct."
-    : score >= 12
+    : score >= strongScore
       ? "Great work. Review the highlighted questions and try for full marks."
       : "Review Chapter 4, then try again when you are ready.";
 
-  result.className = `quiz-result show ${score >= 12 ? "strong-score" : ""}`;
+  result.className = `quiz-result show ${score >= strongScore ? "strong-score" : ""}`;
   result.innerHTML = `<strong>${score}/${questions.length}</strong><span>${message}</span>`;
   result.scrollIntoView({ behavior: "smooth", block: "center" });
 });

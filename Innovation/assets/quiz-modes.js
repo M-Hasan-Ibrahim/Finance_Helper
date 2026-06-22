@@ -99,12 +99,13 @@
     questions.forEach((_, index) => {
       if (evaluateQuestion(index)) score += 1;
     });
+    const strongScore = Math.ceil(questions.length * 0.8);
     const message = score === questions.length
       ? "Excellent - every answer is correct."
-      : score >= 12
+      : score >= strongScore
         ? "Great work. Use the indicators to review your answers."
         : "Review the red questions, then try again.";
-    result.className = `quiz-result show ${score >= 12 ? "strong-score" : ""}`;
+    result.className = `quiz-result show ${score >= strongScore ? "strong-score" : ""}`;
     result.innerHTML = `<strong>${score}/${questions.length}</strong><span>${message}</span>`;
     result.scrollIntoView({ behavior: "smooth", block: "center" });
   }
@@ -141,7 +142,10 @@
     quiz.classList.toggle("single-question-mode", singleMode);
 
     if (singleMode) {
-      questions.forEach((_, index) => evaluateQuestion(index));
+      questions.forEach((question, index) => {
+        indicators[index].classList.toggle("correct", question.classList.contains("correct"));
+        indicators[index].classList.toggle("incorrect", question.classList.contains("incorrect"));
+      });
       showQuestion(currentQuestion);
     } else {
       questions.forEach((question) => { question.hidden = false; });

@@ -13,7 +13,10 @@ const questions = [
   { text: "Which option is a low-carbon, non-renewable primary energy source?", options: ["Coal", "Solar energy", "Nuclear energy", "Biomass"], answer: 2, explanation: "Nuclear energy is low-carbon but relies on a non-renewable fuel." },
   { text: "Which sequence correctly represents the energy chain?", options: ["Useful → final → secondary → primary", "Primary → secondary → final → useful", "Primary → useful → final → secondary", "Secondary → primary → useful → final"], answer: 1, explanation: "Energy moves from primary to secondary, final, and then useful energy." },
   { text: "Why are electricity and hydrogen not considered primary energy sources?", options: ["They cannot be transported.", "They are energy carriers produced from other energy sources.", "They always create more emissions than coal.", "They cannot provide useful energy."], answer: 1, explanation: "Electricity and hydrogen carry energy that has been converted from primary sources." },
-  { text: "Which combination does the chapter identify as necessary for the energy transition?", options: ["Cleaner energy + efficiency + sufficiency", "More fossil fuels + lower prices + more consumption", "Electrification only", "Nuclear energy only"], answer: 0, explanation: "The transition must combine cleaner energy, efficiency, and sufficiency." }
+  { text: "Which combination does the chapter identify as necessary for the energy transition?", options: ["Cleaner energy + efficiency + sufficiency", "More fossil fuels + lower prices + more consumption", "Electrification only", "Nuclear energy only"], answer: 0, explanation: "The transition must combine cleaner energy, efficiency, and sufficiency." },
+  { text: "A lamp converts electricity into light but loses much energy as heat. Which concept explains why the useful service can be much smaller than the final energy consumed?", options: ["Energy primary source.", "Energy vector.", "Equipment efficiency between final energy and useful energy.", "Location-based electricity accounting."], answer: 2, explanation: "Equipment efficiency determines how much final energy is converted into the useful service; the rest is lost, often as heat." },
+  { text: "What is the strongest lesson from the historical evolution of energy consumption?", options: ["Each new energy source has fully replaced the previous one.", "Energy systems have mostly accumulated sources rather than simply substituting one source for another.", "Renewable energy automatically removes the need for fossil fuels.", "Electricity is a primary energy source, so its carbon impact is independent of production method."], answer: 1, explanation: "Historically, new energy sources have mostly been added to the mix rather than fully replacing older sources." },
+  { text: "Why does the course evaluation emphasize measurement, systemic modeling, levers of reduction, and cost-benefit analysis?", options: ["Because sustainable IT is mainly about producing a beautiful presentation.", "Because every environmental problem can be solved by a single technical optimization.", "Because qualitative opinions are enough if they are ethically motivated.", "Because credible action requires quantified assumptions, understanding of systemic effects, and critical prioritization."], answer: 3, explanation: "Credible environmental decisions require quantified assumptions, systemic understanding, and prioritization of effective actions." }
 ];
 
 window.innovationQuizQuestions = questions;
@@ -50,14 +53,15 @@ quiz.addEventListener("submit", (event) => {
     markQuestion(quiz.querySelector(`[data-question="q${index + 1}"]`), isCorrect, question.explanation);
   });
 
-  const message = score === 15
+  const strongScore = Math.ceil(questions.length * 0.8);
+  const message = score === questions.length
     ? "Excellent — every answer is correct."
-    : score >= 12
+    : score >= strongScore
       ? "Great work. Review the highlighted questions and try for full marks."
       : "Review Chapter 1, then try again when you are ready.";
 
-  result.className = `quiz-result show ${score >= 12 ? "strong-score" : ""}`;
-  result.innerHTML = `<strong>${score}/15</strong><span>${message}</span>`;
+  result.className = `quiz-result show ${score >= strongScore ? "strong-score" : ""}`;
+  result.innerHTML = `<strong>${score}/${questions.length}</strong><span>${message}</span>`;
   result.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 

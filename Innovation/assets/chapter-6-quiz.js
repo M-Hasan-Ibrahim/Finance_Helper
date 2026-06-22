@@ -13,7 +13,8 @@ const questions = [
   { text: "Which individual practice reduces unnecessary video-related demand?", options: ["Always use the highest resolution", "Disable video when it is not useful and choose lower resolutions", "Stream the same content on several devices", "Leave automatic video enabled"], answer: 1, explanation: "Lower resolution and disabling unnecessary video reduce data transfer and processing demand." },
   { text: "Which web eco-design practice reduces network requests and third-party dependence?", options: ["Add more trackers and external scripts", "Reduce scripts, trackers, network calls, and external services", "Autoplay all media", "Duplicate every library"], answer: 1, explanation: "Limiting scripts, trackers, calls, and external services reduces data transfer, processing, and dependencies." },
   { text: "Why should eco-design support slow connections and older devices?", options: ["To extend hardware usefulness and improve accessibility", "To force users to replace equipment", "To increase page weight", "To prevent service decommissioning"], answer: 0, explanation: "Compatibility reduces premature equipment replacement and makes services more inclusive and resilient." },
-  { text: "Which property must a well-written good-practice rule have?", options: ["It should combine many unrelated objectives.", "It should be objectively verifiable.", "It should avoid stating a difficulty level.", "It should use vague language that cannot be tested."], answer: 1, explanation: "A useful rule should be positive, clear, understandable, objectively verifiable, and assigned a difficulty level." }
+  { text: "Which property must a well-written good-practice rule have?", options: ["It should combine many unrelated objectives.", "It should be objectively verifiable.", "It should avoid stating a difficulty level.", "It should use vague language that cannot be tested."], answer: 1, explanation: "A useful rule should be positive, clear, understandable, objectively verifiable, and assigned a difficulty level." },
+  { text: "What is the main idea behind Green UX?", options: ["Add animations to make users spend more time on the service.", "Maximize the number of available features so every possible need is covered.", "Replace all design decisions with technical compression.", "Design around real user value, useful functions, sober interfaces, and avoidance of unnecessary complexity."], answer: 3, explanation: "Green UX begins with genuine user value and removes unnecessary functions, interactions, and interface complexity." }
 ];
 
 window.innovationQuizQuestions = questions;
@@ -50,13 +51,14 @@ quiz.addEventListener("submit", (event) => {
     markQuestion(quiz.querySelector(`[data-question="q${index + 1}"]`), isCorrect, question.explanation);
   });
 
+  const strongScore = Math.ceil(questions.length * 0.8);
   const message = score === questions.length
     ? "Excellent - every answer is correct."
-    : score >= 12
+    : score >= strongScore
       ? "Great work. Review the highlighted questions and try for full marks."
       : "Review Chapter 6, then try again when you are ready.";
 
-  result.className = `quiz-result show ${score >= 12 ? "strong-score" : ""}`;
+  result.className = `quiz-result show ${score >= strongScore ? "strong-score" : ""}`;
   result.innerHTML = `<strong>${score}/${questions.length}</strong><span>${message}</span>`;
   result.scrollIntoView({ behavior: "smooth", block: "center" });
 });

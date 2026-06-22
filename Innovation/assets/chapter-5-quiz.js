@@ -13,7 +13,10 @@ const questions = [
   { text: "What does IT for Green mean?", options: ["Using digital technology to reduce impacts outside IT for a useful environmental purpose", "Painting data centres green", "Measuring only the IT department's emissions", "Replacing all physical services with digital ones"], answer: 0, explanation: "IT for Green uses digital solutions to support environmental improvements in other activities." },
   { text: "What condition must an IT for Green solution satisfy?", options: ["Its environmental benefit must exceed the footprint of the digital system required", "It must use the newest possible hardware", "It must eliminate all human decisions", "Its own footprint does not need to be measured"], answer: 0, explanation: "The avoided impacts must be compared with the complete footprint of creating and operating the digital solution." },
   { text: "Why is Wi-Fi connectivity technically difficult on high-speed TGV trains?", options: ["Trains never pass through network cells.", "Speed, tunnels, cell handovers, and the train body's Faraday-cage effect complicate connections.", "Passenger devices cannot use Wi-Fi.", "Rail lines have no telecommunications infrastructure."], answer: 1, explanation: "High speed, rapid cell transitions, tunnels, and signal shielding make stable rail connectivity challenging." },
-  { text: "Why are technical improvements alone insufficient for managing TGV streaming impacts?", options: ["They may create new uses and rebound effects, so usefulness and demand must also be managed.", "Compression always increases data volume.", "Technical improvements cannot reduce energy use.", "Passengers never change their behaviour."], answer: 0, explanation: "More efficient connectivity can encourage additional streaming, so limits, messaging, and service-need decisions remain necessary." }
+  { text: "Why are technical improvements alone insufficient for managing TGV streaming impacts?", options: ["They may create new uses and rebound effects, so usefulness and demand must also be managed.", "Compression always increases data volume.", "Technical improvements cannot reduce energy use.", "Passengers never change their behaviour."], answer: 0, explanation: "More efficient connectivity can encourage additional streaming, so limits, messaging, and service-need decisions remain necessary." },
+  { text: "Why is awareness-building necessary but insufficient in a large organization?", options: ["Employees cannot influence digital impacts at all.", "Awareness campaigns replace the need for measurement.", "Awareness is useful only for communication teams.", "Durable change also requires tools, governance, procurement rules, project criteria, and operational constraints."], answer: 3, explanation: "Awareness supports change, but lasting results require organizational rules, tools, governance, purchasing criteria, and operational limits." },
+  { text: "Why can maintainable, modular, operable code be considered more sustainable?", options: ["It may cost more initially but reduces long-term operation, maintenance, duplication, and evolution costs.", "It always consumes zero electricity.", "It removes the need to question business value.", "It makes hardware impacts disappear."], answer: 0, explanation: "Maintainable and modular software can reduce duplicated work, operational complexity, and long-term resource use across its lifetime." },
+  { text: "In the Wi-Fi-on-board case, why is defining the functional unit, perimeter, hypotheses, and scenario essential?", options: ["The same calculation applies to every train and country.", "The result is independent of usage assumptions.", "Only passenger devices matter.", "The conclusion depends on the service compared, the infrastructure included, and the impacts considered."], answer: 3, explanation: "A consequential assessment changes with its functional unit, system boundary, included infrastructure, usage assumptions, and comparison scenario." }
 ];
 
 window.innovationQuizQuestions = questions;
@@ -50,13 +53,14 @@ quiz.addEventListener("submit", (event) => {
     markQuestion(quiz.querySelector(`[data-question="q${index + 1}"]`), isCorrect, question.explanation);
   });
 
+  const strongScore = Math.ceil(questions.length * 0.8);
   const message = score === questions.length
     ? "Excellent - every answer is correct."
-    : score >= 12
+    : score >= strongScore
       ? "Great work. Review the highlighted questions and try for full marks."
       : "Review Chapter 5, then try again when you are ready.";
 
-  result.className = `quiz-result show ${score >= 12 ? "strong-score" : ""}`;
+  result.className = `quiz-result show ${score >= strongScore ? "strong-score" : ""}`;
   result.innerHTML = `<strong>${score}/${questions.length}</strong><span>${message}</span>`;
   result.scrollIntoView({ behavior: "smooth", block: "center" });
 });
