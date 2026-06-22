@@ -16,11 +16,13 @@ const questions = [
   { text: "Why is moving to the cloud not automatically environmentally beneficial?", options: ["Cloud systems never use efficient hardware.", "Complete impacts such as manufacturing, water, replacement, and rebound effects must still be measured.", "Cloud services cannot use renewable electricity.", "Cloud emissions belong only to Scope 1."], answer: 1, explanation: "Efficiency or carbon-neutrality claims do not replace a complete assessment of the cloud service's physical impacts." }
 ];
 
+window.innovationQuizQuestions = questions;
+
 const quiz = document.querySelector("#chapter4Quiz");
 const questionHost = document.querySelector("#quizQuestions");
 const result = document.querySelector("#quizResult");
 const resetButton = document.querySelector("#resetQuiz");
-const letters = ["A", "B", "C", "D"];
+const letters = ["1", "2", "3", "4"];
 
 questionHost.innerHTML = questions.map((question, index) => `
   <fieldset class="quiz-question" data-question="q${index + 1}">
@@ -42,7 +44,8 @@ quiz.addEventListener("submit", (event) => {
   let score = 0;
 
   questions.forEach((question, index) => {
-    const isCorrect = Number(formData.get(`q${index + 1}`)) === question.answer;
+    const selected = formData.get(`q${index + 1}`);
+    const isCorrect = selected !== null && Number(selected) === question.answer;
     if (isCorrect) score += 1;
     markQuestion(quiz.querySelector(`[data-question="q${index + 1}"]`), isCorrect, question.explanation);
   });

@@ -16,11 +16,13 @@ const questions = [
   { text: "Which design choice best supports a sober user journey?", options: ["Display every possible feature at once", "Add steps so users remain longer", "Help users complete their goal directly and leave quickly", "Use heavy technology even for simple content"], answer: 2, explanation: "Sober design prioritizes useful functions, direct content, fewer steps, and efficient completion of the user's goal." }
 ];
 
+window.innovationQuizQuestions = questions;
+
 const quiz = document.querySelector("#chapter7Quiz");
 const questionHost = document.querySelector("#quizQuestions");
 const result = document.querySelector("#quizResult");
 const resetButton = document.querySelector("#resetQuiz");
-const letters = ["A", "B", "C", "D"];
+const letters = ["1", "2", "3", "4"];
 
 questionHost.innerHTML = questions.map((question, index) => `
   <fieldset class="quiz-question" data-question="q${index + 1}">
@@ -42,7 +44,8 @@ quiz.addEventListener("submit", (event) => {
   let score = 0;
 
   questions.forEach((question, index) => {
-    const isCorrect = Number(formData.get(`q${index + 1}`)) === question.answer;
+    const selected = formData.get(`q${index + 1}`);
+    const isCorrect = selected !== null && Number(selected) === question.answer;
     if (isCorrect) score += 1;
     markQuestion(quiz.querySelector(`[data-question="q${index + 1}"]`), isCorrect, question.explanation);
   });

@@ -16,11 +16,13 @@ const questions = [
   { text: "Which interventions are generally the most powerful?", options: ["Changing small numerical parameters only.", "Changing information display colors.", "Changing the system's goals and underlying paradigms.", "Treating isolated symptoms without changing structure."], answer: 2, explanation: "Goals and paradigms shape the whole system, so changing them has high leverage even though it is difficult." }
 ];
 
+window.innovationQuizQuestions = questions;
+
 const quiz = document.querySelector("#chapter2Quiz");
 const questionHost = document.querySelector("#quizQuestions");
 const result = document.querySelector("#quizResult");
 const resetButton = document.querySelector("#resetQuiz");
-const letters = ["A", "B", "C", "D"];
+const letters = ["1", "2", "3", "4"];
 
 questionHost.innerHTML = questions.map((question, index) => `
   <fieldset class="quiz-question" data-question="q${index + 1}">
@@ -42,7 +44,8 @@ quiz.addEventListener("submit", (event) => {
   let score = 0;
 
   questions.forEach((question, index) => {
-    const isCorrect = Number(formData.get(`q${index + 1}`)) === question.answer;
+    const selected = formData.get(`q${index + 1}`);
+    const isCorrect = selected !== null && Number(selected) === question.answer;
     if (isCorrect) score += 1;
     markQuestion(quiz.querySelector(`[data-question="q${index + 1}"]`), isCorrect, question.explanation);
   });

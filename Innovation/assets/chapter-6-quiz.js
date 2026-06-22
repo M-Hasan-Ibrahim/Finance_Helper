@@ -16,11 +16,13 @@ const questions = [
   { text: "Which property must a well-written good-practice rule have?", options: ["It should combine many unrelated objectives.", "It should be objectively verifiable.", "It should avoid stating a difficulty level.", "It should use vague language that cannot be tested."], answer: 1, explanation: "A useful rule should be positive, clear, understandable, objectively verifiable, and assigned a difficulty level." }
 ];
 
+window.innovationQuizQuestions = questions;
+
 const quiz = document.querySelector("#chapter6Quiz");
 const questionHost = document.querySelector("#quizQuestions");
 const result = document.querySelector("#quizResult");
 const resetButton = document.querySelector("#resetQuiz");
-const letters = ["A", "B", "C", "D"];
+const letters = ["1", "2", "3", "4"];
 
 questionHost.innerHTML = questions.map((question, index) => `
   <fieldset class="quiz-question" data-question="q${index + 1}">
@@ -42,7 +44,8 @@ quiz.addEventListener("submit", (event) => {
   let score = 0;
 
   questions.forEach((question, index) => {
-    const isCorrect = Number(formData.get(`q${index + 1}`)) === question.answer;
+    const selected = formData.get(`q${index + 1}`);
+    const isCorrect = selected !== null && Number(selected) === question.answer;
     if (isCorrect) score += 1;
     markQuestion(quiz.querySelector(`[data-question="q${index + 1}"]`), isCorrect, question.explanation);
   });

@@ -1,4 +1,4 @@
-﻿const questions = [
+const questions = [
   { text: "What is the main difference between weather and climate?", options: ["Weather is global, while climate is local.", "Weather is short-term, while climate describes long-term averages and variations.", "Weather concerns temperature only, while climate concerns rainfall only.", "There is no meaningful difference."], answer: 1, explanation: "Weather describes short-term conditions; climate describes long-term averages and variations." },
   { text: "How do greenhouse gases contribute to global warming?", options: ["They absorb heat emitted by Earth.", "They prevent sunlight from reaching Earth.", "They remove oxygen from the atmosphere.", "They cool the oceans directly."], answer: 0, explanation: "Greenhouse gases absorb heat emitted by Earth, strengthening the greenhouse effect." },
   { text: "Which greenhouse gas has a warming effect of about 25–28 times that of CO₂?", options: ["Methane (CH₄)", "Nitrous oxide (N₂O)", "Oxygen (O₂)", "Hydrogen (H₂)"], answer: 0, explanation: "Methane has approximately 25–28 times the warming effect of CO₂." },
@@ -16,16 +16,18 @@
   { text: "Which combination does the chapter identify as necessary for the energy transition?", options: ["Cleaner energy + efficiency + sufficiency", "More fossil fuels + lower prices + more consumption", "Electrification only", "Nuclear energy only"], answer: 0, explanation: "The transition must combine cleaner energy, efficiency, and sufficiency." }
 ];
 
+window.innovationQuizQuestions = questions;
+
 const quiz = document.querySelector("#chapter1Quiz");
 const questionHost = document.querySelector("#quizQuestions");
 const result = document.querySelector("#quizResult");
 const resetButton = document.querySelector("#resetQuiz");
-const letters = ["a", "b", "c", "d"];
+const letters = ["1", "2", "3", "4"];
 
 questionHost.innerHTML = questions.map((question, index) => `
   <fieldset class="quiz-question" data-question="q${index + 1}">
     <legend><span>${index + 1}</span> ${question.text}</legend>
-    ${question.options.map((option, optionIndex) => `<label><input type="radio" name="q${index + 1}" value="${optionIndex}" /> ${letters[optionIndex].toUpperCase()}. ${option}</label>`).join("")}
+    ${question.options.map((option, optionIndex) => `<label><input type="radio" name="q${index + 1}" value="${optionIndex}" /> ${letters[optionIndex]}. ${option}</label>`).join("")}
     <p class="question-feedback" aria-live="polite"></p>
   </fieldset>
 `).join("");
@@ -42,7 +44,8 @@ quiz.addEventListener("submit", (event) => {
   let score = 0;
 
   questions.forEach((question, index) => {
-    const isCorrect = Number(formData.get(`q${index + 1}`)) === question.answer;
+    const selected = formData.get(`q${index + 1}`);
+    const isCorrect = selected !== null && Number(selected) === question.answer;
     if (isCorrect) score += 1;
     markQuestion(quiz.querySelector(`[data-question="q${index + 1}"]`), isCorrect, question.explanation);
   });

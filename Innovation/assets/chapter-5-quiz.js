@@ -16,11 +16,13 @@ const questions = [
   { text: "Why are technical improvements alone insufficient for managing TGV streaming impacts?", options: ["They may create new uses and rebound effects, so usefulness and demand must also be managed.", "Compression always increases data volume.", "Technical improvements cannot reduce energy use.", "Passengers never change their behaviour."], answer: 0, explanation: "More efficient connectivity can encourage additional streaming, so limits, messaging, and service-need decisions remain necessary." }
 ];
 
+window.innovationQuizQuestions = questions;
+
 const quiz = document.querySelector("#chapter5Quiz");
 const questionHost = document.querySelector("#quizQuestions");
 const result = document.querySelector("#quizResult");
 const resetButton = document.querySelector("#resetQuiz");
-const letters = ["A", "B", "C", "D"];
+const letters = ["1", "2", "3", "4"];
 
 questionHost.innerHTML = questions.map((question, index) => `
   <fieldset class="quiz-question" data-question="q${index + 1}">
@@ -42,7 +44,8 @@ quiz.addEventListener("submit", (event) => {
   let score = 0;
 
   questions.forEach((question, index) => {
-    const isCorrect = Number(formData.get(`q${index + 1}`)) === question.answer;
+    const selected = formData.get(`q${index + 1}`);
+    const isCorrect = selected !== null && Number(selected) === question.answer;
     if (isCorrect) score += 1;
     markQuestion(quiz.querySelector(`[data-question="q${index + 1}"]`), isCorrect, question.explanation);
   });
