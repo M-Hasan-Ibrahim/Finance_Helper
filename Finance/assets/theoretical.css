@@ -171,6 +171,69 @@
   gap: 12px;
 }
 
+.summary-definition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.summary-definition {
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-top: 4px solid var(--teal);
+  border-radius: 9px;
+  background: #f8fafc;
+}
+
+.summary-definition h4 {
+  margin: 0 0 7px;
+  color: #07364a;
+  font-size: 16px;
+}
+
+.summary-definition h4 span {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.summary-definition p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.summary-definition ul {
+  margin-bottom: 0;
+}
+
+.summary-wide {
+  grid-column: 1 / -1;
+}
+
+.summary-key-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.summary-key-point {
+  padding: 15px;
+  border-radius: 9px;
+  background: #e6f4f8;
+  color: #07364a;
+  line-height: 1.45;
+}
+
+.summary-key-point b {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+  border-radius: 999px;
+  background: var(--teal);
+  color: white;
+}
+
 .notes-stat,
 .notes-method {
   padding: 14px;
@@ -603,6 +666,11 @@
   }
 
   .formula-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-definition-grid,
+  .summary-key-points {
     grid-template-columns: 1fr;
   }
 

@@ -11,6 +11,7 @@ const mcqPracticeSetSize = document.getElementById("mcqPracticeSetSize");
 const mcqCategoryControl = document.getElementById("mcqCategoryControl");
 const mcqSetSizeControl = document.getElementById("mcqSetSizeControl");
 const startMcqSessionBtn = document.getElementById("startMcqSessionBtn");
+const courseSummaryContainer = document.getElementById("courseSummaryContainer");
 const extraNotesContainer = document.getElementById("extraNotesContainer");
 
 const MCQ_GROUPS = [
@@ -25,6 +26,7 @@ const theoryTabButtons = [...document.querySelectorAll("[data-theory-tab]")];
 const theoryPanels = {
   lesson: document.getElementById("lessonPanel"),
   mcq: document.getElementById("mcqPanel"),
+  summary: document.getElementById("summaryPanel"),
   notes: document.getElementById("notesPanel")
 };
 
@@ -364,15 +366,17 @@ function startPracticeSession() {
 
 async function initTheory() {
   try {
-    const [theoryResponse, mcqResponse, mcqFrenchResponse, extraNotesResponse] = await Promise.all([
+    const [theoryResponse, mcqResponse, mcqFrenchResponse, courseSummaryResponse, extraNotesResponse] = await Promise.all([
       fetch("data/theoretical_questions.json"),
       fetch("data/mcq_questions.json"),
       fetch("data/mcq_questions_fr.json"),
+      fetch("data/course_summary_notes.html"),
       fetch("data/extra_course_notes.html")
     ]);
     if (!theoryResponse.ok) throw new Error(`Could not load theoretical_questions.json (${theoryResponse.status})`);
     if (!mcqResponse.ok) throw new Error(`Could not load mcq_questions.json (${mcqResponse.status})`);
     if (!mcqFrenchResponse.ok) throw new Error(`Could not load mcq_questions_fr.json (${mcqFrenchResponse.status})`);
+    if (!courseSummaryResponse.ok) throw new Error(`Could not load course_summary_notes.html (${courseSummaryResponse.status})`);
     if (!extraNotesResponse.ok) throw new Error(`Could not load extra_course_notes.html (${extraNotesResponse.status})`);
 
     theoryData = await theoryResponse.json();
@@ -387,6 +391,7 @@ async function initTheory() {
         }))
         .sort((a, b) => a.id - b.id)
     };
+    courseSummaryContainer.innerHTML = await courseSummaryResponse.text();
     extraNotesContainer.innerHTML = await extraNotesResponse.text();
     renderLanguage(theoryData.defaultLanguage || "fr");
     renderAllMcqs();
