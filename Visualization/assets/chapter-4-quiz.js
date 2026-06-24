@@ -14,7 +14,8 @@ const explanations = {
   q7: "A present target is normally found faster than an absent target, which requires a more exhaustive search.",
   q8: "Shape alone can pop out pre-attentively, while conjunctions such as color plus shape require slower search.",
   q9: "Contrast depends on the brightness or luminance difference between foreground and background.",
-  q10: "Selective finds targets; associative groups them; quantitative reads values; orderable ranks them; discriminability counts distinguishable levels."
+  q10: "Selective finds targets; associative groups them; quantitative reads values; orderable ranks them; discriminability counts distinguishable levels.",
+  q11: "The difference between foreground and background is contrast."
 };
 
 const matches = [
@@ -160,6 +161,11 @@ quiz.addEventListener("submit", (event) => {
   if (q9Correct) score += 1;
   markQuestion(quiz.querySelector('[data-question="q9"]'), q9Correct, explanations.q9);
 
+
+  const q11Answer = normalize(formData.get("q11") || "");
+  const q11Correct = q11Answer === "contrast";
+  if (q11Correct) score += 1;
+  markQuestion(quiz.querySelector('[data-question="q11"]'), q11Correct, explanations.q11);
   const q10Correct = [...matchingGrid.querySelectorAll(".match-slot")].every((slot) => {
     const card = slot.querySelector(".match-card");
     return card && card.dataset.id === slot.dataset.answer;
@@ -167,8 +173,8 @@ quiz.addEventListener("submit", (event) => {
   if (q10Correct) score += 1;
   markQuestion(quiz.querySelector('[data-question="q10"]'), q10Correct, explanations.q10);
 
-  result.className = `quiz-result show ${score >= 8 ? "strong-score" : ""}`;
-  result.innerHTML = `<strong>${score}/10</strong><span>${score === 10 ? "Excellent—every answer is correct." : score >= 8 ? "Great work. Review the highlighted questions and try for full marks." : "Review Chapter 4 and try again when ready."}</span>`;
+  result.className = `quiz-result show ${score >= 9 ? "strong-score" : ""}`;
+  result.innerHTML = `<strong>${score}/11</strong><span>${score === 11 ? "Excellent—every answer is correct." : score >= 9 ? "Great work. Review the highlighted questions and try for full marks." : "Review Chapter 4 and try again when ready."}</span>`;
   result.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 

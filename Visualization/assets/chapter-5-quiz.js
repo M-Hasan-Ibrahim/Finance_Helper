@@ -55,7 +55,8 @@ const answers = {
   q7: "false",
   q8: "c",
   q9: "a",
-  q10: "false"
+  q10: "false",
+  q11: "b"
 };
 
 const explanations = {
@@ -68,7 +69,8 @@ const explanations = {
   q7: "Specific layout optimization problems can be NP-hard, but graph drawing as a whole is not always NP-hard.",
   q8: "Adjacency matrices avoid edge-crossing clutter and scale well for dense graphs.",
   q9: "A graph is an abstract object and exists independently of any drawing.",
-  q10: "Matrices still require a row and column ordering, so they do not remove every layout decision."
+  q10: "Matrices still require a row and column ordering, so they do not remove every layout decision.",
+  q11: "Adjacency lists are useful graph data structures, especially for sparse graphs, but dense graph visualizations often use adjacency matrices."
 };
 
 function markQuestion(question, isCorrect, explanation) {
@@ -96,8 +98,8 @@ quiz.addEventListener("submit", (event) => {
   if (q2Correct) score += 1;
   markQuestion(quiz.querySelector('[data-question="q2"]'), q2Correct, explanations.q2);
 
-  result.className = `quiz-result show ${score >= 8 ? "strong-score" : ""}`;
-  result.innerHTML = `<strong>${score}/10</strong><span>${score === 10 ? "Excellent - every answer is correct." : score >= 8 ? "Great work. Review the highlighted questions and try for full marks." : "Review Chapter 5 and try again when ready."}</span>`;
+  result.className = `quiz-result show ${score >= 9 ? "strong-score" : ""}`;
+  result.innerHTML = `<strong>${score}/11</strong><span>${score === 11 ? "Excellent - every answer is correct." : score >= 9 ? "Great work. Review the highlighted questions and try for full marks." : "Review Chapter 5 and try again when ready."}</span>`;
   result.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 

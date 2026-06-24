@@ -4,12 +4,13 @@ const resetButton = document.querySelector("#resetQuiz");
 const orderingList = document.querySelector("#mantraOrder");
 
 const correctOrder = ["Overview first", "Zoom and filter", "Details on demand"];
-const answers = { q1: "b", q2: "d", q3: "b", q5: "d" };
+const answers = { q1: "b", q2: "d", q3: "b", q5: "d", q6: "c" };
 const explanations = {
   q1: "The model is iterative, with loops around data foraging, interpretation, and presentation.",
   q2: "Analytic tasks describe the questions and activities a visualization must support.",
   q3: "Computers may process huge datasets, but human perception and cognition remain limited.",
-  q5: "Select is an interaction category; click is a physical input action."
+  q5: "Select is an interaction category; click is a physical input action.",
+  q6: "Discover is the analysis goal associated with generating new hypotheses."
 };
 
 let draggedItem = null;
@@ -99,8 +100,8 @@ quiz.addEventListener("submit", (event) => {
     "The sequence is: Overview first → Zoom and filter → Details on demand."
   );
 
-  result.className = `quiz-result show ${score >= 4 ? "strong-score" : ""}`;
-  result.innerHTML = `<strong>${score}/5</strong><span>${score === 5 ? "Excellent—every answer is correct." : score >= 4 ? "Great work. Review the highlighted question and try for full marks." : "Review Chapter 3 and try again when ready."}</span>`;
+  result.className = `quiz-result show ${score >= 5 ? "strong-score" : ""}`;
+  result.innerHTML = `<strong>${score}/6</strong><span>${score === 6 ? "Excellent—every answer is correct." : score >= 5 ? "Great work. Review the highlighted question and try for full marks." : "Review Chapter 3 and try again when ready."}</span>`;
   result.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 

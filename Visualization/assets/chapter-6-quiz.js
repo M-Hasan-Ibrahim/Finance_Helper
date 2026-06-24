@@ -70,7 +70,7 @@ const resetButton = document.querySelector("#resetQuiz");
 
 const answers = {
   q1: "b", q3: "b", q4: "a", q5: "b", q6: "a",
-  q7: "false", q8: "d", q9: "a", q10: "c"
+  q7: "false", q8: "d", q9: "a", q10: "c", q11: "true", q12: "true"
 };
 
 const explanations = {
@@ -83,7 +83,9 @@ const explanations = {
   q7: "Not always - scales must be explicit and non-misleading. Bar charts normally should begin at zero.",
   q8: "Data ink is the visual material that directly represents data. Data-ink ratio = data ink / total ink.",
   q9: "Lie factor = size of effect shown in the graphic / size of effect shown in the data.",
-  q10: "The decorative monster adds clutter without improving understanding, making it chartjunk."
+  q10: "The decorative monster adds clutter without improving understanding, making it chartjunk.",
+  q11: "Chartjunk is unnecessary decoration that does not help explain the data.",
+  q12: "Tufte recommends maximizing the data-ink ratio when possible, while preserving clarity."
 };
 
 function markQuestion(question, isCorrect, explanation) {
@@ -109,8 +111,8 @@ quiz.addEventListener("submit", (event) => {
   if (q2Correct) score += 1;
   markQuestion(quiz.querySelector('[data-question="q2"]'), q2Correct, explanations.q2);
 
-  result.className = `quiz-result show ${score >= 8 ? "strong-score" : ""}`;
-  result.innerHTML = `<strong>${score}/10</strong><span>${score === 10 ? "Excellent - every answer is correct." : score >= 8 ? "Great work. Review the highlighted questions and try for full marks." : "Review Chapter 6 and try again when ready."}</span>`;
+  result.className = `quiz-result show ${score >= 10 ? "strong-score" : ""}`;
+  result.innerHTML = `<strong>${score}/12</strong><span>${score === 12 ? "Excellent - every answer is correct." : score >= 10 ? "Great work. Review the highlighted questions and try for full marks." : "Review Chapter 6 and try again when ready."}</span>`;
   result.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 
