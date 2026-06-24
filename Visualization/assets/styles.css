@@ -256,6 +256,12 @@ p { color: var(--muted); line-height: 1.65; }
 .chartjunk-figure img { display: block; width: 100%; height: auto; border-radius: 6px; }
 .chartjunk-figure figcaption { margin-top: 10px; color: var(--muted); font-size: 14px; text-align: center; }
 .critique-guide .definition { margin: 14px 0; }
+.encoding-table-wrap { overflow-x: auto; margin: 18px 0; }
+.encoding-table { width: 100%; min-width: 520px; border-collapse: collapse; border: 1px solid #c9dce4; border-radius: 8px; background: #ffffff; }
+.encoding-table th, .encoding-table td { padding: 12px 14px; border-bottom: 1px solid #d7e0e7; text-align: left; }
+.encoding-table th { background: #edf7fa; color: var(--navy); font-weight: 800; }
+.encoding-table td { color: var(--text); }
+.encoding-table tr:last-child td { border-bottom: 0; }
 .critique-list { display: grid; gap: 8px; max-width: 520px; margin: 18px 0; padding: 18px 18px 18px 44px; border-radius: 8px; background: #f1f5f9; color: var(--navy); font-weight: 700; }
 .exam-template { overflow-x: auto; margin: 18px 0 0; padding: 20px; border: 1px solid #c9dce4; border-radius: 8px; background: #0f2433; color: #f8fafc; font-size: 16px; line-height: 1.6; }
 .exam-template code { color: inherit; font-family: Consolas, Monaco, "Courier New", monospace; }

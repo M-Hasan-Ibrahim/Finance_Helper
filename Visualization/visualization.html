@@ -110,33 +110,90 @@
 
         <section>
           <h3>2. Check The Encoding</h3>
-          <p>Ask: are the visual channels good? Best channels for accurate comparison:</p>
-          <ol class="critique-list">
-            <li>position on common scale</li>
-            <li>length</li>
-            <li>angle/slope</li>
-            <li>area</li>
-            <li>color</li>
-          </ol>
-          <p>If a chart uses <strong>area, 3D, color, or angle</strong> when the task is precise comparison, criticize it.</p>
-          <p class="definition">The visualization makes comparison difficult because it uses area/color instead of position or length. A bar chart or aligned dot plot would be more effective.</p>
+          <p>Ask yourself: <strong>how is the data represented visually?</strong></p>
+          <p>In a visualization, data is shown using visual channels:</p>
+          <div class="encoding-table-wrap">
+            <table class="encoding-table">
+              <thead>
+                <tr><th>Data shown by</th><th>Encoding channel</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>x/y position</td><td>position</td></tr>
+                <tr><td>bar height</td><td>length</td></tr>
+                <tr><td>circle size</td><td>area</td></tr>
+                <tr><td>color brightness</td><td>luminance</td></tr>
+                <tr><td>color category</td><td>hue</td></tr>
+                <tr><td>line thickness</td><td>width</td></tr>
+                <tr><td>symbol shape</td><td>shape</td></tr>
+                <tr><td>connection between nodes</td><td>edge/link</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The critique is: <strong>is this a good channel for the task?</strong></p>
+
+          <h3>Example 1: Exact Values</h3>
+          <p>If the task is to <strong>compare exact values</strong>, using color is weak.</p>
+          <p class="definition"><strong>Bad:</strong> Values are encoded with color intensity, so comparing exact numbers is difficult.</p>
+          <p class="definition"><strong>Better:</strong> Use bars or aligned dots, because position/length is easier to compare.</p>
+
+          <h3>Example 2: Categories</h3>
+          <p>If the task is to show <strong>categories</strong>, color is good.</p>
+          <p class="definition"><strong>Good:</strong> Different categories are encoded by different colors, which is appropriate because color hue helps distinguish identity.</p>
+
+          <h3>Example 3: Quantities With Area</h3>
+          <p>If the task is to compare quantities, circle area is risky.</p>
+          <p class="definition"><strong>Bad:</strong> The values are encoded by circle area, but humans do not compare areas accurately.</p>
+          <p class="definition"><strong>Better:</strong> Use bar length or position on a common scale.</p>
+
+          <h3>Very Simple Exam Sentence</h3>
+          <pre class="exam-template"><code>The encoding is not effective because it uses ____ to show ____.
+This makes ____ difficult.
+A better encoding would be ____ because it supports the task of ____.</code></pre>
+          <pre class="exam-template"><code>The encoding is not effective because it uses color to show quantitative values.
+This makes accurate comparison difficult.
+A better encoding would be position or length because it supports comparing values more clearly.</code></pre>
         </section>
 
         <section>
           <h3>3. Check Perception Problems</h3>
-          <div class="task-grid">
-            <span>too many colors</span>
-            <span>rainbow color scale</span>
-            <span>low contrast</span>
-            <span>clutter</span>
-            <span>overlapping labels</span>
-            <span>3D distortion</span>
-            <span>bad ordering</span>
-            <span>missing scale</span>
-            <span>misleading axis</span>
-            <span>chartjunk</span>
+          <p>Ask yourself: <strong>can the human eye understand this visualization easily, or is something making it hard to read?</strong></p>
+          <p>This is about how people perceive visuals.</p>
+          <div class="encoding-table-wrap">
+            <table class="encoding-table">
+              <thead>
+                <tr><th>Problem</th><th>Meaning</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>too many colors</td><td>the viewer gets confused</td></tr>
+                <tr><td>rainbow color scale</td><td>colors do not have a clear order</td></tr>
+                <tr><td>low contrast</td><td>hard to separate foreground/background</td></tr>
+                <tr><td>clutter</td><td>too much information at once</td></tr>
+                <tr><td>overlapping labels</td><td>text becomes unreadable</td></tr>
+                <tr><td>3D distortion</td><td>shapes look bigger/smaller than reality</td></tr>
+                <tr><td>bad ordering</td><td>categories are not sorted logically</td></tr>
+                <tr><td>missing scale</td><td>user cannot know exact values</td></tr>
+                <tr><td>misleading axis</td><td>axis exaggerates or hides differences</td></tr>
+                <tr><td>chartjunk</td><td>decorative elements that do not help understand data</td></tr>
+              </tbody>
+            </table>
           </div>
-          <p class="definition">The rainbow scale is problematic because the colors are not perceptually ordered, so users may misread high and low values.</p>
+
+          <h3>Very Simple Exam Sentence</h3>
+          <pre class="exam-template"><code>The visualization has a perception problem because ____.
+This makes it difficult for the viewer to ____.
+A better design would be ____.</code></pre>
+
+          <h3>Example</h3>
+          <pre class="exam-template"><code>The visualization has a perception problem because there are too many colors.
+This makes it difficult for the viewer to identify the important patterns.
+A better design would be to use fewer colors and reserve strong colors for important values.</code></pre>
+
+          <h3>Another Example</h3>
+          <pre class="exam-template"><code>The visualization uses a rainbow color scale, which is not perceptually ordered.
+This makes high and low values hard to interpret.
+A better design would be to use a sequential color scale from light to dark.</code></pre>
+
+          <p class="definition"><strong>If the eye struggles, it is a perception problem.</strong></p>
         </section>
 
         <section>

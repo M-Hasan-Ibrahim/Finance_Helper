@@ -11,14 +11,13 @@
     .page { width:min(960px,calc(100% - 32px)); margin:auto; padding:48px 0; }
     h1 { margin:0 0 8px; color:var(--navy); font-size:clamp(28px,5vw,42px); }
     .subtitle { margin:0 0 28px; color:var(--muted); line-height:1.5; }
-    .tabs { display:flex; flex-wrap:wrap; gap:8px; border-bottom:2px solid var(--border); }
-    .tab-button { padding:12px 18px; border:1px solid #c5d6df; border-bottom:0; border-radius:9px 9px 0 0; background:#d8e7ee; color:#0f3f52; font-size:15px; font-weight:700; cursor:pointer; }
-    .tab-button:hover,.tab-button.active { background:var(--teal); color:#fff; }
-    .tab-panel { min-height:260px; padding:28px; border:1px solid var(--border); border-top:0; border-radius:0 0 10px 10px; background:#fff; box-shadow:0 10px 30px rgba(7,54,74,.08); }
-    .tab-panel[hidden] { display:none; }
-    .tab-panel h2 { margin:0 0 10px; color:var(--navy); }
-    .tab-panel p { color:var(--muted); line-height:1.55; }
-    .course-link { display:inline-block; margin-top:12px; padding:12px 18px; border-radius:8px; background:var(--teal); color:#fff; font-weight:700; text-decoration:none; }
+    .course-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .course-card { display:grid; align-content:start; min-height:260px; padding:28px; border:1px solid var(--border); border-radius:10px; background:#fff; box-shadow:0 10px 30px rgba(7,54,74,.08); color:inherit; text-decoration:none; transition:transform 160ms ease,border-color 160ms ease; }
+    .course-card:hover { border-color:var(--teal); transform:translateY(-2px); }
+    .course-card h2 { margin:0 0 10px; color:var(--navy); }
+    .course-card p { color:var(--muted); line-height:1.55; }
+    .course-link { display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; margin-top:12px; padding:12px 16px 12px 18px; border-radius:8px; background:var(--teal); color:#fff; font-weight:700; text-decoration:none; }
+    .course-link::after { content:"→"; margin-left:auto; font-size:20px; line-height:1; }
     .course-link:hover { background:var(--dark); }
     .empty-state { display:grid; min-height:200px; place-content:center; text-align:center; }
     .empty-state span { color:#7b8790; font-size:14px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
@@ -26,9 +25,8 @@
     .site-footer p { margin:3px 0; }
     @media (max-width:560px) {
       .page { width:min(100% - 20px,960px); padding:28px 0; }
-      .tabs { display:grid; border-bottom:0; }
-      .tab-button { width:100%; border-bottom:1px solid #c5d6df; border-radius:8px; }
-      .tab-panel { margin-top:10px; padding:22px; border-top:1px solid var(--border); border-radius:10px; }
+      .course-grid { grid-template-columns:1fr; }
+      .course-card { min-height:0; padding:22px; }
     }
   </style>
 </head>
@@ -36,35 +34,24 @@
   <main class="page">
     <h1>Course Hub</h1>
     <p class="subtitle">Choose a subject to open its learning materials and exercises.</p>
-    <nav class="tabs" role="tablist" aria-label="Course subjects">
-      <button class="tab-button active" id="financeTab" type="button" role="tab" aria-selected="true" aria-controls="financePanel" data-tab="financePanel">Finance</button>
-      <button class="tab-button" id="innovationTab" type="button" role="tab" aria-selected="false" aria-controls="innovationPanel" data-tab="innovationPanel">Innovation</button>
-      <button class="tab-button" id="visualizationTab" type="button" role="tab" aria-selected="false" aria-controls="visualizationPanel" data-tab="visualizationPanel">Visualization</button>
-    </nav>
-    <section class="tab-panel" id="financePanel" role="tabpanel" aria-labelledby="financeTab">
-      <h2>Finance</h2>
-      <p>Study financial tables, calculation exercises, startup capital, valuation, and dilution.</p>
-      <a class="course-link" href="Finance/finance.html">Open Finance course</a>
-    </section>
-    <section class="tab-panel" id="innovationPanel" role="tabpanel" aria-labelledby="innovationTab" hidden>
-      <h2>Innovation</h2>
-      <p>The section structure is ready for course summaries, quizzes, and past exams.</p>
-      <a class="course-link" href="Innovation/innovation.html">Open Innovation section</a>
-    </section>
-    <section class="tab-panel" id="visualizationPanel" role="tabpanel" aria-labelledby="visualizationTab" hidden>
-      <h2>Visualization</h2>
-      <p>The section structure is ready. Course content will be added later.</p>
-      <a class="course-link" href="Visualization/visualization.html">Open Visualization section</a>
+    <section class="course-grid" aria-label="Course subjects">
+      <article class="course-card">
+        <h2>Finance</h2>
+        <p>Study financial tables, calculation exercises, startup capital, valuation, and dilution.</p>
+        <a class="course-link" href="Finance/finance.html">Open Finance course</a>
+      </article>
+      <article class="course-card">
+        <h2>Innovation</h2>
+        <p>The section structure is ready for course summaries, quizzes, and past exams.</p>
+        <a class="course-link" href="Innovation/innovation.html">Open Innovation course</a>
+      </article>
+      <article class="course-card">
+        <h2>Visualization</h2>
+        <p>Open the visualization course summaries, quizzes, past exams, and critique guide.</p>
+        <a class="course-link" href="Visualization/visualization.html">Open Visualization course</a>
+      </article>
     </section>
   </main>
-  <script>
-    const tabs = document.querySelectorAll("[data-tab]");
-    const panels = document.querySelectorAll('[role="tabpanel"]');
-    tabs.forEach((tab) => tab.addEventListener("click", () => {
-      tabs.forEach((item) => { const active = item === tab; item.classList.toggle("active", active); item.setAttribute("aria-selected", String(active)); });
-      panels.forEach((panel) => { panel.hidden = panel.id !== tab.dataset.tab; });
-    }));
-  </script>
   <footer class="site-footer">
     <p>&copy; 2026 Mohamad Hassan IBRAHIM. All rights reserved.</p>
     <p>Course Notes and Mock Exams. Built and maintained with assistance from his Codex account.</p>
