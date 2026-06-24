@@ -255,6 +255,10 @@ p { color: var(--muted); line-height: 1.65; }
 .chartjunk-figure { max-width: 700px; margin: 18px auto; padding: 12px; border: 1px solid #c9dce4; border-radius: 10px; background: #ffffff; }
 .chartjunk-figure img { display: block; width: 100%; height: auto; border-radius: 6px; }
 .chartjunk-figure figcaption { margin-top: 10px; color: var(--muted); font-size: 14px; text-align: center; }
+.critique-guide .definition { margin: 14px 0; }
+.critique-list { display: grid; gap: 8px; max-width: 520px; margin: 18px 0; padding: 18px 18px 18px 44px; border-radius: 8px; background: #f1f5f9; color: var(--navy); font-weight: 700; }
+.exam-template { overflow-x: auto; margin: 18px 0 0; padding: 20px; border: 1px solid #c9dce4; border-radius: 8px; background: #0f2433; color: #f8fafc; font-size: 16px; line-height: 1.6; }
+.exam-template code { color: inherit; font-family: Consolas, Monaco, "Courier New", monospace; }
 .takeaway { margin-top: 30px; padding: 20px; border-radius: 10px; background: var(--navy); }
 .takeaway h2, .takeaway p { color: #ffffff; }
 .takeaway p { margin-bottom: 0; }

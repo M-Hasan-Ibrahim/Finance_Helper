@@ -16,6 +16,7 @@
     <nav class="section-tabs" role="tablist" aria-label="Visualization sections">
       <button class="section-tab active" type="button" role="tab" aria-selected="true" aria-controls="coursesPanel" data-section-tab="coursesPanel">Courses</button>
       <button class="section-tab" type="button" role="tab" aria-selected="false" aria-controls="examsPanel" data-section-tab="examsPanel">Exams</button>
+      <button class="section-tab" type="button" role="tab" aria-selected="false" aria-controls="critiquePanel" data-section-tab="critiquePanel">Critique Guide</button>
     </nav>
 
     <section class="section-panel" id="coursesPanel" role="tabpanel">
@@ -79,6 +80,97 @@
         <a class="available" href="exams/exams.html#2018"><strong>2018</strong><span>Available now</span></a>
         <a class="available" href="exams/exams.html#2017"><strong>2017</strong><span>Available now</span></a>
       </nav>
+    </section>
+
+    <section class="section-panel" id="critiquePanel" role="tabpanel" hidden>
+      <header class="course-heading">
+        <p class="eyebrow">Exam method</p>
+        <h1>How to Critique a Visualization</h1>
+        <p class="subtitle">Critique questions ask: <strong>what is wrong with this visualization, why is it wrong, and how can we fix it?</strong></p>
+      </header>
+
+      <article class="article critique-guide">
+        <section>
+          <h2>Use This Method Every Time</h2>
+          <p class="definition"><strong>Task first. Encoding second. Perception third. Fix last.</strong></p>
+        </section>
+
+        <section>
+          <h2>1. Start With The Task</h2>
+          <p>Ask: what is the user supposed to do?</p>
+          <div class="task-grid">
+            <span>compare values</span>
+            <span>see trends</span>
+            <span>find clusters</span>
+            <span>find outliers</span>
+            <span>understand hierarchy</span>
+            <span>compare categories</span>
+            <span>follow change over time</span>
+          </div>
+          <p>If the visualization does not help the task, that is your critique.</p>
+        </section>
+
+        <section>
+          <h2>2. Check The Encoding</h2>
+          <p>Ask: are the visual channels good? Best channels for accurate comparison:</p>
+          <ol class="critique-list">
+            <li>position on common scale</li>
+            <li>length</li>
+            <li>angle/slope</li>
+            <li>area</li>
+            <li>color</li>
+          </ol>
+          <p>If a chart uses <strong>area, 3D, color, or angle</strong> when the task is precise comparison, criticize it.</p>
+          <p class="definition">The visualization makes comparison difficult because it uses area/color instead of position or length. A bar chart or aligned dot plot would be more effective.</p>
+        </section>
+
+        <section>
+          <h2>3. Check Perception Problems</h2>
+          <div class="task-grid">
+            <span>too many colors</span>
+            <span>rainbow color scale</span>
+            <span>low contrast</span>
+            <span>clutter</span>
+            <span>overlapping labels</span>
+            <span>3D distortion</span>
+            <span>bad ordering</span>
+            <span>missing scale</span>
+            <span>misleading axis</span>
+            <span>chartjunk</span>
+          </div>
+          <p class="definition">The rainbow scale is problematic because the colors are not perceptually ordered, so users may misread high and low values.</p>
+        </section>
+
+        <section>
+          <h2>4. Check If It Lies</h2>
+          <ul>
+            <li>Is the axis truncated?</li>
+            <li>Are sizes proportional to the data?</li>
+            <li>Does the visual effect exaggerate the real effect?</li>
+            <li>Is context missing?</li>
+          </ul>
+          <p>This is Tufte-style critique.</p>
+          <p class="definition">The chart exaggerates the difference because the y-axis does not start at zero, increasing the perceived change.</p>
+        </section>
+
+        <section>
+          <h2>5. Always Give A Fix</h2>
+          <p>Never only say what is wrong. Add the better design.</p>
+          <p class="definition">A better solution would be to use ___ because the task is ___.</p>
+          <p class="definition">A better solution would be to use an adjacency matrix because the graph is dense and matrix views avoid edge clutter.</p>
+        </section>
+
+        <section>
+          <h2>Exam Template</h2>
+          <pre class="exam-template"><code>The main problem is that the visualization does not support the task of ____ well.
+
+It uses ____ encoding, which makes ____ difficult because ____.
+
+There is also a perception/design issue: ____.
+
+A better solution would be ____ because it would make ____ easier to see/compare/understand.</code></pre>
+        </section>
+      </article>
     </section>
   </main>
 
