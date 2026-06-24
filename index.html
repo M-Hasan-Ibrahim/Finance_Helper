@@ -22,6 +22,8 @@
     .course-link:hover { background:var(--dark); }
     .empty-state { display:grid; min-height:200px; place-content:center; text-align:center; }
     .empty-state span { color:#7b8790; font-size:14px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+    .site-footer { width:min(960px,calc(100% - 32px)); margin:0 auto; padding:0 0 28px; color:var(--muted); font-size:14px; text-align:center; }
+    .site-footer p { margin:3px 0; }
     @media (max-width:560px) {
       .page { width:min(100% - 20px,960px); padding:28px 0; }
       .tabs { display:grid; border-bottom:0; }
@@ -63,5 +65,9 @@
       panels.forEach((panel) => { panel.hidden = panel.id !== tab.dataset.tab; });
     }));
   </script>
+  <footer class="site-footer">
+    <p>&copy; 2026 Mohamad Hassan IBRAHIM. All rights reserved.</p>
+    <p>Course Notes and Mock Exams. Built and maintained with assistance from his Codex account.</p>
+  </footer>
 </body>
 </html>

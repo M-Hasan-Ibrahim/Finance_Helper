@@ -348,3 +348,6 @@ code { color:var(--dark); font-weight:700; }
   .single-question-mode .quiz-progress-heading { display:flex; }
   .single-question-mode .quiz-question { padding:13px 12px 10px; }
 }
+
+.site-footer { width:min(1120px,calc(100% - 32px)); margin:0 auto; padding:0 0 28px; color:var(--muted); font-size:14px; text-align:center; }
+.site-footer p { margin:3px 0; }
